@@ -15,7 +15,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="max-w-[1370px] mx-auto grid grid-cols-3 w-full px-4 gap-8">
+    <div className="max-w-[1370px] mx-auto mt-12 grid grid-cols-3 w-full px-4 gap-8">
       <div className="flex flex-col pr-6">
         <div className="h-[70px] w-auto flex items-center py-2">
           <Image

@@ -1,18 +1,38 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { MenuItems } from "./MenuItems";
 import { Button } from "@/components/ui/button";
-import { AlignLeft, Mail, Menu, Phone } from "lucide-react";
+import { AlignLeft, Mail, Phone } from "lucide-react";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 60);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="border border-b-[1.5px]">
-      <div className="max-w-[1370px] mx-auto flex flex-row justify-between items-center h-[55px] ">
+    <div
+      className={`border-b-[1.5px] w-full fixed z-50 transition-colors duration-300 ${
+        scrolled ? "bg-[#01AD87]" : "bg-white"
+      }`}
+    >
+      <div className="max-w-[1370px] mx-auto flex flex-row justify-between items-center h-[55px]">
         <Button variant={"outline"} size={"icon"} className="border-none">
           <AlignLeft size={40} color="#000000" />
         </Button>
+
         <div className="translate-x-20">
           <MenuItems />
         </div>
+
         <div className="flex flex-row items-center gap-4">
           <div className="gap-1.5 flex flex-row items-center justify-center">
             <Mail size={16} />

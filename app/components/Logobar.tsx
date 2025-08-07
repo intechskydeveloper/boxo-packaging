@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Logobar = () => {
   return (
-    <div className="max-w-[1370px] mx-auto flex flex-row justify-between items-center h-[86px] px-4">
+    <div className="max-w-[1370px] mx-auto flex flex-row justify-between items-center h-[86px] px-4 bg">
       <div className="h-[77px] w-auto flex items-center py-2">
         <Image
           src="/logo.webp"

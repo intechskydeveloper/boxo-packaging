@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Tagline from "./Tagline";
+import Tagline from "../../Tagline";
 
 export function FAQ() {
   return (

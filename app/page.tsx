@@ -1,18 +1,20 @@
-import Benifits from "./components/Benifits";
-import Products from "./components/Products";
-import Hero from "./components/Hero";
-import ImagesSection from "./components/ImagesSection";
-import Logobar from "./components/Logobar";
-import Categories from "./components/Categories";
-import { FAQ } from "./components/FAQ";
-import Benifits2 from "./components/Benifits2";
+import Products from "./components/sections/Home/Products";
+import Hero from "./components/sections/Home/Hero";
+import Logobar from "./components/sections/Home/Logobar";
+import Categories from "./components/sections/Home/Categories";
+import Benifits2 from "./components/sections/Home/Benifits2";
+import ImagesSection from "./components/sections/Home/ImagesSection";
+import { FAQ } from "./components/sections/Home/FAQ";
+import FeaturedSection from "./components/sections/Home/FeaturedSection";
+import { Temp } from "./components/Temp";
 
 const page = () => {
   return (
     <>
       <Logobar />;
       <Hero />
-      {/* <Benifits /> */}
+      <FeaturedSection />
+      {/* <Temp />  */}
       <Products />
       <Categories />
       <Benifits2 />

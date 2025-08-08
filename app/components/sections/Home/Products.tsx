@@ -6,9 +6,7 @@ import React from "react";
 const Products = () => {
   return (
     <div className="max-w-[1370px] mx-auto px-4 pt-20">
-      <div>
-        <h2 className="sectionHeadingLeft">Products</h2>
-      </div>
+      <h2 className="sectionHeadingLeft">Products</h2>
       <div className="flex flex-row w-full gap-4">
         <div className="w-[25%] ">
           <div className="my-4 gap-1 flex flex-col">

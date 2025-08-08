@@ -1,13 +1,10 @@
 import Image from "next/image";
-import Tagline from "./Tagline";
+import Tagline from "../../Tagline";
 
 export default function ImagesSection() {
   return (
     <section className="max-w-[1370px] mx-auto px-4 py-24">
       <div className="text-center mb-8">
-        {/* <p className="text-[#7a7a7a] text-xs text-center uppercase tracking-[1px] font-bold">
-          sustainable future
-        </p> */}
         <Tagline title="Sustainable future" />
         <h2 className="headingTwo">Let’s create together</h2>
         <p className="subHeadingTwo">

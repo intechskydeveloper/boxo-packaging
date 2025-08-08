@@ -49,7 +49,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #01AD87;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -85,7 +85,7 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: #313F4A;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -117,4 +117,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.headingTwo{
+  @apply text-4xl text-center font-bold text-gray-900 py-4
+}
+
+.subHeadingTwo{
+  @apply text-gray-600 text-center max-w-2xl mx-auto
+}
+
+.sectionHeadingLeft{
+  @apply text-3xl font-bold pb-3;  
 }

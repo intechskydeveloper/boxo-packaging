@@ -18,7 +18,7 @@ const Logobar = () => {
         />
       </div>
 
-      <div className="translate-x-8 flex flex-row  border-[1.5px] border-[#d4d7da] h-[45px] items-center pl-4 rounded-xs -z-50 gap-3 min-w-[500px]">
+      <div className="translate-x-8 flex flex-row  border-[1.5px] border-[#d4d7da] h-[45px] items-center pl-4 rounded-sm  -z-50 gap-3 min-w-[500px]">
         <input
           type="text"
           placeholder="Search for designs..."
@@ -31,7 +31,7 @@ const Logobar = () => {
           All Category
           <ChevronDown size={14} className="mt-1" />
         </Link>
-        <button className="bg-black h-full flex items-center justify-center rounded-r-xs min-w-[45px]">
+        <button className="bg-black h-full flex items-center justify-center rounded-r-sm min-w-[45px]">
           <Search size={18} color="#ffffff" />
         </button>
       </div>

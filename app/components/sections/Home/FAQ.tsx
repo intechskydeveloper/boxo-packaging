@@ -19,7 +19,7 @@ export function FAQ() {
         type="single"
         collapsible
         className="w-full max-w-[1370px] mx-auto pb-10"
-        defaultValue="item-1"
+        // defaultValue="item-1"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-lg font-bold  cursor-pointer my-3">

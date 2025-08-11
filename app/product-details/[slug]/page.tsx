@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import SplitImage from "@/app/components/sections/Details/SplitImage";
+// import { notFound } from "next/navigation";
 
 interface ProductPageProps {
   params: { slug: string };
@@ -17,6 +18,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   // const product = await res.json();
 
-  return;
-  <></>;
+  return <>
+    <SplitImage />
+  </>;
 }

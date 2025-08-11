@@ -1,0 +1,43 @@
+import React from "react";
+import ProductImageGallery from "./ProductImageGallery";
+import ProductDetailsPanel from "./ProductDetailsPanel";
+
+const productImages = [
+  { src: "/products/p1.webp", alt: "Front view" },
+  { src: "/products/p2.webp", alt: "Side view" },
+  { src: "/products/p3.webp", alt: "Back view" },
+  { src: "/products/p4.webp", alt: "Inside view" },
+];
+
+const product = {
+  title: "Seeds Of Change Organic Quinoa, Brown",
+  description:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure minus error doloribus saepe natus?",
+  brand: "ESTA BETTERU CO",
+  flavour: "Super Saver Pack",
+  dietType: "Vegetarian",
+  weight: "200 Grams",
+  speciality: "Gluten Free, Sugar Free",
+  info: "Egg Free, Allergen-Free",
+  items: 1,
+  price: 120.25,
+  oldPrice: 123.25,
+  reviewCount: 75,
+  weights: ["50kg", "80kg", "120kg", "200kg"],
+  colors: ["#364153", "#6A7282", "#AC8157"],
+};
+
+function SplitImage() {
+  return (
+    <section className="sectionWrapper py-10 flex flex-row">
+      <div className="w-1/2">
+        <ProductImageGallery images={productImages} />
+      </div>
+      <div className="w-1/2">
+        <ProductDetailsPanel product={product} />
+      </div>
+    </section>
+  );
+}
+
+export default SplitImage;

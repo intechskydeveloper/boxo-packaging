@@ -3,17 +3,17 @@ import ProductImageGallery from "./ProductImageGallery";
 import ProductDetailsPanel from "./ProductDetailsPanel";
 
 const productImages = [
+  { src: "/products/p4.webp", alt: "Inside view" },
   { src: "/products/p1.webp", alt: "Front view" },
   { src: "/products/p2.webp", alt: "Side view" },
   { src: "/products/p3.webp", alt: "Back view" },
-  { src: "/products/p4.webp", alt: "Inside view" },
 ];
 
 const product = {
   title: "Seeds Of Change Organic Quinoa, Brown",
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure minus error doloribus saepe natus?",
-  brand: "ESTA BETTERU CO",
+  brand: "Intechsky",
   flavour: "Super Saver Pack",
   dietType: "Vegetarian",
   weight: "200 Grams",
@@ -29,7 +29,7 @@ const product = {
 
 function SplitImage() {
   return (
-    <section className="sectionWrapper py-10 flex lg:flex-row flex-col">
+    <section className="sectionWrapper pb-10 pt-4 flex lg:flex-row flex-col">
       <div className="w-full lg:w-1/2">
         <ProductImageGallery images={productImages} />
       </div>

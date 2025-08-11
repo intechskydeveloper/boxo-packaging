@@ -13,8 +13,8 @@ export default function ProductImageGallery({
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
-    <div className="flex flex-col items-center px-10">
-      <div className="relative w-full h-[500px] mb-4">
+    <div className="flex flex-col items-center">
+      <div className="relative w-full h-[450px] mb-4">
         <Image
           src={selectedImage.src}
           alt={selectedImage.alt || "Product image"}

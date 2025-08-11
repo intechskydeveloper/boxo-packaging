@@ -32,9 +32,9 @@ export default function ProductDetailsPanel({
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="max-w-lg space-y-3">
+    <div className="max-w-lg space-y-3 px-10">
       <h2 className="sectionHeadingLeft">{product.title}</h2>
-      <p className="text-gray-500 text-lg">{product.description}</p>
+      <p className="text-gray-500 text-sm ">{product.description}</p>
 
       <div className="flex items-center gap-1 text-sm">
         <span className="text-orange-500">★★★★★</span>
@@ -43,28 +43,28 @@ export default function ProductDetailsPanel({
       <hr />
 
       <div className="text-sm space-y-1">
-        <p>
+        <p className="text-gray-500">
           <strong className="text-[#323339]">Brand</strong> : {product.brand}
         </p>
-        <p>
+        <p className="text-gray-500">
           <strong className="text-[#323339]">Flavour</strong> :{" "}
           {product.flavour}
         </p>
-        <p>
+        <p className="text-gray-500">
           <strong className="text-[#323339]">Diet Type</strong> :{" "}
           {product.dietType}
         </p>
-        <p>
+        <p className="text-gray-500">
           <strong className="text-[#323339]">Weight</strong> : {product.weight}
         </p>
-        <p>
+        <p className="text-gray-500">
           <strong className="text-[#323339]">Speciality</strong> :{" "}
           {product.speciality}
         </p>
-        <p>
+        <p className="text-gray-500">
           <strong className="text-[#323339]">Info</strong> : {product.info}
         </p>
-        <p>
+        <p className="text-gray-500">
           <strong className="text-[#323339]">Items</strong> : {product.items}
         </p>
       </div>
@@ -133,12 +133,12 @@ export default function ProductDetailsPanel({
         <Button
           onClick={() => setLiked((prev) => !prev)}
           className={`p-2 hover:text-red-700 rounded ${
-            liked ? "text-primary " : "text-red-700"
+            !liked ? "text-primary " : "text-red-700"
           }`}
           size={"icon"}
           variant={"outline"}
         >
-          <Heart size={18} fill={liked ? "#ffffff" : "red"} />
+          <Heart size={18} fill={!liked ? "#ffffff" : "red"} />
         </Button>
 
         <Button

@@ -1,6 +1,6 @@
+import { PageBreadcrumb } from "@/app/components/Common/PageBreadcrumb";
 import SplitImage from "@/app/components/sections/Details/SplitImage";
-// import { notFound } from "next/navigation";
-
+import { TabMenu } from "@/app/components/sections/Details/TabMenu";
 interface ProductPageProps {
   params: { slug: string };
 }
@@ -18,7 +18,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   // const product = await res.json();
 
-  return <>
-    <SplitImage />
-  </>;
+  return (
+    <>
+      <PageBreadcrumb />
+      <SplitImage />
+      <TabMenu />
+    </>
+  );
 }

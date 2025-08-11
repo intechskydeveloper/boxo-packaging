@@ -1,5 +1,5 @@
 import React from "react";
-import Tagline from "../../Tagline";
+import Tagline from "../../Common/Tagline";
 
 const Benifits2 = () => {
   return (

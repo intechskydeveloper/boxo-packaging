@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Tagline from "../../Tagline";
+import Tagline from "../../Common/Tagline";
 
 export default function ImagesSection() {
   return (

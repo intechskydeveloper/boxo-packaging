@@ -29,11 +29,11 @@ const product = {
 
 function SplitImage() {
   return (
-    <section className="sectionWrapper py-10 flex flex-row">
-      <div className="w-1/2">
+    <section className="sectionWrapper py-10 flex lg:flex-row flex-col">
+      <div className="w-full lg:w-1/2">
         <ProductImageGallery images={productImages} />
       </div>
-      <div className="w-1/2">
+      <div className="w-full lg:w-1/2">
         <ProductDetailsPanel product={product} />
       </div>
     </section>

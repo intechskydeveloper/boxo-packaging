@@ -32,7 +32,7 @@ export default function ProductDetailsPanel({
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="max-w-md space-y-3">
+    <div className="max-w-lg space-y-3">
       <h2 className="sectionHeadingLeft">{product.title}</h2>
       <p className="text-gray-500 text-lg">{product.description}</p>
 
@@ -102,7 +102,7 @@ export default function ProductDetailsPanel({
               onClick={() => setSelectedColor(color)}
               style={{ backgroundColor: color }}
               className={`w-8 h-8 rounded-full border-2 ring-2 ${
-                selectedColor === color ? "ring-primary" : "ring-gray-300"
+                selectedColor === color ? "ring-primary" : "ring-gray-200"
               }`}
             />
           ))}

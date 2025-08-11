@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import SectionIntro from "../../SectionIntro";
 import Link from "next/link";
 import * as React from "react";
 import {
@@ -11,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import SectionIntro from "../../Common/SectionIntro";
 
 export default function FeaturedSection() {
   return (

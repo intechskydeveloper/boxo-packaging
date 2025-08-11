@@ -50,7 +50,7 @@ export default function FeaturedSection() {
           className="w-full px-12 max-w-[1090px]"
           opts={{
             align: "start",
-            // loop: true,
+            loop: true,
             slidesToScroll: 4,
           }}
         >

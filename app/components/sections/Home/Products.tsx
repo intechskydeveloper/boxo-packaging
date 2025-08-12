@@ -70,7 +70,10 @@ const Products = () => {
         </div>
         <div className="grid-cols-4 grid w-full px-2 gap-3">
           {Array.from({ length: 8 }).map((item, index: number) => (
-            <div className="flex flex-col items-center " key={index}>
+            <div
+              className="flex flex-col items-center "
+              key={`products ${index}`}
+            >
               <div className="h-[275px] w-auto flex items-center py-2">
                 <Image
                   src={`/packaging/p${index + 1}.webp`}

@@ -46,7 +46,7 @@ export default function ProductDetailsPanel({
       <div className="flex items-center pb-4">
         {[0, 1, 2, 3, 4].map((rating) => (
           <Star
-            key={rating}
+            key={`${rating} Product rating`}
             className={cn(
               product.reviewCount > rating
                 ? "text-yellow-500"

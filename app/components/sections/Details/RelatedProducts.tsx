@@ -161,7 +161,7 @@ const RelatedProducts = () => {
         <CarouselContent className="gap-1">
           {dummyproducts.map((product, idx) => (
             <CarouselItem
-              key={idx}
+              key={product.title}
               // Adjusting for smaller gap (gap-2 = 0.5rem total)
               className="group basis-[calc(20%-0.2rem)] sm:basis-[calc(33.333%-0.2rem)] md:basis-[calc(25%-0.2rem)] lg:basis-[calc(20%-0.2rem)]"
             >

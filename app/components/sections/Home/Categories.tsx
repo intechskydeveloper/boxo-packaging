@@ -5,7 +5,7 @@ import SectionIntro from "../../Common/SectionIntro";
 
 export default function Categories() {
   return (
-    <div className="py-24 sm:py-20">
+    <div className="py-12 sm:py-12">
       <div className="mx-auto mt-8 max-w-2xl lg:max-w-7xl xl:max-w-[1370px]">
         <SectionIntro
           align="center"

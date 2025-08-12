@@ -35,7 +35,7 @@ export default function HeroCarousel() {
       }}
       plugins={[
         Autoplay({
-          delay: 3000,
+          delay: 4000,
         }),
       ]}
     >

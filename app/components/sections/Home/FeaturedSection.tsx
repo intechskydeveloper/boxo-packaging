@@ -14,7 +14,7 @@ import SectionIntro from "../../Common/SectionIntro";
 
 export default function FeaturedSection() {
   return (
-    <div className="mx-auto max-w-[1370px] pt-[88px] pb-4 px-4">
+    <div className="mx-auto max-w-[1370px] pt-12 pb-4 px-4">
       <SectionIntro
         align="center"
         tagline="Best Colletion"

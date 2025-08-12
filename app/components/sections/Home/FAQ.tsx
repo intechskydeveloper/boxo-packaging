@@ -5,16 +5,17 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Tagline from "../../Common/Tagline";
+import SectionIntro from "../../Common/SectionIntro";
 
 export function FAQ() {
   return (
     <>
-      <div className="max-w-[1370px] mx-auto pt-20 items-center flex flex-col w-full">
-        <Tagline title="FAQ's" />
-        <h2 className="font-bold text-4xl text-center mt-4 mb-8">
-          Frequently Asked Questions
-        </h2>
-      </div>
+      <SectionIntro
+        align="center"
+        tagline="Any Question?"
+        heading="Frequently Asked Questions"
+        className="pb-8"
+      />
       <Accordion
         type="single"
         collapsible

@@ -6,7 +6,7 @@ import H3 from "../../Common/H3";
 
 const Products = () => {
   return (
-    <div className="max-w-[1370px] mx-auto px-4 pt-20">
+    <div className="max-w-[1370px] mx-auto px-4 pt-12">
       <H3 align="start">Products</H3>
       <div className="flex flex-row w-full gap-4">
         <div className="w-[25%] ">

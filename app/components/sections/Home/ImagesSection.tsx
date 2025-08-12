@@ -4,7 +4,7 @@ import SectionIntro from "../../Common/SectionIntro";
 
 export default function ImagesSection() {
   return (
-    <section className="max-w-[1370px] mx-auto px-4 py-24">
+    <section className="max-w-[1370px] mx-auto px-4 py-12">
       <SectionIntro
         align="center"
         tagline="Sustainable future"

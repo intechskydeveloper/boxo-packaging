@@ -57,10 +57,10 @@ export default function HeroCarousel() {
             </div>
 
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl leading-16">
                 {slide.heading}
               </h1>
-              <p className="text-lg md:text-2xl font-thin mb-8 max-w-4xl">
+              <p className="text-sm md:text-xl mb-8 max-w-4xl fontmonst font-extralight">
                 {slide.text}
               </p>
               <Button

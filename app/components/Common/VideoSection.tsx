@@ -23,13 +23,13 @@ export default function VideoSection() {
   return (
     <div className="w-full flex justify-center px-4">
       <div
-        className="relative w-full max-w-[1200px] rounded-lg overflow-hidden"
+        className="relative w-full max-w-[1000px] h-[500px] rounded-2xl overflow-hidden"
         onClick={handlePlayPause}
       >
         <video
           ref={videoRef}
           src="/videos/promo.mp4"
-          className="w-full h-auto"
+          className="w-full h-full object-cover"
           controls={false}
         />
 
@@ -39,10 +39,15 @@ export default function VideoSection() {
               e.stopPropagation();
               handlePlayPause();
             }}
-            className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition"
+            className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition-colors duration-300"
           >
-            <div className="bg-white rounded-full p-4 shadow-lg">
-              <Play className="w-10 h-10 text-black" />
+            <div className="rounded-full p-[8px] ring-[1.5px] ring-white flex flex-row items-center justify-center">
+              <div className="bg-white rounded-full p-4 shadow-lg">
+                <Play
+                  className="w-7 h-7 ml-[1.5px] text-black"
+                  fill="#000000"
+                />
+              </div>
             </div>
           </button>
         )}

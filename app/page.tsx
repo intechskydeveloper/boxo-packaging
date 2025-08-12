@@ -5,12 +5,14 @@ import Categories from "./components/sections/Home/Categories";
 import Benifits2 from "./components/sections/Home/Benifits2";
 import ImagesSection from "./components/sections/Home/ImagesSection";
 import FeaturedSection from "./components/sections/Home/FeaturedSection";
+import Promotion from "./components/sections/Home/Promotion";
 
 const page = () => {
   return (
     <>
       <Logobar />;
       <Hero />
+      <Promotion />
       <FeaturedSection />
       <Products />
       <Categories />

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Tagline from "../../Common/Tagline";
+import SectionIntro from "../../Common/SectionIntro";
 
 export default function ImagesSection() {
   return (
     <section className="max-w-[1370px] mx-auto px-4 py-24">
-      <div className="text-center mb-8">
-        <Tagline title="Sustainable future" />
-        <h2 className="headingTwo">Let’s create together</h2>
-        <p className="subHeadingTwo">
-          Grow your business with eco-friendly alternatives to packaging. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, alias.
-        </p>
-      </div>
+      <SectionIntro
+        align="center"
+        tagline="Sustainable future"
+        heading="Let’s create together"
+        subHeading="Grow your business with eco-friendly alternatives to packaging. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, alias."
+        className="pb-8"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="relative group rounded-xl overflow-hidden group">

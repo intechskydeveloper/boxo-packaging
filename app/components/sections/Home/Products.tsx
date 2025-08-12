@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import H3 from "../../Common/H3";
 
 const Products = () => {
   return (
     <div className="max-w-[1370px] mx-auto px-4 pt-20">
-      <h2 className="sectionHeadingLeft">Products</h2>
+      <H3 align="start">Products</H3>
       <div className="flex flex-row w-full gap-4">
         <div className="w-[25%] ">
           <div className="my-4 gap-1 flex flex-col">

@@ -16,9 +16,11 @@ export default function FeaturedSection() {
   return (
     <div className="mx-auto max-w-[1370px] pt-[88px] pb-4 px-4">
       <SectionIntro
+        align="center"
         tagline="Best Colletion"
         heading="Featured Section"
         subHeading="Explore our handpicked selection of best-selling and trending products, chosen just for you."
+        className="pb-8"
       />
       <div className="flex flex-row bg-white">
         <div className="w-[310px] rounded-lg overflow-hidden relative group">

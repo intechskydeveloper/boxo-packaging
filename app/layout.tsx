@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Instrument_Sans,
-  Montserrat,
-} from "next/font/google";
+import { Instrument_Sans, Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/sections/Home/Navbar";
 import Footer from "./components/sections/Home/Footer";
 import { FAQ } from "./components/sections/Home/FAQ";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -21,7 +11,7 @@ const instrumentSans = Instrument_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const montserrat = Montserrat({
+const montserrat = Raleway({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600"],
@@ -40,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${instrumentSans.variable} ${montserrat.variable} antialiased`}
+        className={`${instrumentSans.variable} ${montserrat.variable} antialiased`}
       >
         <Navbar />
         <main className="pt-[55px] pb-20">{children}</main>

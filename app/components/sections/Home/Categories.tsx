@@ -1,19 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import Tagline from "../../Common/Tagline";
+import SectionIntro from "../../Common/SectionIntro";
 
 export default function Categories() {
   return (
     <div className="py-24 sm:py-20">
       <div className="mx-auto mt-8 max-w-2xl lg:max-w-7xl xl:max-w-[1370px]">
-        {/* <p className="text-[#7a7a7a] text-xs text-center uppercase tracking-[1px] font-bold">
-          Shop by Category
-        </p> */}
-        <div className="flex flex-col items-center">
-          <Tagline title="Shop by Category" />
-          <h2 className="headingTwo">Product Categories</h2>
-        </div>
-
+        <SectionIntro
+          align="center"
+          tagline="Shop by Category"
+          heading="Product Categories"
+          subHeading="Boxo Packaging is more than just your custom packaging boxes provider; we’re your creative partner in delivering standout packaging solutions."
+        />
         <div className="grid grid-cols-1 gap-4 sm:mt-10 lg:grid-cols-6 lg:grid-rows-2">
           <div className="flex p-px lg:col-span-4 ">
             <div className="relative group overflow-hidden w-full rounded-lg ring-1 ring-white/15 max-lg:rounded-t-[1.5rem] lg:rounded-tl-[1.5rem] border-[1px] border-gray-300 bg-white">

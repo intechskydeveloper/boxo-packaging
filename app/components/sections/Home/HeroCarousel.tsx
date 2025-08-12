@@ -41,10 +41,7 @@ export default function HeroCarousel() {
     >
       <CarouselContent>
         {slides.map((slide, index) => (
-          <CarouselItem
-            key={slide.heading}
-            className="w-screen h-[85vh] relative"
-          >
+          <CarouselItem key={slide.text} className="w-screen h-[85vh] relative">
             <div className="absolute inset-0">
               <Image
                 src={slide.image}
@@ -63,10 +60,7 @@ export default function HeroCarousel() {
               <p className="text-sm md:text-xl mb-8 max-w-4xl fontmonst font-extralight">
                 {slide.text}
               </p>
-              <Button
-                className="px-6 py-3 text-lg rounded-full bg-[#303E48]"
-                size={"lg"}
-              >
+              <Button className="px-6 py-3 text-lg bg-[#303E48]" size={"lg"}>
                 {slide.button}
               </Button>
             </div>

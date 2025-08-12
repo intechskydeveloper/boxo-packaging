@@ -31,6 +31,7 @@ export default function VideoSection() {
           src="/videos/promo.mp4"
           className="w-full h-full object-cover"
           controls={false}
+          loop
         />
 
         {!isPlaying && (

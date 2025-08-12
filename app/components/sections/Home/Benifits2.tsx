@@ -1,18 +1,18 @@
 import React from "react";
 import Tagline from "../../Common/Tagline";
+import SectionIntro from "../../Common/SectionIntro";
 
 const Benifits2 = () => {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 text-center">
-          <Tagline title="Features" />
-          <h2 className="headingTwo">Revolutionary Features</h2>
-          <p className="subHeadingTwo">
-            Provides advanced features like time tracking, integrating with
-            third party apps (calendar / Google drive), creating subtasks.
-          </p>
-        </div>
+        <SectionIntro
+          align="center"
+          tagline="Features"
+          heading="Revolutionary Features"
+          subHeading=" Provides advanced features like time tracking, integrating with third party apps (calendar / Google drive), creating subtasks."
+          className="pb-8"
+        />
         {/* <div className="flex justify-center items-center gap-x-5 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8"> */}
         <div className="grid grid-cols-4 gap-8 ">
           <div className="relative w-full text-center max-md:max-w-sm max-md:mx-auto group">

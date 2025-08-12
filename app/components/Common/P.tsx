@@ -1,0 +1,26 @@
+import clsx from "clsx";
+import React from "react";
+
+const P = ({
+  align,
+  className,
+  children,
+}: {
+  align?: "center" | "start";
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <p
+      className={clsx(
+        className,
+        `text-gray-600 text-center max-w-2xl mx-auto font-instruction`,
+        align == "center" ? "text-center" : "text-start"
+      )}
+    >
+      {children}
+    </p>
+  );
+};
+
+export default P;

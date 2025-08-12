@@ -124,9 +124,6 @@
 h1{
   @apply font-instruction
 }
-h2{
-  @apply font-instruction
-}
 
 .headingTwo{
   @apply text-4xl text-center font-bold text-gray-900 py-4

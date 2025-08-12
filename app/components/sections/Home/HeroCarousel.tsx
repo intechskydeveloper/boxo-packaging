@@ -41,7 +41,10 @@ export default function HeroCarousel() {
     >
       <CarouselContent>
         {slides.map((slide, index) => (
-          <CarouselItem key={index} className="w-screen h-[85vh] relative">
+          <CarouselItem
+            key={slide.heading}
+            className="w-screen h-[85vh] relative"
+          >
             <div className="absolute inset-0">
               <Image
                 src={slide.image}

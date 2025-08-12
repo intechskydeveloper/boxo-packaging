@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Heart, ShoppingCart, Instagram } from "lucide-react";
+import { Heart, ShoppingCart, Instagram, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface ProductDetailsPanelProps {
   product: {
@@ -32,17 +33,33 @@ export default function ProductDetailsPanel({
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="max-w-lg space-y-3 px-10">
-      <h2 className="sectionHeadingLeft">{product.title}</h2>
-      <p className="text-gray-500 text-sm ">{product.description}</p>
+    <div className="px-10">
+      <div className="flex flex-row justify-between">
+        <h2 className="text-3xl font-semibold pb-3 mb-0 max-w-md">
+          {product.title}
+        </h2>
 
-      <div className="flex items-center gap-1 text-sm">
-        <span className="text-orange-500">★★★★★</span>
-        <span>({product.reviewCount} Review)</span>
+        <span className="text-emerald-600 text-3xl font-bold">
+          ${product.price}
+        </span>
+      </div>
+      <div className="flex items-center pb-4">
+        {[0, 1, 2, 3, 4].map((rating) => (
+          <Star
+            key={rating}
+            className={cn(
+              product.reviewCount > rating
+                ? "text-yellow-500"
+                : "text-gray-300",
+              "h-5 w-5"
+            )}
+          />
+        ))}
+        <p className="sr-only">{product.reviewCount} out of 5 stars</p>
       </div>
       <hr />
 
-      <div className="text-sm space-y-1">
+      <div className="text-sm space-y-1 mt-4">
         <p className="text-gray-500">
           <strong className="text-[#323339]">Brand</strong> : {product.brand}
         </p>
@@ -69,47 +86,40 @@ export default function ProductDetailsPanel({
         </p>
       </div>
 
-      <div className="flex items-baseline gap-2">
-        <span className="text-emerald-600 text-2xl font-bold">
-          ${product.price}
-        </span>
-        <span className="text-gray-400 line-through">${product.oldPrice}</span>
-      </div>
-
-      <div>
-        <p className="text-sm font-medium">Size/Weight :</p>
-        <div className="flex gap-2 mt-2">
-          {product.weights.map((w) => (
-            <Button
-              key={w}
-              onClick={() => setSelectedWeight(w)}
-              className={`px-3 py-1 rounded 
+      <div className="flex flex-row gap-5 justify-between max-w-md py-6">
+        <div>
+          <p className="text-sm font-medium">Colors :</p>
+          <div className="flex gap-2 mt-2">
+            {product.colors.map((color) => (
+              <button
+                key={color}
+                onClick={() => setSelectedColor(color)}
+                style={{ backgroundColor: color }}
+                className={`w-8 h-8 rounded-full border-2 ring-2 ${
+                  selectedColor === color ? "ring-primary" : "ring-gray-200"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+        <div>
+          <p className="text-sm font-medium">Size/Weight :</p>
+          <div className="flex gap-2 mt-2">
+            {product.weights.map((w) => (
+              <Button
+                key={w}
+                onClick={() => setSelectedWeight(w)}
+                className={`px-3 py-1 rounded 
                 border text-sm`}
-              variant={selectedWeight == w ? "default" : "outline"}
-            >
-              {w}
-            </Button>
-          ))}
+                variant={selectedWeight == w ? "default" : "outline"}
+              >
+                {w}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
-
-      <div>
-        <p className="text-sm font-medium">Colors :</p>
-        <div className="flex gap-2 mt-2">
-          {product.colors.map((color) => (
-            <button
-              key={color}
-              onClick={() => setSelectedColor(color)}
-              style={{ backgroundColor: color }}
-              className={`w-8 h-8 rounded-full border-2 ring-2 ${
-                selectedColor === color ? "ring-primary" : "ring-gray-200"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 mt-4">
         <div className="flex items-center border rounded">
           <button
             onClick={() => setQuantity((q) => Math.max(1, q - 1))}

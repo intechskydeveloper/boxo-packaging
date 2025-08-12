@@ -228,33 +228,3 @@ export default function FeaturedSection() {
     </div>
   );
 }
-
-// import Image from "next/image";
-// import React from "react";
-
-// const FeaturedSection = () => {
-//   return (
-//     <div className="max-w-[1370px] mx-auto px-4 pt-20">
-//       <h2 className="sectionHeadingLeft">Featured Products</h2>
-//       <div className="w-full flex flex-row">
-//         <div className="w-[280px] h-[350px] bg-red-700">
-//           <div className="h-full w-full flex items-center px-2 mt-4">
-//             <Image
-//               src="/i7.jpeg"
-//               alt="logo"
-//               fill={false}
-//               width={0}
-//               height={0}
-//               sizes="100vw"
-//               className="h-full w-full object-cover rounded-lg"
-//             />
-//           </div>
-//         </div>
-
-//         <div className="w-full bg-yellow-600">Product card section </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FeaturedSection;

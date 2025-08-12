@@ -54,14 +54,14 @@ export function TabMenu() {
       <Tabs defaultValue="specifications">
         <TabsList className=" rounded-sm gap-3 px-2 my-1">
           <TabsTrigger
-            className="rounded-sm data-[state=active]:bg-primary data-[state=active]:text-white"
+            className="rounded-[3px] data-[state=active]:bg-primary data-[state=active]:text-white"
             value="specifications"
           >
             Specification
           </TabsTrigger>
           <TabsTrigger
             value="description"
-            className="rounded-sm data-[state=active]:bg-primary data-[state=active]:text-white"
+            className="rounded-[3px] data-[state=active]:bg-primary data-[state=active]:text-white"
           >
             Description
           </TabsTrigger>

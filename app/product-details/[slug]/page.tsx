@@ -1,4 +1,5 @@
 import { PageBreadcrumb } from "@/app/components/Common/PageBreadcrumb";
+import RelatedProducts from "@/app/components/sections/Details/RelatedProducts";
 import SplitImage from "@/app/components/sections/Details/SplitImage";
 import { TabMenu } from "@/app/components/sections/Details/TabMenu";
 interface ProductPageProps {
@@ -6,7 +7,7 @@ interface ProductPageProps {
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${slug}`, {
   //   cache: "no-store",
@@ -23,6 +24,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <PageBreadcrumb />
       <SplitImage />
       <TabMenu />
+      <RelatedProducts />
     </>
   );
 }

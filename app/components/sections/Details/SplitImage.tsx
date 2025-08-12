@@ -22,7 +22,7 @@ const product = {
   items: 1,
   price: 120.25,
   oldPrice: 123.25,
-  reviewCount: 75,
+  reviewCount: 4,
   weights: ["50kg", "80kg", "120kg", "200kg"],
   colors: ["#364153", "#6A7282", "#AC8157"],
 };

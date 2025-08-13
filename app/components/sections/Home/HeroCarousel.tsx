@@ -53,11 +53,11 @@ export default function HeroCarousel() {
               <div className="absolute inset-0 bg-black/60" />
             </div>
 
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl leading-16">
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white md:px-6 px-6">
+              <h1 className="md:text-4xl text-2xl lg:text-6xl font-bold mb-6 lg:max-w-4xl md:max-w-xl max-w-md lg:leading-16 md:leading-12 leading-8">
                 {slide.heading}
               </h1>
-              <p className="text-sm md:text-xl mb-8 max-w-4xl fontmonst font-extralight">
+              <p className="text-sm md:text-xl mb-8  fontmonst font-extralight lg:max-w-4xl md:max-w-xl max-w-md">
                 {slide.text}
               </p>
               <Button className="px-6 py-3 text-lg bg-[#303E48]" size={"lg"}>
@@ -68,8 +68,8 @@ export default function HeroCarousel() {
         ))}
       </CarouselContent>
 
-      <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2 bg-transparent border-none hover:bg-transparent" />
-      <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-2  bg-transparent border-none hover:bg-transparent" />
+      <CarouselPrevious className="absolute md:left-4 left-1 top-1/2 -translate-y-1/2 rounded-full md:p-2 bg-transparent border-none hover:bg-transparent" />
+      <CarouselNext className="absolute md:right-4 right-1 top-1/2 -translate-y-1/2 rounded-full md:p-2  bg-transparent border-none hover:bg-transparent" />
     </Carousel>
   );
 }

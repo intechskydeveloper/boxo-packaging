@@ -8,11 +8,11 @@ import P from "../../Common/P";
 const Promotion = () => {
   return (
     <section
-      className="flex flex-col w-full max-w-[1300px] py-20 mx-auto items-center"
+      className="flex flex-col w-full max-w-[1300px] py-20 mx-auto items-center "
       id="promotion"
     >
-      <div className="flex flex-row gap-16 pb-14 items-center">
-        <div className="max-w-5/12">
+      <div className="flex flex-col md:flex-row gap-16 pb-14 items-center">
+        <div className="max-w-5/12 w-full">
           <SectionIntro
             tagline="Promotion"
             heading="Explore Our Signature Packaging Solutions"
@@ -34,7 +34,7 @@ const Promotion = () => {
           </div>
         </div>
         <div className="">
-          <P className="max-w-2xl">
+          <P className="max-w-2xl" align="start">
             Boxo Packaging offers a wide range of products that stand out for
             their quality, versatility, and customization options. Our popular
             products are designed to meet the unique needs of businesses across

@@ -14,7 +14,7 @@ const Benifits2 = () => {
           className="pb-8"
         />
         {/* <div className="flex justify-center items-center gap-x-5 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8"> */}
-        <div className="grid grid-cols-4 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4  gap-8 ">
           <div className="relative w-full text-center max-md:max-w-sm max-md:mx-auto group">
             <div className="bg-indigo-50 rounded-lg flex justify-center items-center mb-5 w-20 h-20 mx-auto   transition-all duration-500 group-hover:bg-indigo-600">
               <svg

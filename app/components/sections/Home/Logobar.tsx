@@ -1,12 +1,20 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ChevronDown, Heart, Search, ShoppingCart, User } from "lucide-react";
+import {
+  AlignRight,
+  ChevronDown,
+  Heart,
+  Search,
+  ShoppingCart,
+  User,
+} from "lucide-react";
 import Link from "next/link";
+import { S } from "../../layout/navbar/SmNavbar";
 
 const Logobar = () => {
   return (
-    <div className="max-w-[1370px] mx-auto flex flex-row justify-between items-center h-[86px] px-4 bg">
+    <div className="max-w-[1370px] mx-auto hidden md:flex flex-row justify-between items-center h-[86px] px-4 lg:px-8 2xl:px-0">
       <div className="h-[77px] w-auto flex items-center py-2">
         <Image
           src="/logo.webp"
@@ -18,7 +26,7 @@ const Logobar = () => {
         />
       </div>
 
-      <div className="translate-x-8 flex flex-row  border-[1.5px] border-[#d4d7da] h-[45px] items-center pl-4 rounded-sm  -z-50 gap-3 min-w-[500px]">
+      <div className="translate-x-8 lg:flex hidden flex-row  border-[1.5px] border-[#d4d7da] h-[45px] items-center pl-4 rounded-sm  -z-50 gap-3 md:min-w-[300px] lg:min-w-[500px]">
         <input
           type="text"
           placeholder="Search for designs..."
@@ -26,7 +34,7 @@ const Logobar = () => {
         />
         <Link
           href={"#"}
-          className="flex flex-row gap-1 text-xs items-center pl-4 min-w-[100px] border-l-[1.5px] border-l-[#d4d7da] h-full"
+          className="flex flex-row gap-1 text-xs items-center pl-4 min-w-[120px] border-l-[1.5px] border-l-[#d4d7da] h-full"
         >
           All Category
           <ChevronDown size={14} className="mt-1" />
@@ -35,28 +43,36 @@ const Logobar = () => {
           <Search size={18} color="#ffffff" />
         </button>
       </div>
-      <div className="flex flex-row gap-4 items-center">
+
+      <div className="flex flex-row lg:gap-4 items-center">
         <Button
           variant={"outline"}
-          className="flex flex-row items-center gap-2 border-none text-sm"
+          className="flex lg:hidden flex-row items-center gap-2 border-none text-sm px-0 lg:has-[>svg]:px-0 has-[>svg]:px-3"
+        >
+          <Search size={18} color="#000000" strokeWidth={"1.6"} />
+        </Button>
+        <Button
+          variant={"outline"}
+          className="hidden lg:flex flex-row items-center gap-2 border-none text-sm px-0 lg:has-[>svg]:px-0 has-[>svg]:px-3 "
         >
           <User strokeWidth={"1.7"} />
-          Acconts
+          <p className="hidden lg:block">Acconts</p>
         </Button>
         <Button
           variant={"outline"}
-          className="flex flex-row items-center gap-2 border-none text-sm"
+          className="hidden lg:flex  flex-row items-center gap-2 border-none text-sm px-0 lg:has-[>svg]:px-0 has-[>svg]:px-3"
         >
           <Heart />
-          WishList
+          <p className="hidden lg:block">WishList</p>
         </Button>
         <Button
           variant={"outline"}
-          className="flex flex-row items-center gap-2 border-none text-sm"
+          className="flex flex-row items-center gap-2 border-none text-sm px-0 lg:has-[>svg]:px-0 has-[>svg]:px-3"
         >
           <ShoppingCart />
-          Cart
+          <p className="hidden lg:block">Cart</p>
         </Button>
+        <S />
       </div>
     </div>
   );

@@ -97,7 +97,7 @@ export default function FeaturedSection() {
               {
                 label: "Limited Offer",
                 labelColor: "bg-red-500",
-                img: "/i13.jfif",
+                img: "/i8.jfif",
                 title: "Organic Avocado Oil Chips",
                 price: "$5.99",
                 oldPrice: "$7.50",
@@ -106,7 +106,7 @@ export default function FeaturedSection() {
               {
                 label: "Hot Deal",
                 labelColor: "bg-yellow-500",
-                img: "/i14.jfif",
+                img: "/i9.jfif",
                 title: "Gourmet Dark Chocolate Box",
                 price: "$45.00",
                 oldPrice: "$60.00",
@@ -115,7 +115,7 @@ export default function FeaturedSection() {
               {
                 label: "Save 20%",
                 labelColor: "bg-purple-500",
-                img: "/i15.jfif",
+                img: "/i10.jfif",
                 title: "Cold Brew Coffee Concentrate",
                 price: "$15.20",
                 oldPrice: "$19.00",
@@ -124,7 +124,7 @@ export default function FeaturedSection() {
               {
                 label: "Best Choice",
                 labelColor: "bg-teal-500",
-                img: "/i16.jfif",
+                img: "/i10.jfif",
                 title: "Vegan Protein Snack Bar Pack",
                 price: "$28.75",
                 oldPrice: "$35.00",

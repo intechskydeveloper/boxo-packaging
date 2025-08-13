@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/sections/Home/Navbar";
-import Footer from "./components/sections/Home/Footer";
+import Navbar from "./components/layout/navbar/Navbar";
+import Footer from "./components/layout/Footer";
 import { FAQ } from "./components/sections/Home/FAQ";
 
 const instrumentSans = Instrument_Sans({

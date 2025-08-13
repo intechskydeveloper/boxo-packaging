@@ -78,7 +78,7 @@ const Products = () => {
               <div className="h-[200px] sm:h-[275px] w-full flex items-center py-2">
                 <Image
                   src={`/packaging/p${index + 1}.webp`}
-                  alt="logo"
+                  alt="Banner"
                   width={150}
                   height={82}
                   className="h-full w-full object-cover rounded-xl transition-all hover:scale-105 duration-300"

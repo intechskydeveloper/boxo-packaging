@@ -4,12 +4,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Tagline from "../../Common/Tagline";
 import SectionIntro from "../../Common/SectionIntro";
 
 export function FAQ() {
   return (
-    <section className="px-6">
+    <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <SectionIntro
         align="center"
         tagline="Any Question?"

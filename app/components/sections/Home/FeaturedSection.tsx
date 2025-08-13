@@ -20,7 +20,7 @@ export default function FeaturedSection() {
         tagline="Best Colletion"
         heading="Featured Section"
         subHeading="Explore our handpicked selection of best-selling and trending products, chosen just for you."
-        className="pb-8 px-6"
+        className="pb-8"
       />
       <div className="flex flex-row bg-white">
         {/* <div className="w-[310px] rounded-lg overflow-hidden 2xl:block hidden relative group">
@@ -144,10 +144,11 @@ export default function FeaturedSection() {
                   <div className="w-full h-40 relative mb-4 flex items-center justify-center bg-white">
                     <Image
                       src={product.img}
-                      alt={product.title}
+                      alt={product.title || "Product image"}
                       fill
-                      className="object-contain p-2 group-hover:scale-105 transition-all duration-300"
-                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
+                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                      priority={false}
                     />
                   </div>
                   <div className="px-4 pb-4 h-full">

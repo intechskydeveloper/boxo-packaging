@@ -14,7 +14,7 @@ export default function Categories() {
           subHeading="Boxo Packaging is more than just your custom packaging boxes provider; we’re your creative partner in delivering standout packaging solutions."
           className="pb-8"
         />
-        <div className="grid grid-cols-1 gap-4 sm:mt-10 lg:grid-cols-6 lg:grid-rows-2 px-6 xl:px-0">
+        <div className="grid grid-cols-1 gap-4 sm:mt-10 lg:grid-cols-6 lg:grid-rows-2">
           <div className="flex p-px lg:col-span-4 w-full">
             <div className="relative group overflow-hidden w-full rounded-lg ring-1 ring-white/15 max-lg:rounded-t-[1.5rem] lg:rounded-tl-[1.5rem] border-[1px] border-gray-300 bg-white">
               <Image

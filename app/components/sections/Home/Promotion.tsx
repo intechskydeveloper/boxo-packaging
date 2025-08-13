@@ -8,16 +8,16 @@ import P from "../../Common/P";
 const Promotion = () => {
   return (
     <section
-      className="flex flex-col w-full max-w-[1300px] py-20 mx-auto items-center "
+      className="flex flex-col w-full max-w-[1300px] pt-20 mx-auto items-center px-6 md:px-10 lg:px-12 2xl:px-0"
       id="promotion"
     >
-      <div className="flex flex-col md:flex-row gap-16 pb-14 items-center">
-        <div className="max-w-5/12 w-full">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 pb-8 md:pb-14 items-center">
+        <div className="md:max-w-5/12 w-full">
           <SectionIntro
             tagline="Promotion"
             heading="Explore Our Signature Packaging Solutions"
             align="start"
-            className="mb-4 "
+            className="sm:mb-4"
           />
           <div className="flex flex-row gap-4">
             <Button className="relative">

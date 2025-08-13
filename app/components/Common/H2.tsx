@@ -14,7 +14,7 @@ const H2 = ({
     <h2
       className={clsx(
         className,
-        `lg:text-5xl md:text-2xl text-xl text-center font-bold text-gray-900 py-4 w-full font-instruction`,
+        `lg:text-5xl md:text-3xl max-w-sm md:max-w-none text-2xl text-center font-bold text-gray-900 py-4 w-full font-instruction`,
         align == "center" ? "text-center" : "text-start"
       )}
     >

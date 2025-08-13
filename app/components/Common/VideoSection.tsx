@@ -21,9 +21,9 @@ export default function VideoSection() {
   };
 
   return (
-    <div className="w-full flex justify-center px-4">
+    <div className="w-full flex justify-center lg:px-4">
       <div
-        className="relative w-full max-w-[1000px] h-[500px] rounded-2xl overflow-hidden"
+        className="relative w-full max-w-[1000px] h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden"
         onClick={handlePlayPause}
       >
         <video
@@ -42,10 +42,10 @@ export default function VideoSection() {
             }}
             className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition-colors duration-300"
           >
-            <div className="rounded-full p-[8px] ring-[1.5px] ring-white flex flex-row items-center justify-center">
-              <div className="bg-white rounded-full p-4 shadow-lg">
+            <div className="rounded-full md:p-[8px] p-[6px] ring-[1.5px] ring-white flex flex-row items-center justify-center">
+              <div className="bg-white rounded-full md:p-4 p-3 shadow-lg">
                 <Play
-                  className="w-7 h-7 ml-[1.5px] text-black"
+                  className="md:w-7 md:h-7 w-6 h-6 ml-[1.5px] text-black"
                   fill="#000000"
                 />
               </div>

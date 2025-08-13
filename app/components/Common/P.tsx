@@ -15,7 +15,7 @@ const P = ({
       className={clsx(
         className,
         `text-gray-600 max-w-2xl mx-auto font-instruction`,
-        align == "center" ? "text-center" : "md:text-start text-center"
+        align == "center" ? "text-center" : "md:text-start text-justify"
       )}
     >
       {children}

@@ -2,13 +2,13 @@ import { PageBreadcrumb } from "@/app/components/Common/PageBreadcrumb";
 import RelatedProducts from "@/app/components/sections/Details/RelatedProducts";
 import SplitImage from "@/app/components/sections/Details/SplitImage";
 import { TabMenu } from "@/app/components/sections/Details/TabMenu";
-interface ProductPageProps {
-  params: { slug: string };
-}
+import { use } from "react";
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = await params;
 
+export default function ProductPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = use(props.params);
   // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${slug}`, {
   //   cache: "no-store",
   // });

@@ -9,7 +9,7 @@ import SectionIntro from "../../Common/SectionIntro";
 
 export function FAQ() {
   return (
-    <>
+    <section className="px-6">
       <SectionIntro
         align="center"
         tagline="Any Question?"
@@ -65,6 +65,6 @@ export function FAQ() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </>
+    </section>
   );
 }

@@ -5,16 +5,17 @@ import SectionIntro from "../../Common/SectionIntro";
 
 export default function Categories() {
   return (
-    <div className="py-12 sm:py-12">
+    <div className="pt-20">
       <div className="mx-auto mt-8 max-w-2xl lg:max-w-7xl xl:max-w-[1370px]">
         <SectionIntro
           align="center"
           tagline="Shop by Category"
           heading="Product Categories"
           subHeading="Boxo Packaging is more than just your custom packaging boxes provider; we’re your creative partner in delivering standout packaging solutions."
+          className="pb-8"
         />
-        <div className="grid grid-cols-1 gap-4 sm:mt-10 lg:grid-cols-6 lg:grid-rows-2">
-          <div className="flex p-px lg:col-span-4 ">
+        <div className="grid grid-cols-1 gap-4 sm:mt-10 lg:grid-cols-6 lg:grid-rows-2 px-6 xl:px-0">
+          <div className="flex p-px lg:col-span-4 w-full">
             <div className="relative group overflow-hidden w-full rounded-lg ring-1 ring-white/15 max-lg:rounded-t-[1.5rem] lg:rounded-tl-[1.5rem] border-[1px] border-gray-300 bg-white">
               <Image
                 height={512}
@@ -40,14 +41,14 @@ export default function Categories() {
               </div>
             </div>
           </div>
-          <div className="flex p-px lg:col-span-2">
-            <div className="relative group overflow-hidden rounded-lg ring-1 ring-white/15 lg:rounded-tr-[1.5rem] border-[1px] border-gray-300 bg-white">
+          <div className="flex p-px lg:col-span-2 col-span-1 w-full">
+            <div className="relative w-full group overflow-hidden rounded-lg ring-1 ring-white/15 lg:rounded-tr-[1.5rem] border-[1px] border-gray-300 bg-white">
               <Image
                 height={512}
                 width={512}
                 alt=""
                 src="/i2.jpeg"
-                className="h-80 object-cover group-hover:scale-105 transition-all duration-300"
+                className="h-80 w-full object-cover group-hover:scale-105 transition-all duration-300"
               />
               <Link href={"/"} className="absolute inset-0" />
 
@@ -65,14 +66,14 @@ export default function Categories() {
               </div>
             </div>
           </div>
-          <div className="flex p-px lg:col-span-2">
-            <div className="relative group overflow-hidden rounded-lg  ring-1 ring-white/15 lg:rounded-bl-[1.5rem] border-[1px] border-gray-300 bg-white">
+          <div className="flex p-px lg:col-span-2 w-full col-span-1">
+            <div className="relative group overflow-hidden rounded-lg w-full ring-1 ring-white/15 lg:rounded-bl-[1.5rem] border-[1px] border-gray-300 bg-white">
               <Image
                 height={512}
                 width={512}
                 alt=""
                 src="/i3.jpeg"
-                className="h-80 object-cover group-hover:scale-105 transition-all duration-300"
+                className="h-80 w-full object-cover group-hover:scale-105 transition-all duration-300"
               />
               <Link href={"/"} className="absolute inset-0" />
 

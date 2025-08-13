@@ -3,7 +3,7 @@ import React from "react";
 
 const Benifits = () => {
   return (
-    <div className="flex flex-col items-center pt-24">
+    <div className="flex flex-col items-center pt-20">
       <p className="text-[#7a7a7a] text-xs uppercase tracking-[1px] font-bold">
         discover the benifits
       </p>

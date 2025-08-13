@@ -14,16 +14,16 @@ import SectionIntro from "../../Common/SectionIntro";
 
 export default function FeaturedSection() {
   return (
-    <div className="mx-auto max-w-[1370px] pt-12 pb-4 px-4">
+    <div className="mx-auto max-w-[1370px] pt-20 pb-4">
       <SectionIntro
         align="center"
         tagline="Best Colletion"
         heading="Featured Section"
         subHeading="Explore our handpicked selection of best-selling and trending products, chosen just for you."
-        className="pb-8"
+        className="pb-8 px-6"
       />
       <div className="flex flex-row bg-white">
-        <div className="w-[310px] rounded-lg overflow-hidden relative group">
+        {/* <div className="w-[310px] rounded-lg overflow-hidden 2xl:block hidden relative group">
           <Link href="/" className="absolute inset-0 z-10"></Link>
 
           <Image
@@ -46,14 +46,14 @@ export default function FeaturedSection() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <Carousel
-          className="w-full px-12 max-w-[1090px]"
+          className="w-full px-12 max-w-[1370px] mx-auto"
           opts={{
             align: "start",
             loop: true,
-            slidesToScroll: 4,
+            slidesToScroll: 1,
           }}
         >
           <CarouselContent className="">
@@ -133,7 +133,7 @@ export default function FeaturedSection() {
             ].map((product, idx) => (
               <CarouselItem
                 key={product.title}
-                className="group basis-full sm:basis-1/2 md:basis-1/4 lg:basis-1/4 h-full"
+                className="group basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 h-full"
               >
                 <div className="w-full rounded-xl shadow-sm flex flex-col h-full">
                   <span

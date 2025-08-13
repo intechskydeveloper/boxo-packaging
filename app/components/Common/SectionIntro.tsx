@@ -25,7 +25,7 @@ const SectionIntro = ({
         className,
         "max-w-[1370px] mx-auto ",
         align == "center"
-          ? "text-center items-start justify-start"
+          ? "text-center items-start justify-start md:px-0 px-6"
           : "text-start"
       )}
     >

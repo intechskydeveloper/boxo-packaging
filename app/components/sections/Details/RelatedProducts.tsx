@@ -9,7 +9,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import SectionIntro from "../../Common/SectionIntro";
-import { tree } from "next/dist/build/templates/app-page";
 
 const dummyproducts = [
   {
@@ -144,25 +143,24 @@ const RelatedProducts = () => {
   return (
     <section className="mt-20">
       <SectionIntro
+        align="center"
         tagline="Perfect Packagings"
         heading="Related Products"
         subHeading="Discover premium boxes and packaging solutions that complement your style and needs — designed to impress and protect."
       />
 
       <Carousel
-        className="w-full max-w-[1370px] mx-auto" // removed semicolon
+        className="w-full max-w-[1370px] mx-auto"
         opts={{
           align: "start",
           slidesToScroll: 5,
           loop: true,
         }}
       >
-        {/* Put gap here, no px/mx on items */}
         <CarouselContent className="gap-1">
           {dummyproducts.map((product, idx) => (
             <CarouselItem
               key={product.title}
-              // Adjusting for smaller gap (gap-2 = 0.5rem total)
               className="group basis-[calc(20%-0.2rem)] sm:basis-[calc(33.333%-0.2rem)] md:basis-[calc(25%-0.2rem)] lg:basis-[calc(20%-0.2rem)]"
             >
               <div className="border-[1px] border-gray-200  rounded-xl overflow-hidden bg-white">

@@ -147,6 +147,7 @@ export default function FeaturedSection() {
                       alt={product.title}
                       fill
                       className="object-contain p-2 group-hover:scale-105 transition-all duration-300"
+                      loading="lazy"
                     />
                   </div>
                   <div className="px-4 pb-4 h-full">

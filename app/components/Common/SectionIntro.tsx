@@ -24,7 +24,9 @@ const SectionIntro = ({
       className={clsx(
         className,
         "max-w-[1370px] mx-auto ",
-        align == "center" ? "text-center" : "text-start"
+        align == "center"
+          ? "text-center items-start justify-start"
+          : "text-start"
       )}
     >
       {tagline && <Tagline title={tagline} />}

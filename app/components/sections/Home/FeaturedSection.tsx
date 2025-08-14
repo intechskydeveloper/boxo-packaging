@@ -71,9 +71,9 @@ const FPdata = [
 
 export default function FeaturedSection() {
   return (
-    <div className="mx-auto max-w-[1370px] pt-20 pb-4">
+    <div className="mx-auto max-w-[1370px] pt-24 pb-4">
       <SectionIntro
-        align="center"
+        align="start"
         tagline="Best Colletion"
         heading="Featured Section"
         subHeading="Explore our handpicked selection of best-selling and trending products, chosen just for you."

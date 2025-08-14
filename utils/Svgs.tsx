@@ -483,14 +483,14 @@ const Wide = () => {
               <path
                 d="M24 1.76562C24.3429 1.76562 32.1429 2.05134 36 2.1942V14.6228L24 14.1942V1.76562Z"
                 stroke="black"
-                stroke-width="0.857143"
+                strokeWidth="0.857143"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M51.4277 2.19409L45.4277 13.3369H58.2849L52.2849 2.62266L51.4277 2.19409Z"
                 stroke="black"
-                stroke-width="0.857143"
+                strokeWidth="0.857143"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />

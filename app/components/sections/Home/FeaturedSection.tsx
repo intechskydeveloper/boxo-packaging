@@ -81,7 +81,7 @@ export default function FeaturedSection() {
       />
       <div className="flex flex-row bg-white">
         <Carousel
-          className="w-full sm:px-12 max-w-[1370px] mx-auto"
+          className="w-full md:px-12 max-w-[1370px] mx-auto"
           opts={{
             align: "start",
             loop: true,

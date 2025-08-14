@@ -11,7 +11,7 @@ const Promotion = () => {
       className="flex flex-col w-full max-w-[1300px] pt-20 mx-auto items-center"
       id="promotion"
     >
-      <div className="flex flex-col md:flex-row gap-8 md:gap-16 pb-8 md:pb-14 items-center">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 pb-8 md:pb-14 items-center w-full">
         <div className="md:max-w-5/12 w-full">
           <SectionIntro
             tagline="Promotion"
@@ -33,8 +33,8 @@ const Promotion = () => {
             </Button>
           </div>
         </div>
-        <div className="">
-          <P className="max-w-2xl" align="start">
+        <div className="lg:w-auto w-full">
+          <P className="lg:max-w-2xl max-w-none w-full" align="start">
             Boxo Packaging offers a wide range of products that stand out for
             their quality, versatility, and customization options. Our popular
             products are designed to meet the unique needs of businesses across

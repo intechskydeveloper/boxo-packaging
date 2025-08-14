@@ -51,30 +51,30 @@ const benefitsData = [
     description:
       "Bring all your tools and data together. Also join with hundreds of other apps.",
   },
-  {
-    icon: <Svg7 />,
-    bgColor: "bg-teal-50",
-    hoverColor: "group-hover:bg-teal-600",
-    title: "Data Reporting",
-    description:
-      "Get real time insight into progress and allows teams to track their work habits",
-  },
-  {
-    icon: <Svg8 />,
-    bgColor: "bg-orange-50",
-    hoverColor: "group-hover:bg-orange-600",
-    title: "Workflow Builder",
-    description:
-      "Automated processes to coordinate your teams and increase communication.",
-  },
+  // {
+  //   icon: <Svg7 />,
+  //   bgColor: "bg-teal-50",
+  //   hoverColor: "group-hover:bg-teal-600",
+  //   title: "Data Reporting",
+  //   description:
+  //     "Get real time insight into progress and allows teams to track their work habits",
+  // },
+  // {
+  //   icon: <Svg8 />,
+  //   bgColor: "bg-orange-50",
+  //   hoverColor: "group-hover:bg-orange-600",
+  //   title: "Workflow Builder",
+  //   description:
+  //     "Automated processes to coordinate your teams and increase communication.",
+  // },
 ];
 
 const Benifits2 = () => {
   return (
     <section className="py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1370px]">
         <SectionIntro
-          align="center"
+          align="start"
           tagline="Features"
           heading="Revolutionary Features"
           subHeading="Provides advanced features like time tracking, integrating with third party apps (calendar / Google drive), creating subtasks."
@@ -94,7 +94,7 @@ const Benifits2 = () => {
               <h4 className="text-lg font-medium text-gray-900 mb-3 capitalize">
                 {item.title}
               </h4>
-              <p className="text-sm font-normal text-gray-500 max-w-xs mx-auto">
+              <p className="text-sm font-normal text-gray-500 max-w-[290px] mx-auto">
                 {item.description}
               </p>
             </div>

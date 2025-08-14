@@ -20,6 +20,7 @@ export default function ImagesSection() {
             alt="Eco-friendly packaging"
             width={800}
             height={600}
+            loading="lazy"
             className="w-full h-[500px] object-cover group-hover::scale-105"
           />
           <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
@@ -41,6 +42,7 @@ export default function ImagesSection() {
             alt="Sustainable future"
             width={800}
             height={600}
+            loading="lazy"
             className="w-full h-[500px] object-cover"
           />
           <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">

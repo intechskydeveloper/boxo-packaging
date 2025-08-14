@@ -48,6 +48,7 @@ export default function Categories() {
                 width={512}
                 alt=""
                 src="/i2.jpeg"
+                loading="lazy"
                 className="h-80 w-full object-cover group-hover:scale-105 transition-all duration-300"
               />
               <Link href={"/"} className="absolute inset-0" />

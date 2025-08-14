@@ -59,12 +59,13 @@ const Products = () => {
 
           <div className="h-auto w-full flex items-center px-2 mt-4">
             <Image
-              src="/p4.jfif"
+              src="/p4.webp"
               alt="logo"
               fill={false}
               width={0}
               height={0}
               sizes="100vw"
+              loading="lazy"
               className="h-full w-full object-contain rounded-lg"
             />
           </div>
@@ -85,10 +86,10 @@ const Products = () => {
                   priority
                 />
               </div>
-              <h3 className="text-sm px-2 text-start w-full  font-semibold md:mt-2">
+              <h3 className="text-sm md;px-2 text-start w-full  font-semibold md:mt-2">
                 Women Hot Collection
               </h3>
-              <p className="text-sm mt-1 px-2 text-start w-full  font-semibold">
+              <p className="text-sm mt-1 md:px-2 text-start w-full  font-semibold">
                 $ 29.00
               </p>
             </div>

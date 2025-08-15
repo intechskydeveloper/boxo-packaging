@@ -7,6 +7,8 @@ import ImagesSection from "./components/sections/Home/ImagesSection";
 import FeaturedSection from "./components/sections/Home/FeaturedSection";
 import Promotion from "./components/sections/Home/Promotion";
 import Material from "./components/sections/Home/Types";
+import WhyUs from "./components/sections/Home/WhyUs";
+import CategoriesSlider from "./components/sections/Home/CategoriesSlider";
 
 const page = () => {
   return (
@@ -16,6 +18,8 @@ const page = () => {
       <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <Promotion />
         <Material />
+        <WhyUs />
+        <CategoriesSlider />
         <FeaturedSection />
         <Products />
         <Categories />

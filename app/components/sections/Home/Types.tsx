@@ -54,7 +54,6 @@ const Material = () => {
       />
 
       <Carousel opts={{ align: "start" }} className="w-full relative">
-        {/* Buttons at top right inside the Carousel */}
         <div className="absolute right-4 -top-12 flex gap-2 z-10 mr-10">
           <CarouselPrevious />
           <CarouselNext />

@@ -9,6 +9,7 @@ import Promotion from "./components/sections/Home/Promotion";
 import Material from "./components/sections/Home/Types";
 import WhyUs from "./components/sections/Home/WhyUs";
 import CategoriesSlider from "./components/sections/Home/CategoriesSlider";
+import ProductSliders from "./components/sections/Home/ProductSliders";
 
 const page = () => {
   return (
@@ -16,10 +17,11 @@ const page = () => {
       <Logobar />;
       <Hero />
       <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <Promotion />
+        <CategoriesSlider />
+        <ProductSliders />
         <Material />
         <WhyUs />
-        <CategoriesSlider />
+        <Promotion />
         <FeaturedSection />
         <Products />
         <Categories />

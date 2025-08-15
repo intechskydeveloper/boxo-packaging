@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/layout/navbar/Navbar";
 import Footer from "./components/layout/Footer";
 import { FAQ } from "./components/sections/Home/FAQ";
+import { Analytics } from "@vercel/analytics/next";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <main className="pt-[55px] pb-20">{children}</main>
         <FAQ />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ import CategoriesSlider from "./components/sections/Home/CategoriesSlider";
 import ProductSliders from "./components/sections/Home/ProductSliders";
 import CustomPackaging from "./components/sections/Home/CustomPackaging";
 import LogoCloud from "./components/Common/LogoCloud";
+import Table from "./components/sections/Home/Table";
 
 const page = () => {
   return (
@@ -26,6 +27,7 @@ const page = () => {
         <Material />
         <Promotion />
         <LogoCloud />
+        <Table />
         <FeaturedSection />
         <Products />
         <Categories />

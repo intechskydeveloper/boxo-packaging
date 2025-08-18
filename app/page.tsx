@@ -11,6 +11,7 @@ import WhyUs from "./components/sections/Home/WhyUs";
 import CategoriesSlider from "./components/sections/Home/CategoriesSlider";
 import ProductSliders from "./components/sections/Home/ProductSliders";
 import CustomPackaging from "./components/sections/Home/CustomPackaging";
+import LogoCloud from "./components/Common/LogoCloud";
 
 const page = () => {
   return (
@@ -24,6 +25,7 @@ const page = () => {
         <WhyUs />
         <Material />
         <Promotion />
+        <LogoCloud />
         <FeaturedSection />
         <Products />
         <Categories />

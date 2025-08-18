@@ -46,8 +46,8 @@ export default function CarouselSlider({
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-3 md:w-6 bg-gradient-to-r from-white to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-3 md:w-6 bg-gradient-to-l from-white to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-3 md:w-5 bg-gradient-to-r from-white to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-3 md:w-5 bg-gradient-to-l from-white to-transparent" />
       <div
         className="embla overflow-hidden select-none"
         ref={emblaRef}
@@ -60,7 +60,7 @@ export default function CarouselSlider({
               className="embla__slide flex-[0_0_100%] sm:flex-[0_0_calc(100%/3)] md:flex-[0_0_calc(100%/3)] lg:flex-[0_0_calc(100%/4)] p-2 cursor-grab active:cursor-grabbing"
             >
               <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden group">
-                <div className="relative w-full h-60 overflow-hidden rounded-2xl">
+                <div className="relative w-full h-50 sm:h-50 md:h-60 overflow-hidden rounded-2xl">
                   <Image
                     src={slide.img}
                     alt={slide.text}

@@ -65,7 +65,10 @@ export default function LogoCloud() {
         />
         <div className=" grid grid-cols-1 sm:grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 rounded-2xl md:grid-cols-3">
           {Industries.map((item) => (
-            <div className="bg-gray-300/60 p-8 sm:p-10 flex flex-row items-center gap-4">
+            <div
+              className="bg-gray-300/60 p-8 sm:p-10 flex flex-row items-center gap-4"
+              key={item.title}
+            >
               {item.icon}
               <p className="font-extrabold text-xl font-instruction">
                 {item.title}

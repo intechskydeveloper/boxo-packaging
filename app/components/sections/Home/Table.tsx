@@ -88,7 +88,7 @@ export default function Table() {
                   scope="col"
                   className={classNames(
                     index === 0 ? "py-3.5 pr-3 pl-4 sm:pl-6" : "px-3 py-3.5",
-                    "text-left text-sm font-semibold text-gray-900"
+                    "text-left text-xs sm:text-sm font-semibold text-gray-900"
                   )}
                 >
                   {column}
@@ -102,7 +102,7 @@ export default function Table() {
                 <td
                   className={classNames(
                     rowIndex === 0 ? "" : "border-t border-transparent",
-                    "relative py-4 pr-3 pl-4 text-sm font-medium text-gray-900 sm:pl-6"
+                    "relative py-4 pr-3 pl-4 text-xs sm:text-sm font-medium text-gray-900 sm:pl-6"
                   )}
                 >
                   {row["Feature/Benefit"]}
@@ -113,7 +113,7 @@ export default function Table() {
                 <td
                   className={classNames(
                     rowIndex === 0 ? "" : "border-t border-gray-200",
-                    "px-3 py-3.5 text-sm text-gray-600"
+                    "px-3 py-3.5 text-xs sm:text-sm text-gray-600"
                   )}
                 >
                   {row["Ready-Made Boxes"]}
@@ -121,7 +121,7 @@ export default function Table() {
                 <td
                   className={classNames(
                     rowIndex === 0 ? "" : "border-t border-gray-200",
-                    "px-3 py-3.5 text-sm text-gray-600"
+                    "px-3 py-3.5 text-xs sm:text-sm text-gray-600"
                   )}
                 >
                   {row["Custom Printed Boxes"]}

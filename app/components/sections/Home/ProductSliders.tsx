@@ -249,7 +249,7 @@ const slides2: SlideData[] = [
 
 export default function ProductSliders() {
   return (
-    <div className="max-w-[1370px] mx-auto pt-24">
+    <div className="max-w-[1370px] mx-auto pt-32">
       <SectionIntro
         align="start"
         tagline="Box Best"

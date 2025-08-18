@@ -8,8 +8,9 @@ import Link from "next/link";
 
 export type SlideData = {
   img: string;
-  text: string;
+  text?: string;
   description?: string;
+  alt: string;
 };
 
 interface CarouselSliderProps {
@@ -63,7 +64,7 @@ export default function CarouselSlider({
                 <div className="relative w-full h-50 sm:h-50 md:h-60 overflow-hidden rounded-2xl">
                   <Image
                     src={slide.img}
-                    alt={slide.text}
+                    alt={slide.text || ""}
                     fill
                     className="object-cover"
                     loading="lazy"

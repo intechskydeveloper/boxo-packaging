@@ -13,6 +13,7 @@ import ProductSliders from "./components/sections/Home/ProductSliders";
 import CustomPackaging from "./components/sections/Home/CustomPackaging";
 import LogoCloud from "./components/Common/LogoCloud";
 import Table from "./components/sections/Home/Table";
+import Working from "./components/sections/Home/Working";
 
 const page = () => {
   return (
@@ -21,18 +22,13 @@ const page = () => {
       <Hero />
       <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <CustomPackaging />
-        {/* <CategoriesSlider /> */}
         <ProductSliders />
         <WhyUs />
-        <Material />
-        <Promotion />
         <LogoCloud />
         <Table />
-        <FeaturedSection />
-        <Products />
-        <Categories />
-        <Benifits2 />
-        <ImagesSection />
+        <Working />
+        {/* <Material /> */}
+        <Promotion />
       </div>
     </>
   );

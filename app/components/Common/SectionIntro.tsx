@@ -10,6 +10,8 @@ type Prop = {
   subHeading?: string;
   align?: "center" | "start";
   className?: string;
+  H?: "h2" | "h1" | "h3";
+  isHero?: boolean;
 };
 
 const SectionIntro = ({
@@ -18,6 +20,8 @@ const SectionIntro = ({
   subHeading,
   align,
   className,
+  isHero = false,
+  H,
 }: Prop) => {
   return (
     <div
@@ -30,8 +34,14 @@ const SectionIntro = ({
       )}
     >
       {tagline && <Tagline title={tagline} />}
-      <H2 align={align}>{heading}</H2>
-      {subHeading && <P align={align}>{subHeading}</P>}
+      <H2 align={align} H={isHero ? "h1" : H}>
+        {heading}
+      </H2>
+      {subHeading && (
+        <P align={align} className={isHero ? "lg:max-w-5xl" : "lg:max-w-2xl"}>
+          {subHeading}
+        </P>
+      )}
     </div>
   );
 };

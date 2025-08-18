@@ -8,7 +8,7 @@ import P from "../../Common/P";
 const Promotion = () => {
   return (
     <section
-      className="flex flex-col w-full max-w-[1300px] pt-24 mx-auto items-center"
+      className="flex flex-col w-full max-w-[1300px] pt-32 mx-auto items-center"
       id="promotion"
     >
       <div className="flex flex-col md:flex-row gap-8 md:gap-16 pb-8 md:pb-14 items-center w-full">

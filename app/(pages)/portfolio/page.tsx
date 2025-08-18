@@ -1,6 +1,6 @@
-import { SlideData } from "@/app/components/Common/CarouselSlider";
-import SectionIntro from "@/app/components/Common/SectionIntro";
-import ImageGallery from "@/app/components/sections/Home/ImageGallery";
+import { SlideData } from "@/components/Common/CarouselSlider";
+import SectionIntro from "@/components/Common/SectionIntro";
+import ImageGallery from "@/components/sections/Home/ImageGallery";
 import React from "react";
 
 const slides: SlideData[] = [

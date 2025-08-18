@@ -1,9 +1,8 @@
-import { PageBreadcrumb } from "@/app/components/Common/PageBreadcrumb";
-import RelatedProducts from "@/app/components/sections/Details/RelatedProducts";
-import SplitImage from "@/app/components/sections/Details/SplitImage";
-import { TabMenu } from "@/app/components/sections/Details/TabMenu";
+import { PageBreadcrumb } from "@/components/Common/PageBreadcrumb";
+import RelatedProducts from "@/components/sections/Details/RelatedProducts";
+import SplitImage from "@/components/sections/Details/SplitImage";
+import { TabMenu } from "@/components/sections/Details/TabMenu";
 import { use } from "react";
-
 
 export default function ProductPage(props: {
   params: Promise<{ slug: string }>;

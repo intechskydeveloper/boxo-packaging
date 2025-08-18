@@ -1,9 +1,9 @@
 import React from "react";
-import SlidingContact from "../../Common/SlidingContact";
+import SlidingContact from "../../../../components/Common/SlidingContact";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { AlignRight, Search, ShoppingCart, Volleyball } from "lucide-react";
-import ButtonLink from "../../Common/ButtonLink";
+import ButtonLink from "../../../../components/Common/ButtonLink";
 import {
   Accordion,
   AccordionContent,

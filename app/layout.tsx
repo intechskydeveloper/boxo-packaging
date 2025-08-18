@@ -3,7 +3,7 @@ import { Instrument_Sans, Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/layout/navbar/Navbar";
 import Footer from "./components/layout/Footer";
-import { FAQ } from "./components/sections/Home/FAQ";
+import { FAQ } from "../components/sections/Home/FAQ";
 import { Analytics } from "@vercel/analytics/next";
 
 const instrumentSans = Instrument_Sans({

@@ -21,8 +21,8 @@ const page = () => {
         <CustomPackaging />
         {/* <CategoriesSlider /> */}
         <ProductSliders />
-        <Material />
         <WhyUs />
+        <Material />
         <Promotion />
         <FeaturedSection />
         <Products />

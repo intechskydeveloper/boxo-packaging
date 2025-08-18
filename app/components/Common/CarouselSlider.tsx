@@ -46,8 +46,8 @@ export default function CarouselSlider({
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-6 bg-gradient-to-r from-white to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-6 bg-gradient-to-l from-white to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-3 md:w-6 bg-gradient-to-r from-white to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-3 md:w-6 bg-gradient-to-l from-white to-transparent" />
       <div
         className="embla overflow-hidden select-none"
         ref={emblaRef}
@@ -69,24 +69,20 @@ export default function CarouselSlider({
                     loading="lazy"
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
                   />
-                  {slide.description && (
-                    <div className="absolute bottom-0 left-0 w-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                      <div className="bg-gradient-to-t from-black/80 to-transparent p-3">
-                        <p className="text-white text-sm">
-                          Boxo Packaging offers a wide range of products that
-                          stand out for their quality, versatility, and
-                          customization options.
-                        </p>
-                      </div>
+                  <div className="absolute inset-0 flex items-end translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                    <div className="w-full bg-gradient-to-t from-black/80 to-transparent p-3 h-full flex">
+                      <p className="text-white text-sm self-end">
+                        {slide.description}
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </div>
                 <p className="py-2 text-center uppercase text-[16px] font-extrabold font-instruction">
                   {slide.text}
                 </p>
                 <Link
                   href={"/product-details/alsdfjls"}
-                  className="absolute inset-0 z-10 pointer-events-auto"
+                  className="absolute inset-0 z-10"
                 >
                   <span className="sr-only">{slide.text}</span>
                 </Link>

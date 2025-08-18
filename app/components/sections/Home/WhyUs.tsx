@@ -5,7 +5,7 @@ import P from "../../Common/P";
 
 const WhyUs = () => {
   return (
-    <section className="pt-24 max-w-[1370px] mx-auto">
+    <section className="pt-32 max-w-[1370px] mx-auto">
       <SectionIntro
         align="start"
         tagline="Why Us"

@@ -44,7 +44,7 @@ const typedata = [
 
 const Material = () => {
   return (
-    <section className="max-w-[1370px] mx-auto pt-24">
+    <section className="max-w-[1370px] mx-auto pt-32">
       <SectionIntro
         align="start"
         tagline="Types"

@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import SectionIntro from "../../Common/SectionIntro";
+import { generateUniqueKey } from "@/utils/generateUniqueKey";
 
 const dummyproducts = [
   {
@@ -158,9 +159,9 @@ const RelatedProducts = () => {
         }}
       >
         <CarouselContent className="gap-1">
-          {dummyproducts.map((product, idx) => (
+          {dummyproducts.map((product) => (
             <CarouselItem
-              key={product.title}
+              key={generateUniqueKey(product.title)}
               className="group basis-[calc(20%-0.2rem)] sm:basis-[calc(33.333%-0.2rem)] md:basis-[calc(25%-0.2rem)] lg:basis-[calc(20%-0.2rem)]"
             >
               <div className="border-[1px] border-gray-200  rounded-xl overflow-hidden bg-white">

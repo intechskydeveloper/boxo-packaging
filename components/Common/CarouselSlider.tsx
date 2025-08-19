@@ -5,6 +5,7 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll"; // continuous scroll plugin
 import Link from "next/link";
+import { generateUniqueKey } from "@/utils/generateUniqueKey";
 
 export type SlideData = {
   img: string;
@@ -57,14 +58,14 @@ export default function CarouselSlider({
         <div className="embla__container flex">
           {slides.map((slide, index) => (
             <div
-              key={index}
+              key={generateUniqueKey(`${slide.text} ${index}`)}
               className="embla__slide flex-[0_0_100%] sm:flex-[0_0_calc(100%/3)] md:flex-[0_0_calc(100%/3)] lg:flex-[0_0_calc(100%/4)] p-2 cursor-grab active:cursor-grabbing"
             >
               <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden group">
                 <div className="relative w-full h-50 sm:h-50 md:h-60 overflow-hidden rounded-2xl">
                   <Image
                     src={slide.img}
-                    alt={slide.text || ""}
+                    alt={slide.alt}
                     fill
                     className="object-cover"
                     loading="lazy"

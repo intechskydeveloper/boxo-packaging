@@ -70,10 +70,10 @@ export function MenuItems() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="px-2 lg:px-4">
-            Category
+            Boxes by Industry
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
-            <ul className="grid w-[200px] gap-4">
+            <ul className="grid w-[900px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
                   <Link href="#">Components</Link>
@@ -90,7 +90,7 @@ export function MenuItems() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="px-2 lg:px-4">
-            Products
+            Boxes by Material
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
@@ -119,7 +119,7 @@ export function MenuItems() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="px-2 lg:px-4">
-            Pages
+            Boxes by Style
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -132,41 +132,6 @@ export function MenuItems() {
                   {component.description}
                 </ListItem>
               ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="px-2 lg:px-4">
-            Blog
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[300px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Components</div>
-                    <div className="text-muted-foreground">
-                      Browse all components in the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Documentation</div>
-                    <div className="text-muted-foreground">
-                      Learn how to use the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Blog</div>
-                    <div className="text-muted-foreground">
-                      Read our latest blog posts.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

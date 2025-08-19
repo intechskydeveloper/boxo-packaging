@@ -65,7 +65,7 @@ export function MenuItems() {
               navigationMenuTriggerStyle()
             )}
           >
-            <Link href="/docs">Home</Link>
+            <Link href="/">Home</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -138,10 +138,7 @@ export function MenuItems() {
         <NavigationMenuItem>
           <NavigationMenuLink
             asChild
-            className={clsx(
-              "px-2 lg:px-0 lg:pr-4",
-              navigationMenuTriggerStyle()
-            )}
+            className={clsx("px-2 lg:px-4", navigationMenuTriggerStyle())}
           >
             <Link href="/portfolio">Portfolio</Link>
           </NavigationMenuLink>

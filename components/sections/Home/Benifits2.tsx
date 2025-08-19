@@ -83,7 +83,7 @@ const Benifits2 = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefitsData.map((item, idx) => (
             <div
-              key={idx}
+              key={item.title}
               className="relative w-full text-center max-md:max-w-sm max-md:mx-auto group"
             >
               <div

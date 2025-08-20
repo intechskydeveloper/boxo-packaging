@@ -1,4 +1,5 @@
 import { PageBreadcrumb } from "@/components/common/PageBreadcrumb";
+import CTA from "@/components/sections/details/CTA";
 import Progress from "@/components/sections/details/Progress";
 import RelatedProducts from "@/components/sections/details/RelatedProducts";
 import SplitImage from "@/components/sections/details/SplitImage";
@@ -25,6 +26,7 @@ export default function ProductPage(props: {
       <SplitImage />
       <TabMenu />
       <Progress />
+      <CTA />
       <RelatedProducts />
     </div>
   );

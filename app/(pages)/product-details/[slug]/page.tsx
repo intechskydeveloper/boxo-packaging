@@ -1,9 +1,11 @@
 import { PageBreadcrumb } from "@/components/common/PageBreadcrumb";
 import CTA from "@/components/sections/details/CTA";
+import ProductMaterial from "@/components/sections/details/ProductMaterial";
 import Progress from "@/components/sections/details/Progress";
 import RelatedProducts from "@/components/sections/details/RelatedProducts";
 import SplitImage from "@/components/sections/details/SplitImage";
 import { TabMenu } from "@/components/sections/details/TabMenu";
+import FeaturedSection from "@/components/sections/home/FeaturedSection";
 import { use } from "react";
 
 export default function ProductPage(props: {
@@ -27,7 +29,9 @@ export default function ProductPage(props: {
       <TabMenu />
       <Progress />
       <CTA />
-      <RelatedProducts />
+      <ProductMaterial />
+      {/* <RelatedProducts /> */}
+      <FeaturedSection /> {/* as related products*/}
     </div>
   );
 }

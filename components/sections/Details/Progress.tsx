@@ -37,7 +37,7 @@ export default function Progress() {
     <section aria-label="Progress" className="max-w-[1370px] mx-auto pt-10">
       <ol
         role="list"
-        className="divide-y divide-gray-300 rounded-md border border-gray-300 md:flex md:divide-y-0"
+        className="divide-y divide-gray-300 rounded-xl border border-gray-300 md:flex md:divide-y-0"
       >
         {steps.map((step, stepIdx) => (
           <li key={step.name} className="relative md:flex md:flex-1">

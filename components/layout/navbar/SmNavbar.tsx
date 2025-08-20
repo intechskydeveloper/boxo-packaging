@@ -108,7 +108,7 @@ const SmNavbar = () => {
   return (
     <div className="w-full md:hidden flex flex-col">
       <SlidingContact />
-      <div className="w-full flex flex-row justify-between px-4">
+      <div className="w-full flex flex-row bg-white justify-between px-4">
         <div className="h-[77px] w-auto flex items-center py-2">
           <Image
             src="/logo.webp"

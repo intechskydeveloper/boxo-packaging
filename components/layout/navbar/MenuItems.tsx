@@ -58,18 +58,20 @@ export function MenuItems() {
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={clsx(
-              "px-2 lg:px-0 lg:pr-4",
-              navigationMenuTriggerStyle()
-            )}
-          >
-            <Link href="/">Home</Link>
+          <NavigationMenuLink asChild>
+            <Link
+              href="/"
+              className={clsx(
+                "bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white",
+                navigationMenuTriggerStyle()
+              )}
+            >
+              Home
+            </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="px-2 lg:px-4">
+          <NavigationMenuTrigger className="bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white data-[state=open]:bg-secondary-foreground  data-[state=open]:text-white  data-[state=open]:hover:bg-secondary-foreground data-[state=open]:focus:bg-secondary-foreground ">
             Boxes by Industry
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
@@ -89,7 +91,7 @@ export function MenuItems() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="px-2 lg:px-4">
+          <NavigationMenuTrigger className="bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white data-[state=open]:bg-secondary-foreground  data-[state=open]:text-white  data-[state=open]:hover:bg-secondary-foreground data-[state=open]:focus:bg-secondary-foreground ">
             Boxes by Material
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -118,7 +120,7 @@ export function MenuItems() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="px-2 lg:px-4">
+          <NavigationMenuTrigger className="bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white data-[state=open]:bg-secondary-foreground  data-[state=open]:text-white  data-[state=open]:hover:bg-secondary-foreground data-[state=open]:focus:bg-secondary-foreground ">
             Boxes by Style
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -136,11 +138,16 @@ export function MenuItems() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={clsx("px-2 lg:px-4", navigationMenuTriggerStyle())}
-          >
-            <Link href="/portfolio">Portfolio</Link>
+          <NavigationMenuLink asChild>
+            <Link
+              href="/portfolio"
+              className={clsx(
+                "bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white",
+                navigationMenuTriggerStyle()
+              )}
+            >
+              Portfolio
+            </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

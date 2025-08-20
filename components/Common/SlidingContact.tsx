@@ -16,7 +16,7 @@ export default function SlidingContact() {
   }, [items.length]);
 
   return (
-    <div className="w-full h-8 flex items-center justify-center overflow-hidden bg-gray-100">
+    <div className="w-full h-8 flex items-center justify-center overflow-hidden bg-secondary">
       <AnimatePresence mode="wait">
         <motion.div
           key={items[index]}
@@ -24,7 +24,7 @@ export default function SlidingContact() {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
-          className="text-sm font-extrabold text-gray-800 whitespace-nowrap"
+          className="text-sm font-extrabold text-white whitespace-nowrap"
         >
           <Link href={"/"}>{items[index]}</Link>
         </motion.div>

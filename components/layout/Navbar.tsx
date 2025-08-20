@@ -4,7 +4,7 @@ import { SmNavbar } from "./navbar/SmNavbar";
 
 const Navbar = () => {
   return (
-    <nav className="border border-b-[1.5px] w-full fixed z-50 bg-white">
+    <nav className=" w-full fixed z-50 bg-secondary">
       <MdNavbar />
       <SmNavbar />
     </nav>

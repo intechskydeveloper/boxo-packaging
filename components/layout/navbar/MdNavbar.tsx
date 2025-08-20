@@ -13,12 +13,14 @@ const MdNavbar = () => {
       </div>
       <div className="flex flex-col lg:flex-row lg:items-center lg:gap-4 gap-2 items-end">
         <div className="gap-1.5 flex flex-row items-center justify-center">
-          <Mail size={16} />
-          <p className="text-xs font-semibold">sales@boxopackaging.com</p>
+          <Mail size={16} color="#ffffff" />
+          <p className="text-xs font-semibold text-white">
+            sales@boxopackaging.com
+          </p>
         </div>
         <div className="gap-1 items-center flex flex-row justify-center">
-          <Phone size={15} />
-          <p className="text-xs font-semibold">+92 (367) 987 987</p>
+          <Phone size={15} color="#ffffff"/>
+          <p className="text-xs font-semibold text-white">+92 (367) 987 987</p>
         </div>
       </div>
     </div>

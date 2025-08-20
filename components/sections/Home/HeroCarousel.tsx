@@ -8,7 +8,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../../Common/HeroShadcnCarousel";
+} from "../../common/HeroShadcnCarousel";
 import Autoplay from "embla-carousel-autoplay";
 
 const slides = [

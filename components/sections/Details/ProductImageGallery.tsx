@@ -13,22 +13,22 @@ export default function ProductImageGallery({
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="relative w-full h-[450px] mb-4">
+    <div className="flex flex-row-reverse">
+      <div className="relative w-full h-[550px] mb-4">
         <Image
           src={selectedImage.src}
           alt={selectedImage.alt || "Product image"}
           fill
-          className="object-contain rounded-lg border"
+          className="object-cover rounded-lg border"
         />
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-2 pt-1 overflow-y-auto overflow-x-hidden items-center overflow max-h-[550px] scrollbar-hide w-22">
         {images.map((image, index) => (
           <button
             key={image.src}
             onClick={() => setSelectedImage(image)}
-            className={`relative w-20 h-20 border rounded-md transition-all duration-300 overflow-hidden ${
+            className={`relative w-16 h-16 z-50 min-h-16 min-w-16 border rounded-md transition-all duration-300 overflow-hidden ${
               selectedImage.src === image.src
                 ? "ring-2 ring-primary scale-105"
                 : ""

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Tagline from "../../Common/Tagline";
-import SectionIntro from "../../Common/SectionIntro";
+import Tagline from "../../common/Tagline";
+import SectionIntro from "../../common/SectionIntro";
 
 export default function ImagesSection() {
   return (

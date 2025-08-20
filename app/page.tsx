@@ -1,19 +1,19 @@
-import Products from "../components/sections/Home/Products";
-import Hero from "../components/sections/Home/Hero";
-import Logobar from "../components/sections/Home/Logobar";
-import Categories from "../components/sections/Home/Categories";
-import Benifits2 from "../components/sections/Home/Benifits2";
-import ImagesSection from "../components/sections/Home/ImagesSection";
-import FeaturedSection from "../components/sections/Home/FeaturedSection";
-import Promotion from "../components/sections/Home/Promotion";
-import Material from "../components/sections/Home/Types";
-import WhyUs from "../components/sections/Home/WhyUs";
-import CategoriesSlider from "../components/sections/Home/CategoriesSlider";
-import ProductSliders from "../components/sections/Home/ProductSliders";
-import CustomPackaging from "../components/sections/Home/CustomPackaging";
-import LogoCloud from "../components/Common/LogoCloud";
-import Table from "../components/sections/Home/Table";
-import Working from "../components/sections/Home/Working";
+import Products from "../components/sections/home/Products";
+import Hero from "../components/sections/home/Hero";
+import Logobar from "../components/sections/home/Logobar";
+import Categories from "../components/sections/home/Categories";
+import Benifits2 from "../components/sections/home/Benifits2";
+import ImagesSection from "../components/sections/home/ImagesSection";
+import FeaturedSection from "../components/sections/home/FeaturedSection";
+import Promotion from "../components/sections/home/Promotion";
+import Material from "../components/sections/home/Types";
+import WhyUs from "../components/sections/home/WhyUs";
+import CategoriesSlider from "../components/sections/home/CategoriesSlider";
+import ProductSliders from "../components/sections/home/ProductSliders";
+import CustomPackaging from "../components/sections/home/CustomPackaging";
+import LogoCloud from "../components/common/LogoCloud";
+import Table from "../components/sections/home/Table";
+import Working from "../components/sections/home/Working";
 
 const page = () => {
   return (

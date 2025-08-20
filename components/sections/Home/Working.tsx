@@ -1,5 +1,5 @@
 import React from "react";
-import SectionIntro from "../../Common/SectionIntro";
+import SectionIntro from "../../common/SectionIntro";
 import { Dollar, Easy, FreeDelivery, Price, Wide } from "@/utils/Svgs";
 import {
   Carousel,

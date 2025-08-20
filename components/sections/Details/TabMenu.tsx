@@ -50,7 +50,7 @@ const tabledata = [
 
 export function TabMenu() {
   return (
-    <div className="flex w-full flex-col py-14 gap-6 max-w-[1370px] mx-auto">
+    <div className="flex w-full flex-col  gap-6 max-w-[1370px] mx-auto lg:-translate-y-12">
       <Tabs defaultValue="specifications">
         <TabsList className=" rounded-sm gap-3 px-2 my-1">
           <TabsTrigger
@@ -113,8 +113,8 @@ export function TabMenu() {
           </Card>
         </TabsContent>
         <TabsContent value="specifications">
-          <Card className="py-2">
-            <div className="relative overflow-x-auto">
+          <Card className="py-0">
+            <div className="relative overflow-x-auto rounded-2xl">
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 border-none">
                 <tbody>
                   {tabledata.map((item) => (
@@ -124,7 +124,7 @@ export function TabMenu() {
                     >
                       <th
                         scope="row"
-                        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border-b border-gray-200"
+                        className="px-6 py-4 font-bold text-gray-900 whitespace-nowrap border-b border-r-[1px] border-gray-200"
                       >
                         {item.name}
                       </th>

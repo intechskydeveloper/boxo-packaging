@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import H3 from "../../Common/H3";
+import H3 from "../../common/H3";
 
 const Products = () => {
   return (

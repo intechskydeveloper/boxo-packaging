@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Montserrat, Raleway } from "next/font/google";
+import {
+  Instrument_Sans,
+  Montserrat,
+  Raleway,
+  Work_Sans,
+} from "next/font/google";
 import "./globals.css";
-import { FAQ } from "../components/sections/Home/FAQ";
+import { FAQ } from "../components/sections/home/FAQ";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/navbar/Navbar";
+import Navbar from "@/components/layout/Navbar";
 
-const instrumentSans = Instrument_Sans({
+const instrumentSans = Work_Sans({
   variable: "--font-instrument-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

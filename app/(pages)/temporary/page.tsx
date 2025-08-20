@@ -1,10 +1,10 @@
 import React from "react";
-import FeaturedSection from "../../../components/sections/Home/FeaturedSection";
-import Products from "../../../components/sections/Home/Products";
-import Categories from "../../../components/sections/Home/Categories";
-import Benifits2 from "../../../components/sections/Home/Benifits2";
-import ImagesSection from "../../../components/sections/Home/ImagesSection";
-import CategoriesSlider from "../../../components/sections/Home/CategoriesSlider";
+import FeaturedSection from "../../../components/sections/home/FeaturedSection";
+import Products from "../../../components/sections/home/Products";
+import Categories from "../../../components/sections/home/Categories";
+import Benifits2 from "../../../components/sections/home/Benifits2";
+import ImagesSection from "../../../components/sections/home/ImagesSection";
+import CategoriesSlider from "../../../components/sections/home/CategoriesSlider";
 
 const page = () => {
   return (

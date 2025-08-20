@@ -1,7 +1,6 @@
 import React from "react";
-
-import MdNavbar from "./MdNavbar";
-import { SmNavbar } from "./SmNavbar";
+import MdNavbar from "./navbar/MdNavbar";
+import { SmNavbar } from "./navbar/SmNavbar";
 
 const Navbar = () => {
   return (

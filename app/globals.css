@@ -140,3 +140,11 @@ h1{
 .sectionWrapper{
   @apply w-full max-w-[1370px] mx-auto;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}

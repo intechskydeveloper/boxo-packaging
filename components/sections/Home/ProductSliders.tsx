@@ -1,5 +1,5 @@
-import CarouselSlider, { SlideData } from "../../Common/CarouselSlider";
-import SectionIntro from "../../Common/SectionIntro";
+import CarouselSlider, { SlideData } from "../../common/CarouselSlider";
+import SectionIntro from "../../common/SectionIntro";
 
 const slides1: SlideData[] = [
   {

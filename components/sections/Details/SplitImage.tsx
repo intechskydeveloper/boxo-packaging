@@ -3,8 +3,8 @@ import ProductImageGallery from "./ProductImageGallery";
 import ProductDetailsPanel from "./ProductDetailsPanel";
 
 const productImages = [
-  { src: "/products/p4.webp", alt: "Inside view" },
-  { src: "/products/p1.webp", alt: "Front view" },
+  { src: "/products/p22.webp", alt: "Inside view" },
+  { src: "/products/p23.webp", alt: "Front view" },
   { src: "/products/p2.webp", alt: "Side view" },
   { src: "/products/p3.webp", alt: "Back view" },
 ];
@@ -29,7 +29,7 @@ const product = {
 
 function SplitImage() {
   return (
-    <section className="sectionWrapper pb-10 pt-4 flex lg:flex-row flex-col">
+    <section className="w-full max-w-[1200px] mx-auto pb-10 pt-4 flex lg:flex-row flex-col">
       <div className="w-full lg:w-1/2">
         <ProductImageGallery images={productImages} />
       </div>

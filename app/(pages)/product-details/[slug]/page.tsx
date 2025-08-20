@@ -1,7 +1,8 @@
-import { PageBreadcrumb } from "@/components/Common/PageBreadcrumb";
-import RelatedProducts from "@/components/sections/Details/RelatedProducts";
-import SplitImage from "@/components/sections/Details/SplitImage";
-import { TabMenu } from "@/components/sections/Details/TabMenu";
+import { PageBreadcrumb } from "@/components/common/PageBreadcrumb";
+import Progress from "@/components/sections/details/Progress";
+import RelatedProducts from "@/components/sections/details/RelatedProducts";
+import SplitImage from "@/components/sections/details/SplitImage";
+import { TabMenu } from "@/components/sections/details/TabMenu";
 import { use } from "react";
 
 export default function ProductPage(props: {
@@ -19,11 +20,12 @@ export default function ProductPage(props: {
   // const product = await res.json();
 
   return (
-    <>
+    <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <PageBreadcrumb />
       <SplitImage />
       <TabMenu />
+      <Progress />
       <RelatedProducts />
-    </>
+    </div>
   );
 }

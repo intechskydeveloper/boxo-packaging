@@ -40,7 +40,7 @@ const Logobar = () => {
             All Category
             <ChevronDown size={14} className="mt-1" />
           </Link>
-          <button className="bg-black h-full flex items-center justify-center rounded-r-sm min-w-[45px]">
+          <button className="bg-secondary  h-full flex items-center justify-center rounded-r-sm min-w-[45px]">
             <Search size={18} color="#ffffff" />
           </button>
         </div>

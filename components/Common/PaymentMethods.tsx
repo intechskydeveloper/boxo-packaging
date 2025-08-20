@@ -3,10 +3,10 @@ import Image from "next/image";
 const PaymentMethodLogos = ({ paymentLogos }: { paymentLogos: string[] }) => {
   return (
     <>
-      <h3 className="text-lg font-extrabold font-instruction">
+      {/* <h3 className="text-lg font-extrabold font-instruction">
         Payment Methods
-      </h3>
-      <div className="flex flex-wraps mt-2 gap-4">
+      </h3> */}
+      <div className="flex flex-wraps mt-2 gap-2 px-1 items-center">
         {paymentLogos.map((src, index) => (
           <div key={index} className="relative w-auto flex items-center">
             <Image

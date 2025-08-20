@@ -52,7 +52,7 @@ export function TabMenu() {
   return (
     <div className="flex w-full flex-col  gap-6 max-w-[1370px] mx-auto lg:-translate-y-12">
       <Tabs defaultValue="specifications">
-        <TabsList className=" rounded-sm gap-3 px-2 my-1">
+        <TabsList className=" rounded-sm gap-3 px-2 my-1 bg-transparent">
           <TabsTrigger
             className="rounded-[3px] data-[state=active]:bg-primary data-[state=active]:text-white"
             value="specifications"

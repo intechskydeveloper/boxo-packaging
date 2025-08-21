@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import SectionIntro from "../../common/SectionIntro";
+import SectionIntro from "../../Common/SectionIntro";
 import { generateUniqueKey } from "@/utils/generateUniqueKey";
 
 const dummyproducts = [

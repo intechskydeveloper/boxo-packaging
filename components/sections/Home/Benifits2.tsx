@@ -1,5 +1,5 @@
 import React from "react";
-import SectionIntro from "../../common/SectionIntro";
+import SectionIntro from "../../Common/SectionIntro";
 import { Svg1, Svg2, Svg3, Svg4, Svg5, Svg6, Svg7, Svg8 } from "@/utils/Svgs";
 
 const benefitsData = [

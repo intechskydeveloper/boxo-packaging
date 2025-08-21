@@ -1,4 +1,4 @@
-import SectionIntro from "../../common/SectionIntro";
+import SectionIntro from "../../Common/SectionIntro";
 
 const data = [
   {

@@ -1,4 +1,4 @@
-import H3 from "@/components/common/H3";
+import H3 from "@/components/Common/H3";
 import { Button } from "@/components/ui/button";
 import React from "react";
 

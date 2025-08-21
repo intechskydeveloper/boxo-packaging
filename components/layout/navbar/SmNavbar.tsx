@@ -14,8 +14,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import SlidingContact from "@/components/common/SlidingContact";
-import ButtonLink from "@/components/common/ButtonLink";
+import SlidingContact from "@/components/Common/SlidingContact";
+import ButtonLink from "@/components/Common/ButtonLink";
 
 const navigationData = [
   {

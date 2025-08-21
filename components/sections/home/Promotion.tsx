@@ -1,9 +1,9 @@
 import React from "react";
-import VideoSection from "../../common/VideoSection";
-import SectionIntro from "../../common/SectionIntro";
+import VideoSection from "../../Common/VideoSection";
+import SectionIntro from "../../Common/SectionIntro";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import P from "../../common/P";
+import P from "../../Common/P";
 
 const Promotion = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import SectionIntro from "../../common/SectionIntro";
+import SectionIntro from "../../Common/SectionIntro";
 import ImageGallery from "./ImageGallery";
-import { SlideData } from "../../common/CarouselSlider";
+import { SlideData } from "../../Common/CarouselSlider";
 
 const slides: SlideData[] = [
   {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import SectionIntro from "../../common/SectionIntro";
-import P from "../../common/P";
+import SectionIntro from "../../Common/SectionIntro";
+import P from "../../Common/P";
 
 const WhyUs = () => {
   return (

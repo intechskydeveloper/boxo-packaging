@@ -1,12 +1,12 @@
-import LogoCloud from "@/components/common/LogoCloud";
-import CustomPackaging from "@/components/sections/home/CustomPackaging";
-import Hero from "@/components/sections/home/Hero";
-import Logobar from "@/components/sections/home/Logobar";
-import ProductSliders from "@/components/sections/home/ProductSliders";
-import Promotion from "@/components/sections/home/Promotion";
-import Table from "@/components/sections/home/Table";
-import WhyUs from "@/components/sections/home/WhyUs";
-import Working from "@/components/sections/home/Working";
+import LogoCloud from "@/components/Common/LogoCloud";
+import CustomPackaging from "@/components/sections/Home/CustomPackaging";
+import Hero from "@/components/sections/Home/Hero";
+import Logobar from "@/components/sections/Home/Logobar";
+import ProductSliders from "@/components/sections/Home/ProductSliders";
+import Promotion from "@/components/sections/Home/Promotion";
+import Table from "@/components/sections/Home/Table";
+import WhyUs from "@/components/sections/Home/WhyUs";
+import Working from "@/components/sections/Home/Working";
 
 const page = () => {
   return (

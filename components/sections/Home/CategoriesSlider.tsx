@@ -1,5 +1,5 @@
-import CarouselSlider, { SlideData } from "../../common/CarouselSlider";
-import SectionIntro from "../../common/SectionIntro";
+import CarouselSlider, { SlideData } from "../../Common/CarouselSlider";
+import SectionIntro from "../../Common/SectionIntro";
 
 // const slides: SlideData[] = [
 //   { img: "/oxopackaging/p1.webp", text: "Rigid Boxes" },

@@ -1,11 +1,11 @@
-import { PageBreadcrumb } from "@/components/common/PageBreadcrumb";
-import CTA from "@/components/sections/details/CTA";
-import ProductMaterial from "@/components/sections/details/ProductMaterial";
-import Progress from "@/components/sections/details/Progress";
-import RelatedProducts from "@/components/sections/details/RelatedProducts";
-import SplitImage from "@/components/sections/details/SplitImage";
-import { TabMenu } from "@/components/sections/details/TabMenu";
-import FeaturedSection from "@/components/sections/home/FeaturedSection";
+import { PageBreadcrumb } from "@/components/Common/PageBreadcrumb";
+import CTA from "@/components/sections/Details/CTA";
+import ProductMaterial from "@/components/sections/Details/ProductMaterial";
+import Progress from "@/components/sections/Details/Progress";
+import RelatedProducts from "@/components/sections/Details/RelatedProducts";
+import SplitImage from "@/components/sections/Details/SplitImage";
+import { TabMenu } from "@/components/sections/Details/TabMenu";
+import FeaturedSection from "@/components/sections/Home/FeaturedSection";
 import { use } from "react";
 
 export default function ProductPage(props: {

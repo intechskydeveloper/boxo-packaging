@@ -1,4 +1,4 @@
-import SectionIntro from "@/components/common/SectionIntro";
+import SectionIntro from "@/components/Common/SectionIntro";
 import { generateUniqueKey } from "@/utils/generateUniqueKey";
 import Image from "next/image";
 import React from "react";

@@ -3,9 +3,7 @@ import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import { FAQ } from "@/components/sections/home/FAQ";
-
-
+import { FAQ } from "@/components/sections/Home/FAQ";
 
 export const metadata: Metadata = {
   title: "Boxo Packaging",

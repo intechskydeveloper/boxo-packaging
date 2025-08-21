@@ -1,6 +1,6 @@
-import GetQuoteForm from "@/components/common/GetQuoteForm";
-import PaymentMethodLogos from "@/components/common/PaymentMethods";
-import ReadMore from "@/components/common/ReadMore";
+import GetQuoteForm from "@/components/Common/GetQuoteForm";
+import PaymentMethodLogos from "@/components/Common/PaymentMethods";
+import ReadMore from "@/components/Common/ReadMore";
 
 export default function ProductDetailsPanel({ product }: any) {
   return (

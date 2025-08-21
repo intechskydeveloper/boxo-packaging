@@ -1,4 +1,4 @@
-import ButtonLink from "@/components/common/ButtonLink";
+import ButtonLink from "@/components/Common/ButtonLink";
 import { generateUniqueKey } from "@/utils/generateUniqueKey";
 import { CircleArrowRight } from "lucide-react";
 import Image from "next/image";

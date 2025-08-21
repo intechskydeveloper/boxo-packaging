@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Tagline from "../../common/Tagline";
-import SectionIntro from "../../common/SectionIntro";
+import Tagline from "../../Common/Tagline";
+import SectionIntro from "../../Common/SectionIntro";
 
 export default function Categories() {
   return (

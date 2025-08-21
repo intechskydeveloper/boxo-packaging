@@ -5,6 +5,8 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import { FAQ } from "@/components/sections/home/FAQ";
 
+
+
 export const metadata: Metadata = {
   title: "Boxo Packaging",
   description: "Your Custom Packaging Partner",

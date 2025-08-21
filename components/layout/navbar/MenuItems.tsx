@@ -93,7 +93,7 @@ export function MenuItems() {
                           loading="lazy"
                         />
                       </div>
-                      <h3 className="text-lg">{I.title}</h3>
+                      <h3 className="text-sm">{I.title}</h3>
                     </div>
                   </NavigationMenuLink>
                 </li>

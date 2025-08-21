@@ -6,6 +6,7 @@ import RelatedProducts from "@/components/sections/Details/RelatedProducts";
 import SplitImage from "@/components/sections/Details/SplitImage";
 import { TabMenu } from "@/components/sections/Details/TabMenu";
 import FeaturedSection from "@/components/sections/Home/FeaturedSection";
+import Working from "@/components/sections/Home/Working";
 import { use } from "react";
 
 export default function ProductPage(props: {
@@ -32,6 +33,7 @@ export default function ProductPage(props: {
       <ProductMaterial />
       {/* <RelatedProducts /> */}
       <FeaturedSection /> {/* as related products*/}
+      <Working />
     </div>
   );
 }

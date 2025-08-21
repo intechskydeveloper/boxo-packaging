@@ -47,8 +47,8 @@ const Working = () => {
     <section className="max-w-[1370px] mx-auto pt-32">
       <SectionIntro
         align="start"
-        tagline="Types"
-        heading="Types of custom Printed Boxes"
+        tagline="Working"
+        heading="How it works?"
         subHeading="Provides advanced features like time tracking, integrating with third party apps (calendar / Google drive), creating subtasks."
         className="mb-20 md:mb-14 lg:pb-0"
       />

@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <>
       <Navbar />
-      <main className="pt-[55px] mb-20">{children}</main>
+      <main className="pt-[55px] mb-32">{children}</main>
       <FAQ />
       <Footer />
       <Analytics />

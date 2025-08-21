@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import AlternatingImage from "./AlternatingImage";
 
 const tabledata = [
   {
@@ -50,7 +51,7 @@ const tabledata = [
 
 export function TabMenu() {
   return (
-    <div className="flex w-full flex-col  gap-6 max-w-[1370px] mx-auto lg:-translate-y-12">
+    <div className="flex w-full flex-col  gap-6 max-w-[1370px] mx-auto lg:-translate-y-6">
       <Tabs defaultValue="specifications">
         <TabsList className=" rounded-sm gap-3 px-2 my-1 bg-transparent">
           <TabsTrigger
@@ -64,6 +65,12 @@ export function TabMenu() {
             className="rounded-[3px] data-[state=active]:bg-primary data-[state=active]:text-white"
           >
             Description
+          </TabsTrigger>
+          <TabsTrigger
+            value="design"
+            className="rounded-[3px] data-[state=active]:bg-primary data-[state=active]:text-white"
+          >
+            Design
           </TabsTrigger>
         </TabsList>
         <TabsContent value="description">
@@ -137,6 +144,9 @@ export function TabMenu() {
               </table>
             </div>
           </Card>
+        </TabsContent>
+        <TabsContent value="design">
+          <AlternatingImage />
         </TabsContent>
       </Tabs>
     </div>

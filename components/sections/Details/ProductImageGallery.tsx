@@ -20,6 +20,7 @@ export default function ProductImageGallery({
           alt={selectedImage.alt || "Product image"}
           fill
           className="object-cover rounded-lg border"
+          priority={true}
         />
       </div>
 

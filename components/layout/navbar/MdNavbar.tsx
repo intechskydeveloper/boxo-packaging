@@ -1,6 +1,7 @@
 import React from "react";
 import { MenuItems } from "./MenuItems";
 import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 const MdNavbar = () => {
   return (
@@ -12,14 +13,19 @@ const MdNavbar = () => {
         <MenuItems />
       </div>
       <div className="flex flex-col lg:flex-row lg:items-center lg:gap-4 gap-2 items-end">
-        <div className="gap-1.5 flex flex-row items-center justify-center">
+        <div className="relative gap-1.5 flex flex-row items-center justify-center">
+          <Link
+            href={"mailto:sales@boxopackaging.com"}
+            className="absolute inset-0"
+          />
           <Mail size={16} color="#ffffff" />
           <p className="text-xs font-semibold text-white">
             sales@boxopackaging.com
           </p>
         </div>
-        <div className="gap-1 items-center flex flex-row justify-center">
-          <Phone size={15} color="#ffffff"/>
+        <div className="relative gap-1 items-center flex flex-row justify-center">
+          <Link href={"tel:+92 (367) 987 987"} className="absolute inset-0" />
+          <Phone size={15} color="#ffffff" />
           <p className="text-xs font-semibold text-white">+92 (367) 987 987</p>
         </div>
       </div>

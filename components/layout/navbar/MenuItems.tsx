@@ -14,6 +14,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import clsx from "clsx";
+import Image from "next/image";
+import { Boxes_by_Industries } from "@/utils/data";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -74,19 +76,28 @@ export function MenuItems() {
           <NavigationMenuTrigger className="bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white data-[state=open]:bg-secondary-foreground  data-[state=open]:text-white  data-[state=open]:hover:bg-secondary-foreground data-[state=open]:focus:bg-secondary-foreground ">
             Boxes by Industry
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-white">
-            <ul className="grid w-[900px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Components</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Documentation</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Blocks</Link>
-                </NavigationMenuLink>
-              </li>
+          <NavigationMenuContent className="bg-secondary">
+            <ul className="grid w-[1200px] lg:grid-cols-4 md:grid-cols-3">
+              {Boxes_by_Industries.map((I) => (
+                <li>
+                  <NavigationMenuLink asChild className="py-1">
+                    <div className="relative flex flex-row items-center gap-3 group">
+                      <Link href={I.href} className="absolute inset-0" />
+                      <div className="h-[60px] w-auto flex items-center">
+                        <Image
+                          src={I.icon}
+                          alt="logo"
+                          width={150}
+                          height={150}
+                          className="h-full w-[60px] object-contain rounded-md"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 className="text-lg">{I.title}</h3>
+                    </div>
+                  </NavigationMenuLink>
+                </li>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

@@ -35,7 +35,7 @@ const slides = [
 export default function HeroCarousel() {
   return (
     <Carousel
-      className="w-screen h-[85vh] relative"
+      className="w-screen h-[85vh] relative mt-6"
       opts={{
         loop: true,
       }}

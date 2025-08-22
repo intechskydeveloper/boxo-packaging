@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { Toaster } from "sonner";
 
 const instrumentSans = Work_Sans({
   variable: "--font-instrument-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
+        <Toaster/>
       </body>
     </html>
   );

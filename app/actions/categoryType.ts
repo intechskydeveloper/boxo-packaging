@@ -1,6 +1,7 @@
+// app/actions/categoryType.ts
 "use server";
 
-import { prisma } from "@/lib/prisma";
+import prisma from "@/prisma/client";
 import { revalidatePath } from "next/cache";
 
 export async function createCategoryType(formData: FormData) {
@@ -10,10 +11,7 @@ export async function createCategoryType(formData: FormData) {
     throw new Error("Type name is required");
   }
 
-  // ensure unique
-  const existing = await prisma.categoryType.findUnique({
-    where: { name },
-  });
+  const existing = await prisma.categoryType.findUnique({ where: { name } });
   if (existing) {
     throw new Error("Category type already exists");
   }
@@ -22,8 +20,6 @@ export async function createCategoryType(formData: FormData) {
     data: { name },
   });
 
-  // refresh UI
   revalidatePath("/categories/types");
-
   return type;
 }

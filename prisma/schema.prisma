@@ -14,10 +14,66 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Categoy {
-  id      Int    @id @default(autoincrement())
-  name    String
-  phone   String
-  address String @db.VarChar(300)
-  reviews Int    @default(0)
+model CategoryType {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique @db.VarChar(50)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  categories Category[] // one-to-many relation
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(50)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  typeId Int
+  type   CategoryType @relation(fields: [typeId], references: [id])
+
+  subcategories SubCategory[]
+}
+
+model SubCategory {
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(25) // max length 25
+  image      String
+  categoryId Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  category Category             @relation(fields: [categoryId], references: [id])
+  products ProductSubCategory[]
+}
+
+model Product {
+  id        String   @id @default(uuid())
+  name      String
+  richText  String // JSON or HTML string
+  inStock   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  specifications ProductSpecification[]
+  categories     ProductSubCategory[]
+}
+
+model ProductSpecification {
+  id             Int    @id @default(autoincrement())
+  productId      String
+  rowTitle       String
+  rowDescription String
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model ProductSubCategory {
+  productId     String
+  subCategoryId Int
+
+  product     Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  subCategory SubCategory @relation(fields: [subCategoryId], references: [id], onDelete: Cascade)
+
+  @@id([productId, subCategoryId]) // Composite PK for many-to-many
 }

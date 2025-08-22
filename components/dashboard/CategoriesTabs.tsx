@@ -1,10 +1,13 @@
 "use client";
-import { createCategoryType } from "@/app/actions/categoryType";
+import { createCategory, getCategories } from "@/app/actions/category";
+import {
+  createSubCategory,
+  getSubCategories,
+} from "@/app/actions/createSubCategory";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -12,94 +15,84 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useTransition } from "react";
+import { get } from "http";
+import { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 export function CategoriesTabs() {
   const [isPending, startTransition] = useTransition();
+  const [preview, setPreview] = useState<string | null>(null);
+  const [categories, setCategories] = useState<{ id: number; name: string }[]>(
+    []
+  );
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
 
-  async function handleAction(formData: FormData) {
+  useEffect(() => {
+    (async () => {
+      const data = await getCategories();
+      setCategories(data);
+    })();
+    getSubCategories(1).then((data) => {
+      console.log("Subcategories for category 1:", data);
+    });
+  }, []);
+
+  function handlePreview(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+    }
+  }
+
+  async function handleSubmitSubCategory(formData: FormData) {
+    startTransition(async () => {
+      try {
+        formData.append("categoryId", String("")); // ensure categoryId sent
+        const res = await createSubCategory(formData);
+        toast.success("Subcategory created!");
+        console.log("Created:", res);
+      } catch (err) {
+        console.error(err);
+        toast.error("Failed to create subcategory");
+      }
+    });
+  }
+
+  async function handleSubmitCategory(formData: FormData) {
     try {
-      await createCategoryType(formData);
-      toast.success("Category Type created successfully!");
+      await createCategory(formData);
+      toast.success("Category created successfully!");
     } catch (err: any) {
-      toast.error(err.message || "Something went wrong!");
+      toast.error(err.message || "Failed to create category");
     }
   }
 
   return (
     <div className="flex w-full max-w-sm flex-col gap-6 mt-4">
-      <Tabs defaultValue="category">
+      <Tabs defaultValue="sub-category">
         <TabsList>
-          <TabsTrigger value="category">Category</TabsTrigger>
           <TabsTrigger value="sub-category">Sub Category</TabsTrigger>
-          <TabsTrigger value="category-type">Category Type</TabsTrigger>
+          <TabsTrigger value="category">Category</TabsTrigger>
         </TabsList>
         <TabsContent value="category">
-          <Card>
-            <CardHeader>
-              <CardTitle>Category</CardTitle>
-              <CardDescription>
-                Make changes to your account here. Click save when you&apos;re
-                done.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-6">
-              <div className="grid gap-3">
-                <Label htmlFor="tabs-demo-name">Name</Label>
-                <Input id="tabs-demo-name" defaultValue="Pedro Duarte" />
-              </div>
-              <div className="grid gap-3">
-                <Label htmlFor="tabs-demo-username">Username</Label>
-                <Input id="tabs-demo-username" defaultValue="@peduarte" />
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button>Save changes</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
-        <TabsContent value="sub-category">
-          <Card>
-            <CardHeader>
-              <CardTitle>Sub Category</CardTitle>
-              <CardDescription>
-                Change your password here. After saving, you&apos;ll be logged
-                out.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-6">
-              <div className="grid gap-3">
-                <Label htmlFor="tabs-demo-current">Current password</Label>
-                <Input id="tabs-demo-current" type="password" />
-              </div>
-              <div className="grid gap-3">
-                <Label htmlFor="tabs-demo-new">New password</Label>
-                <Input id="tabs-demo-new" type="password" />
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button>Save password</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
-        <TabsContent value="category-type">
           <form
-            action={(formData) => startTransition(() => handleAction(formData))}
+            action={(formData) =>
+              startTransition(() => handleSubmitCategory(formData))
+            }
           >
             <Card>
               <CardHeader>
-                <CardTitle>Create Category Type</CardTitle>
+                <CardTitle>Category</CardTitle>
               </CardHeader>
 
               <CardContent className="grid gap-6">
                 <div className="grid gap-3">
-                  <Label htmlFor="type-name">Category Type Name</Label>
+                  <Label htmlFor="cat-name">Category Name</Label>
                   <Input
-                    id="type-name"
+                    id="cat-name"
                     type="text"
                     name="name"
-                    placeholder="e.g. Industry"
+                    placeholder="e.g. Boxes by Industry"
                     required
                   />
                 </div>
@@ -107,11 +100,84 @@ export function CategoriesTabs() {
 
               <CardFooter>
                 <Button type="submit" disabled={isPending}>
-                  {isPending ? "Saving..." : "Save"}
+                  {isPending ? "Saving..." : "Save Category"}
                 </Button>
               </CardFooter>
             </Card>
           </form>
+        </TabsContent>
+        <TabsContent value="sub-category">
+          <Card>
+            <CardHeader>
+              <CardTitle>Sub Category</CardTitle>
+            </CardHeader>
+
+            <CardContent>
+              <form action={handleSubmitSubCategory} className="grid gap-6">
+                {/* Name */}
+                <div className="grid gap-3">
+                  <Label htmlFor="subcategory-name">Subcategory Name</Label>
+                  <Input
+                    id="subcategory-name"
+                    name="name"
+                    type="text"
+                    required
+                  />
+                </div>
+
+                {/* Category Dropdown */}
+                <div className="grid gap-3">
+                  <Label htmlFor="subcategory-category">Select Category</Label>
+                  <select
+                    id="subcategory-category"
+                    name="categoryId"
+                    value={selectedCategory ?? ""}
+                    onChange={(e) =>
+                      setSelectedCategory(Number(e.target.value))
+                    }
+                    required
+                    className="border rounded-md p-2"
+                  >
+                    <option value="">-- Select a Category --</option>
+                    {categories.map((cat) => (
+                      <option key={cat.id} value={cat.id}>
+                        {cat.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* File Upload */}
+                <div className="grid gap-3">
+                  <Label htmlFor="subcategory-image">Upload Image</Label>
+                  <Input
+                    id="subcategory-image"
+                    name="file"
+                    type="file"
+                    accept="image/*"
+                    onChange={handlePreview}
+                    required
+                  />
+                </div>
+
+                {/* Preview */}
+                {preview && (
+                  <div className="mt-4">
+                    <Label>Preview:</Label>
+                    <img
+                      src={preview}
+                      alt="Preview"
+                      className="w-40 rounded-md"
+                    />
+                  </div>
+                )}
+
+                <Button type="submit" disabled={isPending}>
+                  {isPending ? "Saving..." : "Save Sub Category"}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>

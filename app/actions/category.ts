@@ -1,29 +1,37 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
-import { revalidatePath } from "next/cache";
+import prisma from "@/prisma/client";
 
-export async function createCategoryType(formData: FormData) {
-  const name = formData.get("name")?.toString().trim();
+export async function createCategory(formData: FormData) {
+  try {
+    const name = formData.get("name") as string;
 
-  if (!name) {
-    throw new Error("Type name is required");
+    if (!name) {
+      throw new Error("Name and Image are required");
+    }
+
+    await prisma.category.create({
+      data: {
+        name,
+      },
+    });
+
+    return { success: true };
+  } catch (error: any) {
+    throw new Error(error.message || "Failed to create category");
   }
+}
 
-  // ensure unique
-  const existing = await prisma.categoryType.findUnique({
-    where: { name },
+export async function getCategories() {
+  const categories = await prisma.category.findMany({
+    select: {
+      id: true,
+      name: true,
+    },
+    orderBy: {
+      name: "asc",
+    },
   });
-  if (existing) {
-    throw new Error("Category type already exists");
-  }
 
-  const type = await prisma.categoryType.create({
-    data: { name },
-  });
-
-  // refresh UI
-  revalidatePath("/categories/types");
-
-  return type;
+  return categories;
 }

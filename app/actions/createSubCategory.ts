@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 
 export async function createSubCategory(formData: FormData) {
   const name = formData.get("name")?.toString().trim();
+  const altText = formData.get("altText")?.toString().trim();
   const categoryId = Number(formData.get("categoryId"));
   const file = formData.get("file") as File | null;
 
@@ -32,6 +33,7 @@ export async function createSubCategory(formData: FormData) {
       name,
       image: result.secure_url,
       categoryId,
+      altText,
     },
   });
 

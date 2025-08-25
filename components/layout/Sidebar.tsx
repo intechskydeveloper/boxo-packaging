@@ -2,6 +2,7 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import {
+  Box,
   ChartBarStacked,
   ChartNoAxesColumnIncreasing,
   ChevronsRight,
@@ -49,11 +50,12 @@ const Sidebar = () => {
           href="/dashboard/category"
         />
         <Option
-          Icon={Monitor}
-          title="View Site"
+          Icon={Box}
+          title="Produts (Boxes)"
           selected={selected}
           setSelected={setSelected}
           open={open}
+          href="/dashboard/products"
         />
         <Option
           Icon={ShoppingCart}

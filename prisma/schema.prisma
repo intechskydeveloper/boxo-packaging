@@ -24,8 +24,9 @@ model Category {
 
 model SubCategory {
   id         Int      @id @default(autoincrement())
-  name       String   @db.VarChar(25) // max length 25
+  name       String   @db.VarChar(25)
   image      String
+  altText    String?
   categoryId Int
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
@@ -50,7 +51,7 @@ model ProductSpecification {
   id             Int    @id @default(autoincrement())
   productId      String
   rowTitle       String
-  rowDescription String
+  rowData String
 
   product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }

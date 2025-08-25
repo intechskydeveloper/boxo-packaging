@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { get } from "http";
+import Image from "next/image";
 import { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 
@@ -50,7 +50,9 @@ export function CategoriesTabs() {
         formData.append("categoryId", String("")); // ensure categoryId sent
         const res = await createSubCategory(formData);
         toast.success("Subcategory created!");
-        console.log("Created:", res);
+        setPreview(null);
+        formData.delete("name");
+        formData.delete("file");
       } catch (err) {
         console.error(err);
         toast.error("Failed to create subcategory");
@@ -62,6 +64,7 @@ export function CategoriesTabs() {
     try {
       await createCategory(formData);
       toast.success("Category created successfully!");
+      setPreview(null);
     } catch (err: any) {
       toast.error(err.message || "Failed to create category");
     }
@@ -163,10 +166,12 @@ export function CategoriesTabs() {
                 {/* Preview */}
                 {preview && (
                   <div className="mt-4">
-                    <Label>Preview:</Label>
-                    <img
+                    <Label className="pb-2">Preview:</Label>
+                    <Image
                       src={preview}
                       alt="Preview"
+                      width={160}
+                      height={160}
                       className="w-40 rounded-md"
                     />
                   </div>

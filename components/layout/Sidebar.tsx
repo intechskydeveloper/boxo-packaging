@@ -2,17 +2,19 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import {
+  ChartBarStacked,
   ChartNoAxesColumnIncreasing,
-  ChevronDown,
-  ChevronsDown,
   ChevronsRight,
   DollarSign,
   House,
   Monitor,
+  Shapes,
   ShoppingCart,
   Tag,
   User,
 } from "lucide-react";
+import Link from "next/link";
+import { Url } from "next/dist/shared/lib/router/router";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -35,14 +37,16 @@ const Sidebar = () => {
           selected={selected}
           setSelected={setSelected}
           open={open}
+          href="/dashboard"
         />
         <Option
-          Icon={DollarSign}
-          title="Sales"
+          Icon={Shapes}
+          title="Categories"
           selected={selected}
           setSelected={setSelected}
           open={open}
           notifs={3}
+          href="/dashboard/category"
         />
         <Option
           Icon={Monitor}
@@ -95,6 +99,7 @@ const Option = ({
   setSelected,
   open,
   notifs,
+  href = "",
 }: {
   Icon: any;
   title: string;
@@ -102,6 +107,7 @@ const Option = ({
   setSelected: Dispatch<SetStateAction<string>>;
   open: boolean;
   notifs?: number;
+  href?: Url;
 }) => {
   return (
     <motion.button
@@ -113,6 +119,7 @@ const Option = ({
           : "text-slate-500 hover:bg-slate-100"
       }`}
     >
+      <Link href={href} className="absolute inset-0" />
       <motion.div
         layout
         className="grid h-full w-10 place-content-center text-lg"
@@ -223,7 +230,7 @@ const ToggleClose = ({
         >
           <ChevronsRight
             className={`transition-transform ${open && "rotate-180"}`}
-            size={'16'}
+            size={"16"}
           />
         </motion.div>
         {open && (

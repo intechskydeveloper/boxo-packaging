@@ -70,7 +70,7 @@ export default function BoxesForm() {
         <div className="flex w-full flex-col gap-6 mt-10">
           <Tabs defaultValue="specs" className="w-full">
             <TabsList className="w-full">
-              <TabsTrigger value="specs">Specifications</TabsTrigger>
+              <TabsTrigger value="specs">Specifications Table</TabsTrigger>
               <TabsTrigger value="description">Description</TabsTrigger>
             </TabsList>
 

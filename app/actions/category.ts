@@ -35,3 +35,31 @@ export async function getCategories() {
 
   return categories;
 }
+
+
+export async function getCategoriesWithSubCategories() {
+  try {
+    const categories = await prisma.category.findMany({
+      select: {
+        id: true,
+        name: true,
+        subcategories: {
+          select: {
+            id: true,
+            name: true,
+            categoryId: true,
+          },
+        },
+      },
+      orderBy: {
+        createdAt: "asc",
+      },
+    });
+
+    return { success: true, data: categories };
+  } catch (error) {
+    console.error("❌ Error fetching categories:", error);
+    return { success: false, error: "Failed to fetch categories" };
+  }
+}
+

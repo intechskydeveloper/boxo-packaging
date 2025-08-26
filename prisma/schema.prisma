@@ -36,22 +36,24 @@ model SubCategory {
 }
 
 model Product {
-  id        String   @id @default(uuid())
-  name      String
-  richText  String // JSON or HTML string
-  inStock   Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                String   @id @default(uuid())
+  name              String
+  richText          String
+  inStock           Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  bottomDescription String?
 
   specifications ProductSpecification[]
   categories     ProductSubCategory[]
+  images         ProductImage[] // relation
 }
 
 model ProductSpecification {
-  id             Int    @id @default(autoincrement())
-  productId      String
-  rowTitle       String
-  rowData String
+  id        Int    @id @default(autoincrement())
+  productId String
+  rowTitle  String
+  rowData   String
 
   product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
@@ -64,4 +66,12 @@ model ProductSubCategory {
   subCategory SubCategory @relation(fields: [subCategoryId], references: [id], onDelete: Cascade)
 
   @@id([productId, subCategoryId]) // Composite PK for many-to-many
+}
+
+model ProductImage {
+  id        String  @id @default(uuid())
+  url       String
+  alt       String
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
 }

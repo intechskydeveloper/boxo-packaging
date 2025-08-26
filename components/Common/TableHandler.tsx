@@ -15,8 +15,8 @@ import { Card } from "@/components/ui/card";
 import { Plus, Trash2, Pencil } from "lucide-react";
 
 type Spec = {
-  key: string;
-  value: string;
+  rowTitle: string;
+  rowData: string;
 };
 
 export default function SpecificationsTable({
@@ -36,14 +36,13 @@ export default function SpecificationsTable({
 
     let newSpecs;
     if (editingIndex !== null) {
-      // update existing row
       newSpecs = specs.map((s, i) =>
-        i === editingIndex ? { key: keyInput, value: valueInput } : s
+        i === editingIndex ? { rowTitle: keyInput, rowData: valueInput } : s
       );
       setEditingIndex(null);
     } else {
       // add new row
-      newSpecs = [...specs, { key: keyInput, value: valueInput }];
+      newSpecs = [...specs, { rowTitle: keyInput, rowData: valueInput }];
     }
 
     setSpecs(newSpecs);
@@ -67,77 +66,78 @@ export default function SpecificationsTable({
   };
 
   const handleEdit = (index: number) => {
-    setKeyInput(specs[index].key);
-    setValueInput(specs[index].value);
+    setKeyInput(specs[index].rowTitle);
+    setValueInput(specs[index].rowData);
     setEditingIndex(index);
   };
 
   return (
-    <Card className="w-full max-w-3xl p-4 py-2 mt-4">
-      <Table className="border-gray-500/50">
-        <TableHeader>
-          <TableRow className="hover:bg-transparent border-b">
-            <TableHead>Specification</TableHead>
-            <TableHead>Value</TableHead>
-            <TableHead className="w-24 text-center">Actions</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {/* Input Row */}
-          <TableRow className="hover:bg-transparent border-b">
-            <TableCell>
-              <Input
-                value={keyInput}
-                onChange={(e) => setKeyInput(e.target.value)}
-                placeholder="e.g. Material"
-                className="border-gray-500/50"
-              />
-            </TableCell>
-            <TableCell>
-              <Input
-                value={valueInput}
-                onChange={(e) => setValueInput(e.target.value)}
-                placeholder="e.g. Cardboard"
-                className="border-gray-500/50"
-              />
-            </TableCell>
-            <TableCell className="text-center">
+    // <Card className="w-full max-w-3xl p-4 py-2 mt-4">
+    <Table className="border-gray-500/50">
+      <TableHeader>
+        <TableRow className="hover:bg-transparent border-b">
+          <TableHead>Specification</TableHead>
+          <TableHead>Value</TableHead>
+          <TableHead className="w-24 text-center">Actions</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {/* Input Row */}
+        <TableRow className="hover:bg-transparent border-b">
+          <TableCell>
+            <Input
+              value={keyInput}
+              onChange={(e) => setKeyInput(e.target.value)}
+              placeholder="e.g. Material"
+              className="border-gray-500/50"
+            />
+          </TableCell>
+          <TableCell>
+            <Input
+              value={valueInput}
+              onChange={(e) => setValueInput(e.target.value)}
+              placeholder="e.g. Cardboard"
+              className="border-gray-500/50"
+            />
+          </TableCell>
+          <TableCell className="text-center">
+            <Button
+              size="icon"
+              onClick={handleAddOrUpdate}
+              type="button"
+              className="bg-secondary hover:bg-secondary/90 text-white"
+            >
+              <Plus className="h-4 w-4" />
+            </Button>
+          </TableCell>
+        </TableRow>
+
+        {specs.map((spec, index) => (
+          <TableRow key={index} className="hover:bg-transparent border-b">
+            <TableCell>{spec.rowTitle}</TableCell>
+            <TableCell>{spec.rowData}</TableCell>
+            <TableCell className="flex justify-center gap-2">
               <Button
                 size="icon"
-                onClick={handleAddOrUpdate}
-                type="button" // 👈 prevent form submit
+                variant="outline"
+                onClick={() => handleEdit(index)}
+                type="button"
               >
-                <Plus className="h-4 w-4" />
+                <Pencil className="h-4 w-4" />
+              </Button>
+              <Button
+                size="icon"
+                variant="outline"
+                onClick={() => handleDelete(index)}
+                type="button"
+              >
+                <Trash2 className="h-4 w-4" />
               </Button>
             </TableCell>
           </TableRow>
-
-          {specs.map((spec, index) => (
-            <TableRow key={index} className="hover:bg-transparent border-b">
-              <TableCell>{spec.key}</TableCell>
-              <TableCell>{spec.value}</TableCell>
-              <TableCell className="flex justify-center gap-2">
-                <Button
-                  size="icon"
-                  variant="outline"
-                  onClick={() => handleEdit(index)}
-                  type="button"
-                >
-                  <Pencil className="h-4 w-4" />
-                </Button>
-                <Button
-                  size="icon"
-                  variant="outline"
-                  onClick={() => handleDelete(index)}
-                  type="button"
-                >
-                  <Trash2 className="h-4 w-4" />
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Card>
+        ))}
+      </TableBody>
+    </Table>
+    // </Card>
   );
 }

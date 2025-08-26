@@ -6,14 +6,17 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { X } from "lucide-react";
+import Loader from "./Loader";
 
 type SubCategory = {
-  id: string;
+  id: number;
   name: string;
+  categoryId: number;
 };
 
-type CategoryGroup = {
-  group: string;
+type Category = {
+  id: number;
+  name: string;
   subcategories: SubCategory[];
 };
 
@@ -21,78 +24,97 @@ export default function CategorySelector({
   categories,
   onChange,
 }: {
-  categories: CategoryGroup[];
-  onChange?: (selected: SubCategory[]) => void;
+  categories: Category[];
+  onChange?: (selectedIds: number[]) => void;
 }) {
-  const [selected, setSelected] = useState<SubCategory[]>([]);
+  const [selectedIds, setSelectedIds] = useState<number[]>([]);
 
   const toggleCategory = (sub: SubCategory) => {
-    let updated: SubCategory[];
-    if (selected.find((s) => s.id === sub.id)) {
-      updated = selected.filter((s) => s.id !== sub.id);
+    let updated: number[];
+    if (selectedIds.includes(sub.id)) {
+      updated = selectedIds.filter((id) => id !== sub.id);
     } else {
-      updated = [...selected, sub];
+      updated = [...selectedIds, sub.id];
     }
-    setSelected(updated);
+    setSelectedIds(updated);
     onChange?.(updated);
   };
 
-  const removeBadge = (id: string) => {
-    const updated = selected.filter((s) => s.id !== id);
-    setSelected(updated);
+  const removeBadge = (id: number) => {
+    const updated = selectedIds.filter((sid) => sid !== id);
+    setSelectedIds(updated);
     onChange?.(updated);
   };
+
+  const findSub = (id: number) =>
+    categories.flatMap((c) => c.subcategories).find((s) => s.id === id);
 
   return (
     <div className="flex flex-col">
-      <div className="border rounded-b-none rounded-md border-t p-3 w-full">
+      {/* Selected badges */}
+      <div className="border rounded-b-none border-gray-500/50 rounded-md border-b-0 border-t p-3 w-full">
         <div className="flex flex-wrap gap-2">
-          {selected.length === 0 && (
+          {selectedIds.length === 0 && (
             <span className="text-sm text-gray-500">
               No categories selected
             </span>
           )}
-          {selected.map((sub) => (
-            <Badge
-              key={sub.id}
-              variant="default"
-              className="flex items-center gap-1"
-            >
-              {sub.name}
-              <button
-                type="button"
-                onClick={() => removeBadge(sub.id)}
-                className="ml-1"
+          {selectedIds.map((id) => {
+            const sub = findSub(id);
+            if (!sub) return null;
+            return (
+              <Badge
+                key={id}
+                variant="default"
+                className="flex items-center gap-1 bg-secondary"
               >
-                <X className="h-3 w-3" />
-              </button>
-            </Badge>
-          ))}
+                {sub.name}
+                <button
+                  type="button"
+                  onClick={() => removeBadge(id)}
+                  className="ml-1"
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </Badge>
+            );
+          })}
         </div>
       </div>
 
-      <ScrollArea className="h-64 w-full border rounded-md rounded-t-none p-3">
-        <div className="w-full space-y-4">
-          {categories.map((group) => (
-            <div key={group.group} className="space-y-1">
-              <h3 className="font-medium text-sm">{group.group}</h3>
-              <div className="space-y-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                {group.subcategories.map((sub) => (
-                  <div key={sub.id} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={sub.id}
-                      checked={selected.some((s) => s.id === sub.id)}
-                      onCheckedChange={() => toggleCategory(sub)}
-                    />
-                    <label htmlFor={sub.id} className="text-sm cursor-pointer">
-                      {sub.name}
-                    </label>
-                  </div>
-                ))}
+      {/* Scroll list */}
+      <ScrollArea className="h-64 w-full border border-gray-500/50 rounded-md rounded-t-none p-3">
+        {categories.length == 0 ? (
+          <div className="flex w-full h-56 items-center justify-center self-center">
+            <Loader />
+          </div>
+        ) : (
+          <div className="w-full space-y-4">
+            {categories.map((group) => (
+              <div key={group.name} className="space-y-1">
+                <h3 className="font-medium text-sm">{group.name}</h3>
+                <div className="space-y-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                  {group.subcategories.map((sub) => (
+                    <div key={sub.id} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={sub.name}
+                        checked={selectedIds.includes(sub.id)}
+                        onCheckedChange={() => toggleCategory(sub)}
+                        className="data-[state=checked]:bg-secondary data-[state=checked]:text-white dark:data-[state=checked]:bg-secondary data-[state=checked]:border-secondary "
+                      />
+                      <label
+                        htmlFor={sub.name}
+                        className="text-sm cursor-pointer"
+                      >
+                        {sub.name}
+                      </label>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </ScrollArea>
     </div>
   );

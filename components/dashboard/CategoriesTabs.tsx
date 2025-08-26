@@ -3,7 +3,7 @@ import { createCategory, getCategories } from "@/app/actions/category";
 import {
   createSubCategory,
   getSubCategories,
-} from "@/app/actions/createSubCategory";
+} from "@/app/actions/sub-category";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -161,7 +161,11 @@ export function CategoriesTabs() {
                   />
                 </div>
 
-                <Button type="submit" disabled={isPending} className="w-full">
+                <Button
+                  type="submit"
+                  disabled={isPending}
+                  className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                >
                   {isPending ? "Saving..." : "Save Sub Category"}
                 </Button>
               </form>
@@ -197,7 +201,11 @@ export function CategoriesTabs() {
               </CardContent>
 
               <CardFooter className="w-full">
-                <Button type="submit" disabled={isPending} className="w-full">
+                <Button
+                  type="submit"
+                  disabled={isPending}
+                  className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                >
                   {isPending ? "Saving..." : "Save Category"}
                 </Button>
               </CardFooter>

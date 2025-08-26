@@ -1,39 +1,113 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import TableHandler from "@/components/Common/TableHandler";
 import H2 from "@/components/Common/H2";
 import CategorySelector from "@/components/Common/CategorySelector";
-import { categories } from "@/utils/data";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Editor } from "@/components/Common/DynamicEditor";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { getCategoriesWithSubCategories } from "@/app/actions/category";
+import { toast } from "sonner";
+import { createProduct } from "@/app/actions/product";
+import { Card } from "@/components/ui/card";
+import ProductImagesUploader from "@/components/Common/ProductImagesUploader";
+
+type SubCategory = {
+  id: string;
+  name: string;
+  categoryId: number;
+};
+
+type Category = {
+  id: number;
+  name: string;
+  subcategories: SubCategory[];
+};
+
+type Spec = {
+  rowTitle: string;
+  rowData: string;
+};
 
 export default function BoxesForm() {
-  const [specs, setSpecs] = useState<any[]>([]);
+  const [specs, setSpecs] = useState<Spec[]>([]);
+  const [categories, setCategories] = useState<any[]>([]);
+  const [description, setDescription] = useState<any>(null);
+  const [bottomDescription, setBottomDescription] = useState<any>(null);
+  const [images, setImages] = useState<{ src: string; alt: string }[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<number[]>([]);
+
+  const [loading, setLoading] = useState(false);
 
   const handleSpecsChange = (data: any[]) => {
     setSpecs(data);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-    const productData = {
-      name: formData.get("name"),
-      specifications: specs,
-    };
-
-    console.log("Submitting:", productData);
+  const handleCategoriesChange = (selected: any) => {
+    setSelectedCategories(selected);
   };
 
-  const handleCategoriesChange = (selected: any[]) => {
-    console.log("Selected Categories:", selected);
+  useEffect(() => {
+    console.log("Selected Images:", images);
+  }, [images]);
+
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        const res = await getCategoriesWithSubCategories();
+        if (res.success) {
+          setCategories(res.data!);
+        } else {
+          toast("Error Failed to fetch categories.");
+        }
+      } catch (err) {
+        console.error("❌ Error fetching categories:", err);
+        toast("Something went wrong while fetching categories.");
+      }
+    }
+    fetchCategories();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      const formData = new FormData(e.currentTarget);
+      const name = formData.get("name") as string;
+      const inStock = formData.get("inStock") === "on";
+
+      const productData = {
+        name,
+        richText: JSON.stringify(description),
+        inStock,
+        categoryIds: selectedCategories,
+        specifications: specs,
+        bottomDescription: JSON.stringify(bottomDescription),
+        images,
+      };
+
+      const result = await createProduct(productData);
+      console.log("✅ Product created successfully:", result);
+      toast(`Product Created was added successfully 🎉`);
+
+      e.currentTarget?.reset();
+      setDescription("");
+      setBottomDescription("");
+      setSelectedCategories([]);
+      setSpecs([]);
+    } catch (error) {
+      console.error("❌ Error creating product:", error);
+      toast("Something went wrong while creating the product.");
+    } finally {
+      console.log("🔄 handleSubmit finished.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -44,6 +118,7 @@ export default function BoxesForm() {
           <Label htmlFor="product-name">Product Title (Name)</Label>
           <Input
             id="product-name"
+            defaultValue={""}
             name="name"
             type="text"
             required
@@ -55,6 +130,7 @@ export default function BoxesForm() {
           <Textarea
             id="product-description"
             name="description"
+            defaultValue={""}
             required
             className="border-gray-500/50 min-h-[75px]"
           />
@@ -67,41 +143,59 @@ export default function BoxesForm() {
           />
         </div>
 
-        <div className="flex w-full flex-col gap-6 mt-10">
-          <Tabs defaultValue="specs" className="w-full">
-            <TabsList className="w-full">
-              <TabsTrigger value="specs">Specifications Table</TabsTrigger>
-              <TabsTrigger value="description">Description</TabsTrigger>
-            </TabsList>
+        <div className="flex w-full flex-col mt-10">
+          <Label className="py-0 pb-4">Add Details</Label>
+          <Card className=" border border-gray-500/50 p-4">
+            <Tabs defaultValue="specs" className="w-full gap-0">
+              <TabsList className="w-full ">
+                <TabsTrigger value="specs">Specifications Table</TabsTrigger>
+                <TabsTrigger value="description">Description</TabsTrigger>
+              </TabsList>
 
-            <TabsContent value="specs">
-              <div className="mt-2">
-                <TableHandler initialData={[]} onChange={handleSpecsChange} />
-              </div>
-            </TabsContent>
+              <TabsContent value="specs">
+                <TableHandler
+                  initialData={specs}
+                  onChange={handleSpecsChange}
+                />
+              </TabsContent>
 
-            <TabsContent value="description">
-              <div className="mt-2">
-                <Editor />
-              </div>
-            </TabsContent>
-          </Tabs>
+              <TabsContent value="description" className="mt-6">
+                <Editor
+                  onEditorChange={setDescription}
+                  initialContent={description}
+                />
+              </TabsContent>
+            </Tabs>
+          </Card>
         </div>
         <div className="mt-10">
           <Label className="py-0 pb-4">Description at the Bottom of Page</Label>
-          <Editor />
+          <ProductImagesUploader images={images} onChange={setImages} />
+        </div>
+
+        <div className="mt-10">
+          <Label className="py-0 pb-4">Description at the Bottom of Page</Label>
+          <Editor
+            onEditorChange={setBottomDescription}
+            initialContent={bottomDescription}
+          />
         </div>
         <div className="flex flexrow items-center justify-between mt-10">
           <div className="flex items-center gap-2 pl-1">
             <Checkbox
               id="terms"
               defaultChecked
-              className="border-gray-500/50"
+              name="inStock"
+              className="border-gray-500/50 data-[state=checked]:bg-secondary data-[state=checked]:text-white dark:data-[state=checked]:bg-secondary data-[state=checked]:border-secondary "
             />
             <Label htmlFor="terms">Available in Stock</Label>
           </div>
-          <Button type="submit" className="mt-4 self-end">
-            Save Product
+          <Button
+            type="submit"
+            className="mt-4 self-end bg-secondary hover:bg-secondary/90 text-white"
+            disabled={loading}
+          >
+            {loading ? "Saving..." : "Save Product"}
           </Button>
         </div>
       </form>

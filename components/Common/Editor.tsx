@@ -44,8 +44,24 @@ const redTheme = {
   dark: lightRedTheme,
 };
 
-export default function Editor() {
-  const editor = useCreateBlockNote();
+export default function Editor({
+  initialContent,
+  onEditorChange,
+}: {
+  initialContent?: any;
+  onEditorChange: (data: any) => void;
+}) {
+  const editor = useCreateBlockNote({
+    initialContent: initialContent,
+  });
 
-  return <BlockNoteView editor={editor} theme={redTheme} />;
+  return (
+    <BlockNoteView
+      editor={editor}
+      theme={redTheme}
+      onChange={(editor) => {
+        onEditorChange(editor.document);
+      }}
+    />
+  );
 }

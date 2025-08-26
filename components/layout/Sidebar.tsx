@@ -41,6 +41,14 @@ const Sidebar = () => {
           href="/dashboard"
         />
         <Option
+          Icon={Box}
+          title="Produts (Boxes)"
+          selected={selected}
+          setSelected={setSelected}
+          open={open}
+          href="/dashboard/products"
+        />
+        <Option
           Icon={Shapes}
           title="Categories"
           selected={selected}
@@ -48,14 +56,6 @@ const Sidebar = () => {
           open={open}
           notifs={3}
           href="/dashboard/category"
-        />
-        <Option
-          Icon={Box}
-          title="Produts (Boxes)"
-          selected={selected}
-          setSelected={setSelected}
-          open={open}
-          href="/dashboard/products"
         />
         <Option
           Icon={ShoppingCart}

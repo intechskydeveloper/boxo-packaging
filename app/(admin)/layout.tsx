@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className={`flex w-full`}>
+    <main className="flex w-full max-w-[1370px]">
       <Sidebar />
       <>{children}</>
       <Analytics />

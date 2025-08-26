@@ -23,13 +23,14 @@ model Category {
 }
 
 model SubCategory {
-  id         Int      @id @default(autoincrement())
-  name       String   @db.VarChar(25)
-  image      String
-  altText    String?
-  categoryId Int
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id               Int      @id @default(autoincrement())
+  name             String   @db.VarChar(25)
+  image            String
+  altText          String?
+  imageExplanation String?
+  categoryId       Int
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
   category Category             @relation(fields: [categoryId], references: [id])
   products ProductSubCategory[]

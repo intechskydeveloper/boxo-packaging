@@ -47,7 +47,7 @@ export function CategoriesTabs() {
   async function handleSubmitSubCategory(formData: FormData) {
     startTransition(async () => {
       try {
-        formData.append("categoryId", String("")); // ensure categoryId sent
+        formData.append("categoryId", String(""));  
         const res = await createSubCategory(formData);
         toast.success("Subcategory created!");
         setPreview(null);
@@ -71,7 +71,7 @@ export function CategoriesTabs() {
   }
 
   return (
-    <div className="flex w-full flex-col gap-6 mt-4">
+    <div className="flex w-full flex-col gap-6 mt-4 mb-[30%]">
       <Tabs defaultValue="sub-category" className="w-full">
         <TabsList className="w-full flex">
           <TabsTrigger value="sub-category" className="w-full">
@@ -160,11 +160,22 @@ export function CategoriesTabs() {
                     className="w-full"
                   />
                 </div>
+                <div className="grid gap-3 w-full">
+                  <Label htmlFor="subcategory-image-explanation">
+                    Image Explaination Text
+                  </Label>
+                  <Input
+                    id="subcategory-image-explanation"
+                    name="imageExplanation"
+                    type="text"
+                    className="w-full"
+                  />
+                </div>
 
                 <Button
                   type="submit"
                   disabled={isPending}
-                  className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                  className="w-full bg-secondary hover:bg-secondary/90 text-white mt-10"
                 >
                   {isPending ? "Saving..." : "Save Sub Category"}
                 </Button>

@@ -7,6 +7,7 @@ import { revalidatePath } from "next/cache";
 export async function createSubCategory(formData: FormData) {
   const name = formData.get("name")?.toString().trim();
   const altText = formData.get("altText")?.toString().trim();
+  const imageExplanation = formData.get("imageExplanation")?.toString().trim();
   const categoryId = Number(formData.get("categoryId"));
   const file = formData.get("file") as File | null;
 
@@ -31,9 +32,10 @@ export async function createSubCategory(formData: FormData) {
   const subCategory = await prisma.subCategory.create({
     data: {
       name,
-      image: result.secure_url,
+      image: result.public_id,
       categoryId,
       altText,
+      imageExplanation,
     },
   });
 

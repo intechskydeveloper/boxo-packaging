@@ -57,34 +57,6 @@ const Sidebar = () => {
           notifs={3}
           href="/dashboard/category"
         />
-        <Option
-          Icon={ShoppingCart}
-          title="Products"
-          selected={selected}
-          setSelected={setSelected}
-          open={open}
-        />
-        <Option
-          Icon={Tag}
-          title="Tags"
-          selected={selected}
-          setSelected={setSelected}
-          open={open}
-        />
-        <Option
-          Icon={ChartNoAxesColumnIncreasing}
-          title="Analytics"
-          selected={selected}
-          setSelected={setSelected}
-          open={open}
-        />
-        <Option
-          Icon={User}
-          title="Members"
-          selected={selected}
-          setSelected={setSelected}
-          open={open}
-        />
       </div>
 
       <ToggleClose open={open} setOpen={setOpen} />

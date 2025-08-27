@@ -113,7 +113,10 @@ export default function SpecificationsTable({
         </TableRow>
 
         {specs.map((spec, index) => (
-          <TableRow key={index} className="hover:bg-transparent border-b">
+          <TableRow
+            key={spec.rowTitle}
+            className="hover:bg-transparent border-b"
+          >
             <TableCell>{spec.rowTitle}</TableCell>
             <TableCell>{spec.rowData}</TableCell>
             <TableCell className="flex justify-center gap-2">

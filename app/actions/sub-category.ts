@@ -7,6 +7,7 @@ import { revalidatePath } from "next/cache";
 export async function createSubCategory(formData: FormData) {
   const name = formData.get("name")?.toString().trim();
   const altText = formData.get("altText")?.toString().trim();
+  const featured = formData.get("featured") == "on";
   const imageExplanation = formData.get("imageExplanation")?.toString().trim();
   const categoryId = Number(formData.get("categoryId"));
   const file = formData.get("file") as File | null;
@@ -36,6 +37,7 @@ export async function createSubCategory(formData: FormData) {
       categoryId,
       altText,
       imageExplanation,
+      featured,
     },
   });
 
@@ -58,4 +60,31 @@ export async function getSubCategories(id: number) {
   });
 
   return subCategories;
+}
+
+export async function getFeaturedSubCategories() {
+  try {
+    const subCategories = await prisma.subCategory.findMany({
+      where: {
+        featured: true,
+      },
+      orderBy: {
+        createdAt: "asc",
+      },
+      select: {
+        id: true,
+        name: true,
+        image: true,
+        altText: true,
+        imageExplanation: true,
+        createdAt: true,
+        featured: true,
+      },
+    });
+
+    return subCategories;
+  } catch (error) {
+    console.error("❌ Failed to fetch featured subcategories:", error);
+    throw new Error("Could not fetch featured subcategories");
+  }
 }

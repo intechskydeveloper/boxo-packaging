@@ -31,6 +31,7 @@ model SubCategory {
   categoryId       Int
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+  featured         Boolean  @default(false)
 
   category Category             @relation(fields: [categoryId], references: [id])
   products ProductSubCategory[]
@@ -47,7 +48,7 @@ model Product {
 
   specifications ProductSpecification[]
   categories     ProductSubCategory[]
-  images         ProductImage[] // relation
+  images         ProductImage[]
 }
 
 model ProductSpecification {

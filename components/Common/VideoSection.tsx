@@ -28,10 +28,13 @@ export default function VideoSection() {
       >
         <video
           ref={videoRef}
-          src="/videos/promo.mp4"
+          src="https://res.cloudinary.com/dx7uxroyb/video/upload/v1756310413/promo_tnwrkg.mp4"
           className="w-full h-full object-cover"
           controls={false}
           loop
+          preload="metadata"
+          playsInline
+          poster="https://res.cloudinary.com/dx7uxroyb/video/upload/v1756310413/promo_tnwrkg.jpg"
         />
 
         {!isPlaying && (

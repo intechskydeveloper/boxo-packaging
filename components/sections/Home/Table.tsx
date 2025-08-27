@@ -84,7 +84,7 @@ export default function Table() {
             <tr>
               {columns.map((column, index) => (
                 <th
-                  key={index}
+                  key={column}
                   scope="col"
                   className={classNames(
                     index === 0 ? "py-3.5 pr-3 pl-4 sm:pl-6" : "px-3 py-3.5",

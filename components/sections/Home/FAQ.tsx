@@ -51,7 +51,7 @@ export function FAQ() {
         className="w-full max-w-[1370px] mx-auto pb-10"
       >
         {faqs.map(({ value, question, answer }) => (
-          <AccordionItem key={value} value={value}>
+          <AccordionItem key={question} value={value}>
             <AccordionTrigger className="text-lg font-bold cursor-pointer my-3">
               {question}
             </AccordionTrigger>

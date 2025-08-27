@@ -77,7 +77,7 @@ export default function ProductImagesUploader({ images, onChange }: Props) {
 
       <div className="space-y-2">
         {images.map((img, index) => (
-          <Card key={index} className="py-1">
+          <Card key={img.src} className="py-1">
             <CardContent className="flex items-center justify-between gap-4 p-2 px-3">
               <div className="flex items-center gap-4">
                 <Image

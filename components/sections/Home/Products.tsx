@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import H3 from "../../Common/H3";
+import { generateUniqueKey } from "@/utils/generateUniqueKey";
 
 const Products = () => {
   return (
@@ -74,7 +75,7 @@ const Products = () => {
           {Array.from({ length: 8 }).map((item, index: number) => (
             <div
               className="flex flex-col items-center "
-              key={`products ${index}`}
+              key={generateUniqueKey(`products ${index}`)}
             >
               <div className="h-[200px] sm:h-[275px] w-full flex items-center py-2">
                 <Image

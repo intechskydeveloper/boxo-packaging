@@ -64,7 +64,7 @@ export default function CategorySelector({
             if (!sub) return null;
             return (
               <Badge
-                key={id}
+                key={sub.name}
                 variant="default"
                 className="flex items-center gap-1 bg-secondary"
               >
@@ -95,7 +95,7 @@ export default function CategorySelector({
                 <h3 className="font-medium text-sm">{group.name}</h3>
                 <div className="space-y-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                   {group.subcategories.map((sub) => (
-                    <div key={sub.id} className="flex items-center space-x-2">
+                    <div key={sub.name} className="flex items-center space-x-2">
                       <Checkbox
                         id={sub.name}
                         checked={selectedIds.includes(sub.id)}

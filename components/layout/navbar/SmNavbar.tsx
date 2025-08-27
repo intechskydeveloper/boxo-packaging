@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/sheet";
 import SlidingContact from "@/components/Common/SlidingContact";
 import ButtonLink from "@/components/Common/ButtonLink";
+import { generateUniqueKey } from "@/utils/generateUniqueKey";
 
 const navigationData = [
   {
@@ -183,7 +184,7 @@ function Navigation() {
                 <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                   {item.content.columns.map((col, colIndex) => (
                     <div
-                      key={`content column ${colIndex}`}
+                      key={generateUniqueKey(`col-${colIndex}`)}
                       className="flex flex-col gap-2"
                     >
                       {col.map((item, linkIndex) => (

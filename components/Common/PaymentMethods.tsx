@@ -7,8 +7,8 @@ const PaymentMethodLogos = ({ paymentLogos }: { paymentLogos: string[] }) => {
         Payment Methods
       </h3> */}
       <div className="flex flex-wraps mt-2 gap-2 px-1 items-center">
-        {paymentLogos.map((src, index) => (
-          <div key={index} className="relative w-auto flex items-center">
+        {paymentLogos.map((src) => (
+          <div key={src} className="relative w-auto flex items-center">
             <Image
               src={src}
               alt="Payment method logo"

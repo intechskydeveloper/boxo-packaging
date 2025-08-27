@@ -3,16 +3,9 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Box,
-  ChartBarStacked,
-  ChartNoAxesColumnIncreasing,
   ChevronsRight,
-  DollarSign,
   House,
-  Monitor,
   Shapes,
-  ShoppingCart,
-  Tag,
-  User,
 } from "lucide-react";
 import Link from "next/link";
 import { Url } from "next/dist/shared/lib/router/router";
@@ -146,18 +139,15 @@ const TitleSection = ({ open }: { open: boolean }) => {
               <span className="block text-xs font-semibold">
                 Boxo Packaging
               </span>
-              {/* <span className="block text-xs text-slate-500">Pro Plan</span> */}
             </motion.div>
           )}
         </div>
-        {/* {open && <ChevronDown className="mr-2" />} */}
       </div>
     </div>
   );
 };
 
 const Logo = () => {
-  // Temp logo from https://logoipsum.com/
   return (
     <motion.div
       layout

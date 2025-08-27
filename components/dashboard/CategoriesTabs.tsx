@@ -18,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
+import { Checkbox } from "../ui/checkbox";
 
 export function CategoriesTabs() {
   const [isPending, startTransition] = useTransition();
@@ -47,7 +48,7 @@ export function CategoriesTabs() {
   async function handleSubmitSubCategory(formData: FormData) {
     startTransition(async () => {
       try {
-        formData.append("categoryId", String(""));  
+        formData.append("categoryId", String(""));
         const res = await createSubCategory(formData);
         toast.success("Subcategory created!");
         setPreview(null);
@@ -116,7 +117,7 @@ export function CategoriesTabs() {
                   >
                     <option value="">-- Select a Category --</option>
                     {categories.map((cat) => (
-                      <option key={cat.id} value={cat.id}>
+                      <option key={cat.name} value={cat.id}>
                         {cat.name}
                       </option>
                     ))}
@@ -170,6 +171,14 @@ export function CategoriesTabs() {
                     type="text"
                     className="w-full"
                   />
+                </div>
+                <div className="flex items-center gap-2 pl-1">
+                  <Checkbox
+                    id="terms"
+                    name="featured"
+                    className="border-gray-500/50 data-[state=checked]:bg-secondary data-[state=checked]:text-white dark:data-[state=checked]:bg-secondary data-[state=checked]:border-secondary "
+                  />
+                  <Label htmlFor="terms">Is Featured? (To show on Home)</Label>
                 </div>
 
                 <Button

@@ -1,12 +1,7 @@
 "use client";
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Box,
-  ChevronsRight,
-  House,
-  Shapes,
-} from "lucide-react";
+import { Blocks, Box, ChevronsRight, House, Shapes } from "lucide-react";
 import Link from "next/link";
 import { Url } from "next/dist/shared/lib/router/router";
 
@@ -47,8 +42,15 @@ const Sidebar = () => {
           selected={selected}
           setSelected={setSelected}
           open={open}
-          notifs={3}
           href="/dashboard/category"
+        />
+        <Option
+          Icon={Blocks}
+          title="UI Blocks"
+          selected={selected}
+          setSelected={setSelected}
+          open={open}
+          href="/dashboard/ui-blocks"
         />
       </div>
 

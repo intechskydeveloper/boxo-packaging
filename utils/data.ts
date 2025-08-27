@@ -653,3 +653,24 @@ const slides2 = [
     alt: "Image of Kraft Boxes",
   },
 ];
+
+const HeroSlides = [
+  {
+    image: "/oxopackaging/hero/h2.webp",
+    heading: "Welcome to one stop shop Customized packaging solutions.",
+    text: "Using high-end apparel boxes can help your clothes and other items look more polished and put together.",
+    button: "Get a Quota",
+  },
+  {
+    image: "/oxopackaging/hero/h1.webp",
+    heading: "Welcome to one stop shop.",
+    text: "Here we make everthing passible too meet your packaging need. Endless options are available fo size",
+    button: "Get a Quota",
+  },
+  {
+    image: "/oxopackaging/hero/h3.webp",
+    heading: "Custom Packaging your",
+    text: "The sports industry is a global one. Everywhere you go, you will witness the shooting of children playing games. ",
+    button: "Get a quote",
+  },
+];

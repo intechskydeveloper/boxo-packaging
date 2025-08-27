@@ -10,29 +10,26 @@ import {
   CarouselPrevious,
 } from "../../Common/HeroShadcnCarousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Image_By_Public_Id } from "@/lib/utils";
 
-const slides = [
-  {
-    image: "/oxopackaging/hero/h2.webp",
-    heading: "Welcome to one stop shop Customized packaging solutions.",
-    text: "Using high-end apparel boxes can help your clothes and other items look more polished and put together.",
-    button: "Get a Quota",
-  },
-  {
-    image: "/oxopackaging/hero/h1.webp",
-    heading: "Welcome to one stop shop.",
-    text: "Here we make everthing passible too meet your packaging need. Endless options are available fo size",
-    button: "Get a Quota",
-  },
-  {
-    image: "/oxopackaging/hero/h3.webp",
-    heading: "Custom Packaging your",
-    text: "The sports industry is a global one. Everywhere you go, you will witness the shooting of children playing games. ",
-    button: "Get a quote",
-  },
-];
+interface Hero {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  altText: string | null;
+  image: string;
+  order: number | null;
+  title: string;
+  subtitle: string | null;
+  buttonText: string | null;
+}
 
-export default function HeroCarousel() {
+interface HeroCarouselProps {
+  slides: Hero[];
+}
+
+export default function HeroCarousel({ slides }: HeroCarouselProps) {
+  console.log("Slides data in HeroCarousel:", slides);
   return (
     <Carousel
       className="w-screen h-[85vh] relative mt-6"
@@ -46,12 +43,12 @@ export default function HeroCarousel() {
       ]}
     >
       <CarouselContent>
-        {slides.map((slide, index) => (
-          <CarouselItem key={slide.text} className="w-screen h-[85vh] relative">
+        {slides.map((slide: any, index: any) => (
+          <CarouselItem key={slide.id} className="w-screen h-[85vh] relative">
             <div className="absolute inset-0">
               <Image
-                src={slide.image}
-                alt={slide.heading}
+                src={Image_By_Public_Id(slide.image)}
+                alt={slide.title}
                 fill
                 priority
                 className="object-cover"
@@ -61,16 +58,16 @@ export default function HeroCarousel() {
 
             <div className="relative z-10 flex flex-col items-start justify-center h-full text-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
               <h1 className="md:text-4xl text-[#2F3D48] text-2xl lg:text-6xl font-bold sm:mb-6 mb-3 lg:max-w-2xl sm:max-w-xl max-w-sm lg:leading-16 md:leading-12 leading-8">
-                {slide.heading}
+                {slide.title}
               </h1>
               <p className="text-sm md:text-xl sm:mb-8 text-[#2F3D48] mb-4  fontmonst font-extralight lg:max-w-xl md:max-w-xl max-w-sm">
-                {slide.text}
+                {slide.subtitle}
               </p>
               <Button
                 className="px-6 py-3 md:text-lg text-sm bg-[#303E48]"
                 size={"lg"}
               >
-                {slide.button}
+                {slide.buttonText}
               </Button>
             </div>
           </CarouselItem>

@@ -1,20 +1,15 @@
 import Image from "next/image";
 import React from "react";
 import HeroCarousel from "./HeroCarousel";
+import { getAllHeros } from "@/app/actions/ui-blocks/hero";
 
-const Hero = () => {
+const Hero = async () => {
+  const res = await getAllHeros();
+  console.log("Fetched Hero Data:", res.data);
+
   return (
-    // <section className="w-full h-[85vh] relative overflow-hidden -mt-6">
-    //   <Image
-    //     src="/hero.jpg"
-    //     alt="Roast Turkey Hero"
-    //     fill
-    //     className="object-cover"
-    //     priority
-    //   />
-    // </section>
     <section className="-mt-6">
-      <HeroCarousel />
+      <HeroCarousel slides={res.data!} />
     </section>
   );
 };

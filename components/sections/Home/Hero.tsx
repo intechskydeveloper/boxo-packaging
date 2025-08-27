@@ -5,8 +5,6 @@ import { getAllHeros } from "@/app/actions/ui-blocks/hero";
 
 const Hero = async () => {
   const res = await getAllHeros();
-  console.log("Fetched Hero Data:", res.data);
-
   return (
     <section className="-mt-6">
       <HeroCarousel slides={res.data!} />

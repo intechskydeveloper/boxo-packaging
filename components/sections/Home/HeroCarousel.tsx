@@ -43,7 +43,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
       ]}
     >
       <CarouselContent>
-        {slides.map((slide: any, index: any) => (
+        {slides?.map((slide: any, index: any) => (
           <CarouselItem key={slide.id} className="w-screen h-[85vh] relative">
             <div className="absolute inset-0">
               <Image

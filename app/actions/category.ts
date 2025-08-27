@@ -58,7 +58,7 @@ export async function getCategoriesWithSubCategories() {
 
     return { success: true, data: categories };
   } catch (error) {
-    console.error("❌ Error fetching categories:", error);
+    console.error("Error fetching categories:", error);
     return { success: false, error: "Failed to fetch categories" };
   }
 }

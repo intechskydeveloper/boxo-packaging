@@ -6,7 +6,7 @@ import Link from "next/link";
 import React from "react";
 
 export type FeaturedSubCategory = {
-  id: number;
+  id: string;
   name: string;
   image: string;
   altText: string | null;
@@ -22,11 +22,6 @@ const ImageGallery = ({
   data: FeaturedSubCategory[];
   className?: string;
 }) => {
-  console.log(
-    "Image Gallery Data: ",
-    Image_By_Public_Id("Box-Images/mfeum1tvffl18apgus49")
-  );
-
   return (
     <div
       className={clsx(

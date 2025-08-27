@@ -5,8 +5,6 @@ import { getFeaturedSubCategories } from "@/app/actions/sub-category";
 
 const CustomPackaging = async () => {
   const res = await getFeaturedSubCategories();
-  console.log("Featured Subcategories: ", res);
-
   return (
     <section className="max-w-[1370px] mx-auto mt-32">
       <SectionIntro

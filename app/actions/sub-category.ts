@@ -46,7 +46,7 @@ export async function createSubCategory(formData: FormData) {
   return subCategory;
 }
 
-export async function getSubCategories(id: number) {
+export async function getSubCategories(id: any) {
   const subCategories = await prisma.subCategory.findMany({
     where: { id },
     select: {
@@ -84,7 +84,7 @@ export async function getFeaturedSubCategories() {
 
     return subCategories;
   } catch (error) {
-    console.error("❌ Failed to fetch featured subcategories:", error);
+    console.error("Failed to fetch featured subcategories:", error);
     throw new Error("Could not fetch featured subcategories");
   }
 }

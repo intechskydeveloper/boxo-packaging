@@ -91,3 +91,36 @@ export async function createProduct(data: ProductInput) {
     return { success: false, error: "Failed to create product" };
   }
 }
+
+export async function getProductsPreview() {
+  try {
+    const products = await prisma.product.findMany({
+      select: {
+        id: true,
+        name: true,
+        createdAt: true,
+        imageExplanation: true,
+        altText: true,
+        images: {
+          orderBy: {
+            createdAt: "asc",
+          },
+          take: 1,
+          select: {
+            id: true,
+            url: true,
+            createdAt: true,
+          },
+        },
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+
+    return products;
+  } catch (error) {
+    console.error("Failed to fetch product previews:", error);
+    throw new Error("Could not fetch products");
+  }
+}

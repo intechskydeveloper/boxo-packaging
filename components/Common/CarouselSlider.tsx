@@ -6,12 +6,15 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll"; // continuous scroll plugin
 import Link from "next/link";
 import { generateUniqueKey } from "@/utils/generateUniqueKey";
+import { Image_By_Public_Id } from "@/lib/utils";
 
 export type SlideData = {
-  img: string;
-  text?: string;
-  description?: string;
-  alt: string;
+  id: string;
+  name: string;
+  createdAt: Date;
+  imageExplanation: string | null;
+  altText: string | null;
+  images: any;
 };
 
 interface CarouselSliderProps {
@@ -58,14 +61,14 @@ export default function CarouselSlider({
         <div className="embla__container flex">
           {slides.map((slide, index) => (
             <div
-              key={generateUniqueKey(`${slide.text} ${index}`)}
+              key={slide.name}
               className="embla__slide flex-[0_0_100%] sm:flex-[0_0_calc(100%/3)] md:flex-[0_0_calc(100%/3)] lg:flex-[0_0_calc(100%/4)] p-2 cursor-grab active:cursor-grabbing"
             >
               <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden group">
                 <div className="relative w-full h-50 sm:h-50 md:h-60 overflow-hidden rounded-2xl">
                   <Image
-                    src={slide.img}
-                    alt={slide.alt}
+                    src={Image_By_Public_Id(slide.images[0]?.url)}
+                    alt={slide.altText || slide.name}
                     fill
                     className="object-cover"
                     loading="lazy"
@@ -74,19 +77,19 @@ export default function CarouselSlider({
                   <div className="absolute inset-0 flex items-end translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
                     <div className="w-full bg-gradient-to-t from-black/80 to-transparent p-3 h-full flex">
                       <p className="text-white text-sm self-end">
-                        {slide.description}
+                        {slide.imageExplanation}
                       </p>
                     </div>
                   </div>
                 </div>
                 <p className="py-2 text-center uppercase text-[16px] font-extrabold font-instruction">
-                  {slide.text}
+                  {slide.name}
                 </p>
                 <Link
                   href={"/product-details/alsdfjls"}
                   className="absolute inset-0 z-10"
                 >
-                  <span className="sr-only">{slide.text}</span>
+                  <span className="sr-only">{slide.name}</span>
                 </Link>
               </div>
             </div>

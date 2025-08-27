@@ -13,9 +13,11 @@ type ProductInput = {
   richText: string;
   inStock?: boolean;
   specifications: { rowTitle: string; rowData: string }[];
-  categoryIds: number[];
+  categoryIds: string[];
   bottomDescription?: string;
   images: ProductImageInput[];
+  altText: string;
+  imageExplanation: string;
 };
 
 async function uploadToCloudinary(base64: string) {
@@ -54,6 +56,8 @@ export async function createProduct(data: ProductInput) {
         richText: data.richText,
         inStock: data.inStock ?? true,
         bottomDescription: data.bottomDescription || "",
+        altText: data.altText,
+        imageExplanation: data.imageExplanation,
         specifications: {
           create: data.specifications.map((spec) => ({
             rowTitle: spec.rowTitle,

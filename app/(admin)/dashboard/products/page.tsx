@@ -40,7 +40,7 @@ export default function BoxesForm() {
   const [description, setDescription] = useState<any>(null);
   const [bottomDescription, setBottomDescription] = useState<any>(null);
   const [images, setImages] = useState<{ src: string; alt: string }[]>([]);
-  const [selectedCategories, setSelectedCategories] = useState<number[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   const [loading, setLoading] = useState(false);
 
@@ -80,6 +80,8 @@ export default function BoxesForm() {
       setLoading(true);
       const formData = new FormData(e.currentTarget);
       const name = formData.get("name") as string;
+      const altText = formData.get("altText") as string;
+      const imageExplanation = formData.get("imageExplanation") as string;
       const inStock = formData.get("inStock") === "on";
 
       const productData = {
@@ -90,6 +92,8 @@ export default function BoxesForm() {
         specifications: specs,
         bottomDescription: JSON.stringify(bottomDescription),
         images,
+        altText,
+        imageExplanation,
       };
 
       const result = await createProduct(productData);
@@ -142,7 +146,32 @@ export default function BoxesForm() {
             onChange={handleCategoriesChange}
           />
         </div>
-
+        <div className="mt-10">
+          <Label className="py-0 pb-4">Description at the Bottom of Page</Label>
+          <ProductImagesUploader images={images} onChange={setImages} />
+        </div>
+        <div className="grid gap-3 w-full mt-10">
+          <Label htmlFor="altText">Image Alt Text</Label>
+          <Input
+            id="altText"
+            defaultValue={""}
+            name="altText"
+            type="text"
+            required
+            className="border-gray-500/50"
+          />
+        </div>
+        <div className="grid gap-3 w-full mt-10">
+          <Label htmlFor="imageExplanation">Image Explaination</Label>
+          <Input
+            id="imageExplanation"
+            defaultValue={""}
+            name="imageExplanation"
+            type="text"
+            required
+            className="border-gray-500/50"
+          />
+        </div>
         <div className="flex w-full flex-col mt-10">
           <Label className="py-0 pb-4">Add Details</Label>
           <Card className=" border border-gray-500/50 p-4">
@@ -151,14 +180,12 @@ export default function BoxesForm() {
                 <TabsTrigger value="specs">Specifications Table</TabsTrigger>
                 <TabsTrigger value="description">Description</TabsTrigger>
               </TabsList>
-
               <TabsContent value="specs">
                 <TableHandler
                   initialData={specs}
                   onChange={handleSpecsChange}
                 />
               </TabsContent>
-
               <TabsContent value="description" className="mt-6">
                 <Editor
                   onEditorChange={setDescription}
@@ -168,11 +195,6 @@ export default function BoxesForm() {
             </Tabs>
           </Card>
         </div>
-        <div className="mt-10">
-          <Label className="py-0 pb-4">Description at the Bottom of Page</Label>
-          <ProductImagesUploader images={images} onChange={setImages} />
-        </div>
-
         <div className="mt-10">
           <Label className="py-0 pb-4">Description at the Bottom of Page</Label>
           <Editor

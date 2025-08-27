@@ -1,7 +1,6 @@
 import React from "react";
 import SectionIntro from "../../Common/SectionIntro";
 import ImageGallery from "./ImageGallery";
-import { SlideData } from "../../Common/CarouselSlider";
 import { getFeaturedSubCategories } from "@/app/actions/sub-category";
 
 const CustomPackaging = async () => {

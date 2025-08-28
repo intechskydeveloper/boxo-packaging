@@ -39,6 +39,7 @@ export default function ProductImageGallery({
               src={Image_By_Public_Id(image.url)}
               alt={image.alt || `Thumbnail ${index + 1}`}
               fill
+              loading="lazy"
               className="object-contain"
             />
           </button>

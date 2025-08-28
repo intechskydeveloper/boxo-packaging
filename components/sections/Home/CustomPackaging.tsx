@@ -14,7 +14,7 @@ const CustomPackaging = async () => {
         subHeading="Explore our handpicked selection of best-selling and trending products, chosen just for you."
         className="pb-8"
       />
-      <ImageGallery data={res} />
+      <ImageGallery data={res} type="category" />
     </section>
   );
 };

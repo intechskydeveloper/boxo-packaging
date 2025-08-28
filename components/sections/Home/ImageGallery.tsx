@@ -8,20 +8,25 @@ import React from "react";
 export type FeaturedSubCategory = {
   id: string;
   name: string;
-  image: string;
+  image?: string;
   altText: string | null;
   imageExplanation: string | null;
   createdAt: Date;
   featured?: boolean;
+  images?: any;
+};
+
+type ImageGalleryProps = {
+  data: FeaturedSubCategory[];
+  className?: string;
+  type: "category" | "product";
 };
 
 const ImageGallery = ({
   data,
   className,
-}: {
-  data: FeaturedSubCategory[];
-  className?: string;
-}) => {
+  type = "category",
+}: ImageGalleryProps) => {
   return (
     <div
       className={clsx(
@@ -36,7 +41,7 @@ const ImageGallery = ({
         >
           <div className="relative w-full h-40 sm:h-50 md:h-60 overflow-hidden rounded-2xl">
             <Image
-              src={Image_By_Public_Id(slide.image)}
+              src={Image_By_Public_Id(slide.image || slide.images[0].url || "")}
               alt={slide.altText || slide.name}
               fill
               className="object-cover"
@@ -60,7 +65,9 @@ const ImageGallery = ({
           )}
 
           <Link
-            href={`/products-by-category/${slide.id}`}
+            href={`/${
+              type == "category" ? "products-by-category" : "product-details"
+            }/${slide.id}`}
             className="absolute inset-0 z-10"
           >
             <span className="sr-only">{slide.name}</span>

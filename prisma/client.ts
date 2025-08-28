@@ -1,10 +1,16 @@
-import { PrismaClient } from '@/app/generated/prisma'
-import { withAccelerate } from '@prisma/extension-accelerate'
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-const prisma = new PrismaClient().$extends(withAccelerate())
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-const globalForPrisma = global as unknown as { prisma: typeof prisma }
+import { PrismaClient } from "@/app/generated/prisma";
+import { withAccelerate } from "@prisma/extension-accelerate";
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+const prisma = new PrismaClient().$extends(withAccelerate());
 
-export default prisma
+const globalForPrisma = global as unknown as { prisma: typeof prisma };
+
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+
+export default prisma;

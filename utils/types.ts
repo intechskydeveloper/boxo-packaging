@@ -12,6 +12,16 @@ export type ProductSpecs = {
   rowData: string;
 };
 
+export type FeaturedSubCategory = {
+  id: string;
+  name: string;
+  image: string;
+  altText: string | null;
+  imageExplanation: string | null;
+  createdAt: Date;
+  featured?: boolean;
+};
+
 export type ProductDetails = {
   name: string;
   paragraph: string;
@@ -21,4 +31,13 @@ export type ProductDetails = {
   imageExplanation: string;
   images: ProductImage[];
   specification?: ProductSpecs[];
+};
+
+export type SubCategoryWithProducts = {
+  id: string;
+  name: string;
+  images: any;
+  altText: string | null;
+  imageExplanation: string | null;
+  createdAt: Date;
 };

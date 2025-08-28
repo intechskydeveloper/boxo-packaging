@@ -5,7 +5,7 @@ const NotFound = () => {
     <section className="">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="w-full flex-col justify-start items-center lg:gap-16 gap-10 inline-flex pt-10">
-          <div className="relative h-[calc(550px-90px)] flex justify-center items-center flex-col">
+          <div className="relative h-screen flex justify-center items-center flex-col">
             <svg
               width="314"
               height="171"

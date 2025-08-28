@@ -12,7 +12,7 @@ export type FeaturedSubCategory = {
   altText: string | null;
   imageExplanation: string | null;
   createdAt: Date;
-  featured: boolean;
+  featured?: boolean;
 };
 
 const ImageGallery = ({
@@ -60,7 +60,7 @@ const ImageGallery = ({
           )}
 
           <Link
-            href={`/product-details/${slide.id}`}
+            href={`/products-by-category/${slide.id}`}
             className="absolute inset-0 z-10"
           >
             <span className="sr-only">{slide.name}</span>

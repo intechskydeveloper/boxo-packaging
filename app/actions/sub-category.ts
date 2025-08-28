@@ -88,3 +88,42 @@ export async function getFeaturedSubCategories() {
     throw new Error("Could not fetch featured subcategories");
   }
 }
+
+export async function getSubCategoryWithProducts(subCategoryId: string) {
+  try {
+    const subCategory = await prisma.subCategory.findUnique({
+      where: { id: subCategoryId },
+      select: {
+        name: true,
+        altText: true,
+        imageExplanation: true,
+        products: {
+          include: {
+            product: {
+              select: {
+                id: true,
+                name: true,
+                createdAt: true,
+                imageExplanation: true,
+                altText: true,
+                images: {
+                  take: 1,
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const products = subCategory?.products.map((p) => p.product) ?? [];
+
+    return {
+      ...subCategory,
+      products,
+    };
+  } catch (error) {
+    console.error("Error fetching subcategory with products:", error);
+    throw new Error("Failed to fetch subcategory");
+  }
+}

@@ -67,7 +67,7 @@ const ImageGallery = ({
           <Link
             href={`/${
               type == "category" ? "products-by-category" : "product-details"
-            }/${slide.id}`}
+            }/${slide.id}`} // this check to follow
             className="absolute inset-0 z-10"
           >
             <span className="sr-only">{slide.name}</span>

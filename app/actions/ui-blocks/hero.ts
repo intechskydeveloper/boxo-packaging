@@ -1,5 +1,5 @@
 "use server";
-import cloudinary from "@/lib/cloudinary";
+import cloudinary from "@/utils/cloudinary";
 import prisma from "@/prisma/client";
 
 export async function createHeroSlide(formData: FormData) {
@@ -53,7 +53,7 @@ export async function getAllHeros() {
   try {
     const heros = await prisma.hero.findMany({
       orderBy: {
-        order: "asc",  
+        order: "asc",
       },
     });
 

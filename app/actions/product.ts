@@ -1,6 +1,6 @@
 "use server";
 
-import cloudinary from "@/lib/cloudinary";
+import cloudinary from "@/utils/cloudinary";
 import prisma from "@/prisma/client";
 
 type ProductImageInput = {

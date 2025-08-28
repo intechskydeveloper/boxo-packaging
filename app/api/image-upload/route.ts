@@ -1,4 +1,4 @@
-import cloudinary from "@/lib/cloudinary";
+import cloudinary from "@/utils/cloudinary";
 import { NextRequest, NextResponse } from "next/server";
 
 interface CloudinaryUploadResult {

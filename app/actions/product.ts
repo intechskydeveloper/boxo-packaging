@@ -124,3 +124,65 @@ export async function getProductsPreview() {
     throw new Error("Could not fetch products");
   }
 }
+
+export async function getProductDetail(productId: string) {
+  try {
+    const product = await prisma.product.findUnique({
+      where: { id: productId },
+      select: {
+        name: true,
+        inStock: true,
+        altText: true,
+        richText: true,
+        paragraph: true,
+        specifications: true,
+        imageExplanation: true,
+        images: {
+          select: {
+            id: true,
+            url: true,
+            alt: true,
+            createdAt: true,
+          },
+        },
+      },
+    });
+
+    return product ?? null;
+  } catch (error) {
+    console.error("Error fetching bottomDescription:", error);
+    throw new Error("Failed to fetch bottomDescription");
+  }
+}
+
+export async function getRichtext(productId: string) {
+  try {
+    const product = await prisma.product.findUnique({
+      where: { id: productId },
+      select: {
+        richText: true,
+      },
+    });
+
+    return product?.richText ?? null;
+  } catch (error) {
+    console.error("Error fetching bottomDescription:", error);
+    throw new Error("Failed to fetch bottomDescription");
+  }
+}
+
+export async function getBottomDescription(productId: string) {
+  try {
+    const product = await prisma.product.findUnique({
+      where: { id: productId },
+      select: {
+        bottomDescription: true,
+      },
+    });
+
+    return product?.bottomDescription ?? null;
+  } catch (error) {
+    console.error("Error fetching bottomDescription:", error);
+    throw new Error("Failed to fetch bottomDescription");
+  }
+}

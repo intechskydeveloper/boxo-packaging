@@ -86,7 +86,7 @@ export default function CarouselSlider({
                   {slide.name}
                 </p>
                 <Link
-                  href={"/product-details/alsdfjls"}
+                  href={`/product-details/${slide.id}`}
                   className="absolute inset-0 z-10"
                 >
                   <span className="sr-only">{slide.name}</span>

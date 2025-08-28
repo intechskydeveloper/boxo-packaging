@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AlternatingImage from "./AlternatingImage";
+import { ProductSpecs } from "@/utils/types";
+import RichtextHandler from "@/components/Common/RichtextHandler";
 
 const tabledata = [
   {
@@ -49,7 +51,13 @@ const tabledata = [
   },
 ];
 
-export function TabMenu() {
+export function TabMenu({
+  specification,
+  richText,
+}: {
+  specification: ProductSpecs[];
+  richText: string;
+}) {
   return (
     <div className="flex w-full flex-col  gap-6 max-w-[1370px] mx-auto lg:-translate-y-6">
       <Tabs defaultValue="specifications">
@@ -74,49 +82,8 @@ export function TabMenu() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="description">
-          <Card className="px-10 py-10">
-            <h2 className="sectionHeadingLeft">
-              Unlimited Customizations In Cigar Box Packaging
-            </h2>
-            <p className="text-gray-500">
-              Now you can get the most functional and unique?cigar boxes?with
-              our unlimited customization options. To gain the desired strength
-              for your packaging, you can select your desired material for their
-              manufacturing, such as Kraft, cardstock, corrugated cardboard,
-              etc. Our latest technology enables us to give unique shapes and
-              styles to the boxes exactly as per your exclusive needs and wants.
-              We will make perfectly sized packaging for your?custom-printed
-              cigar boxes?so they do not experience damage during shipments.
-              Moreover, you can share your designs with us, and we will give
-              them the best impressions with our amazing printing. Or else you
-              can ask our designers to create some intriguing designs for your
-              products that will set them apart from the rest of the crowd. Our
-              design support and digital samples are free of cost, which must
-              excite you.
-            </p>
-            <h2 className="sectionHeadingLeft">
-              Place Your Trust In Us, And We’ll Prove You Right Every Time
-            </h2>
-            <p className="text-gray-500">
-              We make sure to satisfy our customers with the best products and
-              services when they find us capable enough to put their trust in
-              us. We do it gracefully with our finest quality packaging
-              solutions, affordable rates, and some additional flavors to make
-              your experience with us an incredible one. To give a visible
-              highlight to your?best cigar boxes, we can make transparent
-              cutouts on the packaging if you want. It will help the customers
-              make an informed purchase and build their trust in your brand. The
-              customers highly admire our free shipping services in the USA,
-              Australia, and Canada. Our worldwide shipping is also quite
-              economical as well as secure and prompt. We support your small
-              requirements with our minimum order quantity of only 100 pieces.
-              On top of that, the added discounts on bulk purchases of cigar
-              boxes wholesale are also an exciting flavor to enjoy. Moreover,
-              our 24/7 customer support is always ready to listen to your
-              concerns and solve them in the shortest time possible. Now give a
-              click at?www.boxopackaging.com?to land at your dream custom box
-              packaging.
-            </p>
+          <Card className="px-10 pb-10">
+            <RichtextHandler html={richText} />
           </Card>
         </TabsContent>
         <TabsContent value="specifications">
@@ -124,19 +91,19 @@ export function TabMenu() {
             <div className="relative overflow-x-auto rounded-2xl">
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 border-none">
                 <tbody>
-                  {tabledata.map((item) => (
+                  {specification.map((item) => (
                     <tr
-                      key={item.name}
-                      className="bg-white border-b border-gray-200 last:border-none"
+                      key={item.rowTitle}
+                      className="bg-white border-b border-gray-200 first:border-t-[1px]"
                     >
                       <th
                         scope="row"
-                        className="px-6 py-4 font-bold text-gray-900 whitespace-nowrap border-b border-r-[1px] border-gray-200"
+                        className="px-6 py-4 font-bold text-gray-900 whitespace-nowrap border-b border-r-[1px] border-gray-200 max-w-1/4"
                       >
-                        {item.name}
+                        {item.rowTitle}
                       </th>
                       <td className="px-6 py-4 border-b border-gray-200">
-                        {item.description}
+                        {item.rowData}
                       </td>
                     </tr>
                   ))}

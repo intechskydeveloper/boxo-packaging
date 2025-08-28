@@ -45,7 +45,7 @@ const redTheme = {
 };
 
 export default function Editor({
-  initialContent,
+  initialContent = "",
   onEditorChange,
 }: {
   initialContent?: any;
@@ -55,12 +55,17 @@ export default function Editor({
     initialContent: initialContent,
   });
 
+  const toHTML = async (document: any) => {
+    const html = await editor.blocksToHTMLLossy(document);
+    return html;
+  };
+
   return (
     <BlockNoteView
       editor={editor}
       theme={redTheme}
       onChange={(editor) => {
-        onEditorChange(editor.document);
+        onEditorChange(toHTML(editor.document));
       }}
     />
   );

@@ -674,3 +674,28 @@ const HeroSlides = [
     button: "Get a quote",
   },
 ];
+
+export const productImages = [
+  { src: "/products/p22.webp", alt: "Inside view" },
+  { src: "/products/p23.webp", alt: "Front view" },
+  { src: "/products/p2.webp", alt: "Side view" },
+  { src: "/products/p3.webp", alt: "Back view" },
+];
+
+export const product = {
+  title: "Seeds Of Change Organic Quinoa, Brown",
+  description:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure minus error doloribus saepe natus?",
+  brand: "Intechsky",
+  flavour: "Super Saver Pack",
+  dietType: "Vegetarian",
+  weight: "200 Grams",
+  speciality: "Gluten Free, Sugar Free",
+  info: "Egg Free, Allergen-Free",
+  items: 1,
+  price: 120.25,
+  oldPrice: 123.25,
+  reviewCount: 4,
+  weights: ["50kg", "80kg", "120kg", "200kg"],
+  colors: ["#364153", "#6A7282", "#AC8157"],
+};

@@ -60,7 +60,7 @@ const ImageGallery = ({
           )}
 
           <Link
-            href={`"/product-details/${slide.id}`}
+            href={`/product-details/${slide.id}`}
             className="absolute inset-0 z-10"
           >
             <span className="sr-only">{slide.name}</span>

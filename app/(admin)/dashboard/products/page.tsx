@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -73,6 +73,10 @@ export default function BoxesForm() {
     fetchCategories();
   }, []);
 
+  useEffect(() => {
+    console.log("This is description ", description);
+  }, [description]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -83,14 +87,18 @@ export default function BoxesForm() {
       const altText = formData.get("altText") as string;
       const imageExplanation = formData.get("imageExplanation") as string;
       const inStock = formData.get("inStock") === "on";
+      const richTextContent = description ? await description : null;
+      const bottomDescriptionContent = bottomDescription
+        ? await bottomDescription
+        : null;
 
       const productData = {
         name,
-        richText: JSON.stringify(description),
+        richText: richTextContent,
         inStock,
         categoryIds: selectedCategories,
         specifications: specs,
-        bottomDescription: JSON.stringify(bottomDescription),
+        bottomDescription: bottomDescriptionContent,
         images,
         altText,
         imageExplanation,

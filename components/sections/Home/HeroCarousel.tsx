@@ -29,7 +29,6 @@ interface HeroCarouselProps {
 }
 
 export default function HeroCarousel({ slides }: HeroCarouselProps) {
-  console.log("Slides data in HeroCarousel:", slides);
   return (
     <Carousel
       className="w-screen h-[85vh] relative mt-6"

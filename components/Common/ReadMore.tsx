@@ -4,7 +4,10 @@ interface ReadMoreProps {
   wordLimit?: number;
 }
 
-export default function ReadMore({ text, wordLimit = 27 }: ReadMoreProps) {
+export default function ReadMore({
+  text = "No text",
+  wordLimit = 27,
+}: ReadMoreProps) {
   const words = text.split(/\s+/);
   const needsTruncation = words.length > wordLimit;
   const shortText = needsTruncation

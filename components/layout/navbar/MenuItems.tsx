@@ -79,7 +79,7 @@ export function MenuItems() {
           <NavigationMenuContent className="bg-secondary">
             <ul className="grid w-[1200px] lg:grid-cols-4 md:grid-cols-3">
               {Boxes_by_Industries.map((I) => (
-                <li>
+                <li key={I.title}>
                   <NavigationMenuLink asChild className="py-1">
                     <div className="relative flex flex-row items-center gap-3 group">
                       <Link href={I.href} className="absolute inset-0" />

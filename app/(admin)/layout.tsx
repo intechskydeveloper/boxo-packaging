@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-
+import { ClerkProvider, SignedIn } from "@clerk/nextjs";
 import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Sidebar from "@/components/layout/Sidebar";
+import AuthNav from "@/components/dashboard/AuthNav";
 
 export const metadata: Metadata = {
   title: "Admin Boxo Packaging",
@@ -15,10 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex w-full max-w-[1370px]">
-      <Sidebar />
-      <>{children}</>
-      <Analytics />
-    </main>
+    <ClerkProvider>
+      <main className="relative flex w-full max-w-[1370px]">
+        <AuthNav />
+        <SignedIn>
+          <Sidebar />
+        </SignedIn>
+        <>{children}</>
+        <Analytics />
+      </main>
+    </ClerkProvider>
   );
 }

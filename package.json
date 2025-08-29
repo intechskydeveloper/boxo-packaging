@@ -13,6 +13,7 @@
     "@blocknote/core": "^0.36.0",
     "@blocknote/mantine": "^0.36.0",
     "@blocknote/react": "^0.36.0",
+    "@clerk/nextjs": "^6.31.6",
     "@prisma/client": "^6.14.0",
     "@prisma/extension-accelerate": "^2.0.2",
     "@radix-ui/react-accordion": "^1.2.11",

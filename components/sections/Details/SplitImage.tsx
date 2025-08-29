@@ -13,7 +13,7 @@ function SplitImage({ product }: { product: ProductDetails }) {
       </div>
       <div className="w-full lg:w-1/2">
         <ProductDetailsPanel
-          product={{ title: product.name, description: product.paragraph }}
+          product={{ title: product.name, description: product?.paragraph }}
         />
       </div>
     </section>

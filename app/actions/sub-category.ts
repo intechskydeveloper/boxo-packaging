@@ -3,6 +3,7 @@
 import cloudinary from "@/utils/cloudinary";
 import prisma from "@/prisma/client";
 import { revalidatePath } from "next/cache";
+import { slugify } from "@/utils/slugify";
 
 export async function createSubCategory(formData: FormData) {
   const name = formData.get("name")?.toString().trim();
@@ -32,6 +33,7 @@ export async function createSubCategory(formData: FormData) {
 
   const subCategory = await prisma.subCategory.create({
     data: {
+      id: slugify(name),
       name,
       image: result.public_id,
       categoryId,

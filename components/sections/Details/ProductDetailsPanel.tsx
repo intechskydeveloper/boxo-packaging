@@ -2,6 +2,7 @@ import GetQuoteForm from "@/components/Common/GetQuoteForm";
 import ReadMore from "@/components/Common/ReadMore";
 
 export default function ProductDetailsPanel({ product }: any) {
+  console.log("this is product", product);
   return (
     <div className="px-10">
       <div className="flex flex-row justify-between">

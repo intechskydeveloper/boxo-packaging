@@ -2,6 +2,7 @@
 
 import cloudinary from "@/utils/cloudinary";
 import prisma from "@/prisma/client";
+import { slugify } from "@/utils/slugify";
 
 type ProductImageInput = {
   src: string;
@@ -10,6 +11,7 @@ type ProductImageInput = {
 
 type ProductInput = {
   name: string;
+  paragraph: string
   richText: string;
   inStock?: boolean;
   specifications: { rowTitle: string; rowData: string }[];
@@ -52,7 +54,9 @@ export async function createProduct(data: ProductInput) {
 
     const newProduct = await prisma.product.create({
       data: {
+        id: slugify(data.name),
         name: data.name,
+        paragraph: data.paragraph,
         richText: data.richText,
         inStock: data.inStock ?? true,
         bottomDescription: data.bottomDescription || "",

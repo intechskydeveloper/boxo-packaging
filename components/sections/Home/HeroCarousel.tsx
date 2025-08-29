@@ -11,6 +11,7 @@ import {
 } from "../../Common/HeroShadcnCarousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Image_By_Public_Id } from "@/lib/utils";
+import clsx from "clsx";
 
 interface Hero {
   id: string;
@@ -26,12 +27,13 @@ interface Hero {
 
 interface HeroCarouselProps {
   slides: Hero[];
+  className?: string;
 }
 
-export default function HeroCarousel({ slides }: HeroCarouselProps) {
+export default function HeroCarousel({ slides, className }: HeroCarouselProps) {
   return (
     <Carousel
-      className="w-screen h-[85vh] relative mt-6"
+      className={clsx("w-screen  relative mt-6 h-[85vh]", className)}
       opts={{
         loop: true,
       }}

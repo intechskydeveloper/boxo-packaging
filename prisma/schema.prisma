@@ -17,7 +17,7 @@ model Category {
 }
 
 model SubCategory {
-  id               String   @id @default(uuid())
+  id               String   @id
   name             String   @db.VarChar(25)
   image            String
   altText          String?
@@ -32,7 +32,7 @@ model SubCategory {
 }
 
 model Product {
-  id                String   @id @default(uuid())
+  id                String   @id  
   name              String
   paragraph         String?
   richText          String
@@ -77,7 +77,7 @@ model ProductImage {
 }
 
 model Hero {
-  id         String  @id @default(uuid())
+  id         Int     @id @default(autoincrement())
   title      String  @unique
   subtitle   String?
   buttonText String?

@@ -86,6 +86,7 @@ export default function BoxesForm() {
       const name = formData.get("name") as string;
       const altText = formData.get("altText") as string;
       const imageExplanation = formData.get("imageExplanation") as string;
+      const paragraph = formData.get("description") as string;
       const inStock = formData.get("inStock") === "on";
       const richTextContent = description ? await description : null;
       const bottomDescriptionContent = bottomDescription
@@ -102,6 +103,7 @@ export default function BoxesForm() {
         images,
         altText,
         imageExplanation,
+        paragraph,
       };
 
       const result = await createProduct(productData);
@@ -127,7 +129,7 @@ export default function BoxesForm() {
       <H2 className="text-xl font-bold">Boxes Management</H2>
       <form onSubmit={handleSubmit} className="mt-6 max-w-2xl flex flex-col">
         <div className="grid gap-3 w-full">
-          <Label htmlFor="product-name">Product Title (Name)</Label>
+          <Label htmlFor="product-name">Product Name (Must by Unique)</Label>
           <Input
             id="product-name"
             defaultValue={""}

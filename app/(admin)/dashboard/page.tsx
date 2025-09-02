@@ -4,9 +4,14 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import { checkRole } from "@/utils/roles";
+import { toast } from "sonner";
+import DontHasPerm from "@/components/dashboard/DontHasPerm";
 
-const page = () => {
-  return (
+const page = async () => {
+  const isAdmin = await checkRole("admin");
+
+  return isAdmin ? (
     <ResizablePanelGroup
       direction="vertical"
       className="min-h-screen max-w-md rounded-lg border md:min-w-full"
@@ -23,6 +28,8 @@ const page = () => {
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>
+  ) : (
+    <DontHasPerm />
   );
 };
 

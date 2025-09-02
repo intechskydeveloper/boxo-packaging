@@ -91,7 +91,7 @@ export async function getFeaturedSubCategories() {
   }
 }
 
-export async function getSubCategoryWithProducts(subCategoryId: string) {
+export async function getSubCategoryWithProducts(subCategoryId: any) {
   try {
     const subCategory = await prisma.subCategory.findUnique({
       where: { id: subCategoryId },

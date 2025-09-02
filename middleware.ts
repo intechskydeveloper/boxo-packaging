@@ -9,7 +9,7 @@ export default clerkMiddleware(async (auth, req) => {
     isAdminRoute(req) &&
     (await auth()).sessionClaims?.metadata?.role !== "admin"
   ) {
-    const url = new URL("/sign-in", req.url);
+    const url = new URL("/auth/sign-in", req.url);
     return NextResponse.redirect(url);
   }
 });

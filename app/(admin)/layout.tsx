@@ -4,6 +4,7 @@ import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Sidebar from "@/components/layout/Sidebar";
 import AuthNav from "@/components/dashboard/AuthNav";
+import SidebarWrapper from "@/components/layout/SidebarWrapper";
 
 export const metadata: Metadata = {
   title: "Admin Boxo Packaging",
@@ -16,14 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider signInForceRedirectUrl={"/dashboard"}>
       <main className="relative flex w-full max-w-[1370px]">
         <AuthNav />
-        <SignedIn>
-          <Sidebar />
-        </SignedIn>
+        <SidebarWrapper />
         <>{children}</>
-        <Analytics />
       </main>
     </ClerkProvider>
   );

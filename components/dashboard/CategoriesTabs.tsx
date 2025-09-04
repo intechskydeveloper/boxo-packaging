@@ -234,5 +234,6 @@ export function CategoriesTabs() {
         </TabsContent>
       </Tabs>
     </div>
+    // v2 test
   );
 }

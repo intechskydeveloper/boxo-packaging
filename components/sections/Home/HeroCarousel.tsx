@@ -18,6 +18,8 @@ interface HeroCarouselProps {
   className?: string;
 }
 
+// This is v1
+
 export default function HeroCarousel({ slides, className }: HeroCarouselProps) {
   return (
     <Carousel

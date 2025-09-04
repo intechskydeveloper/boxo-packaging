@@ -13,20 +13,8 @@ import Autoplay from "embla-carousel-autoplay";
 import { Image_By_Public_Id } from "@/lib/utils";
 import clsx from "clsx";
 
-interface Hero {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
-  altText: string | null;
-  image: string;
-  order: number | null;
-  title: string;
-  subtitle: string | null;
-  buttonText: string | null;
-}
-
 interface HeroCarouselProps {
-  slides: Hero[];
+  slides: any;
   className?: string;
 }
 

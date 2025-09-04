@@ -17,22 +17,24 @@ model Category {
 }
 
 model SubCategory {
-  id               String   @id
-  name             String   @db.VarChar(25)
+  id               String  @id
+  name             String  @db.VarChar(25)
   image            String
   altText          String?
   imageExplanation String?
-  categoryId       Int
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-  featured         Boolean  @default(false)
+  navIcon          String?
+
+  categoryId Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  featured   Boolean  @default(false)
 
   category Category             @relation(fields: [categoryId], references: [id])
   products ProductSubCategory[]
 }
 
 model Product {
-  id                String   @id  
+  id                String   @id
   name              String
   paragraph         String?
   richText          String

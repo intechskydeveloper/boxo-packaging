@@ -2,12 +2,26 @@
 
 import prisma from "@/prisma/client";
 
+import { auth } from "@clerk/nextjs/server";
+
 export async function createCategory(formData: FormData) {
   try {
+    const { userId, sessionClaims }: any = auth();
+
+    if (!userId) {
+      throw new Error("Unauthorized: Please log in.");
+    }
+
+    const role = sessionClaims?.metadata?.role || sessionClaims?.role;
+
+    if (role !== "admin") {
+      throw new Error("Forbidden: Only admins can create categories.");
+    }
+
     const name = formData.get("name") as string;
 
     if (!name) {
-      throw new Error("Name and Image are required");
+      throw new Error("Name is required.");
     }
 
     await prisma.category.create({
@@ -36,7 +50,6 @@ export async function getCategories() {
   return categories;
 }
 
-
 export async function getCategoriesWithSubCategories() {
   try {
     const categories = await prisma.category.findMany({
@@ -62,4 +75,3 @@ export async function getCategoriesWithSubCategories() {
     return { success: false, error: "Failed to fetch categories" };
   }
 }
-

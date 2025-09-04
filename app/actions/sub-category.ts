@@ -8,34 +8,43 @@ import { slugify } from "@/utils/slugify";
 export async function createSubCategory(formData: FormData) {
   const name = formData.get("name")?.toString().trim();
   const altText = formData.get("altText")?.toString().trim();
-  const featured = formData.get("featured") == "on";
+  const featured = formData.get("featured") === "on";
   const imageExplanation = formData.get("imageExplanation")?.toString().trim();
   const categoryId = Number(formData.get("categoryId"));
   const file = formData.get("file") as File | null;
+  const iconFile = formData.get("iconFile") as File | null;
 
-  if (!name || !file || !categoryId) {
+  if (!name || !file || !categoryId || !iconFile) {
     throw new Error("Name, Image and Category are required");
   }
 
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
+  async function uploadToCloudinary(file: File, folder = "Box-Images") {
+    const buffer = Buffer.from(await file.arrayBuffer());
+    return new Promise<any>((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { folder },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+      uploadStream.end(buffer);
+    });
+  }
 
-  const result = await new Promise<any>((resolve, reject) => {
-    const uploadStream = cloudinary.uploader.upload_stream(
-      { folder: "Box-Images" },
-      (error, result) => {
-        if (error) reject(error);
-        else resolve(result);
-      }
-    );
-    uploadStream.end(buffer);
-  });
+  const [imageResult, iconResult] = await Promise.all([
+    uploadToCloudinary(file),
+    uploadToCloudinary(iconFile),
+  ]);
+
+  
 
   const subCategory = await prisma.subCategory.create({
     data: {
       id: slugify(name),
       name,
-      image: result.public_id,
+      image: imageResult.public_id,
+      navIcon: iconResult.public_id,
       categoryId,
       altText,
       imageExplanation,
@@ -47,6 +56,7 @@ export async function createSubCategory(formData: FormData) {
 
   return subCategory;
 }
+
 
 export async function getSubCategories(id: any) {
   const subCategories = await prisma.subCategory.findMany({

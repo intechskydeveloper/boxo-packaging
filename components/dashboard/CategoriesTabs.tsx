@@ -23,6 +23,7 @@ import { Checkbox } from "../ui/checkbox";
 export function CategoriesTabs() {
   const [isPending, startTransition] = useTransition();
   const [preview, setPreview] = useState<string | null>(null);
+  const [iconPreview, setIconPreview] = useState<string | null>(null);
   const [categories, setCategories] = useState<{ id: number; name: string }[]>(
     []
   );
@@ -45,6 +46,13 @@ export function CategoriesTabs() {
     }
   }
 
+  function handleIconPreview(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (file) {
+      setIconPreview(URL.createObjectURL(file));
+    }
+  }
+
   async function handleSubmitSubCategory(formData: FormData) {
     startTransition(async () => {
       try {
@@ -54,6 +62,8 @@ export function CategoriesTabs() {
         setPreview(null);
         formData.delete("name");
         formData.delete("file");
+        setPreview(null);
+        setIconPreview(null);
       } catch (err) {
         console.error(err);
         toast.error("Failed to create subcategory");
@@ -135,8 +145,6 @@ export function CategoriesTabs() {
                     className="w-full"
                   />
                 </div>
-
-                {/* Preview */}
                 {preview && (
                   <div className="mt-4 w-full">
                     <Label className="pb-2">Preview:</Label>
@@ -149,7 +157,6 @@ export function CategoriesTabs() {
                     />
                   </div>
                 )}
-
                 <div className="grid gap-3 w-full">
                   <Label htmlFor="subcategory-name">
                     Image Alternative Text
@@ -172,6 +179,33 @@ export function CategoriesTabs() {
                     className="w-full"
                   />
                 </div>
+
+                <div className="grid gap-3 w-full">
+                  <Label htmlFor="subcategory-icon">Upload Tab Icon</Label>
+                  <Input
+                    id="subcategory-icon"
+                    name="iconFile"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleIconPreview}
+                    required
+                    className="w-full"
+                  />
+                </div>
+
+                {iconPreview && (
+                  <div className="mt-4 w-full">
+                    <Label className="pb-2">Preview:</Label>
+                    <Image
+                      src={iconPreview}
+                      alt="Preview"
+                      width={160}
+                      height={160}
+                      className="w-full max-w-xs rounded-lg border"
+                    />
+                  </div>
+                )}
+
                 <div className="flex items-center gap-2 pl-1">
                   <Checkbox
                     id="terms"
@@ -236,4 +270,4 @@ export function CategoriesTabs() {
     </div>
     // v2 test
   );
-}
+} 

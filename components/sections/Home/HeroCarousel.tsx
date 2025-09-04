@@ -20,6 +20,10 @@ interface HeroCarouselProps {
 
 // This is v1
 
+// this
+// is
+// main
+
 export default function HeroCarousel({ slides, className }: HeroCarouselProps) {
   return (
     <Carousel

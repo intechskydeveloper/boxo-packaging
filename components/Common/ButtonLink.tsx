@@ -9,6 +9,7 @@ interface buttonProps {
   href: string;
   variant?: "default" | "outline" | "ghost" | "link";
   size?: "sm" | "lg" | "default" | "icon";
+  type?: "default" | "simple";
 }
 
 const ButtonLink = ({
@@ -17,9 +18,10 @@ const ButtonLink = ({
   href = "/",
   variant,
   size,
+  type,
   ...restProps
 }: buttonProps) => {
-  return (
+  return type == "default" ? (
     <Button
       className={clsx("relative cursor-pointer", className)}
       variant={variant}
@@ -29,6 +31,14 @@ const ButtonLink = ({
       <Link href={href} className="absolute inset-0" />
       {children}
     </Button>
+  ) : (
+    <button
+      className={clsx("relative cursor-pointer", className)}
+      {...restProps}
+    >
+      <Link href={href} className="absolute inset-0" />
+      {children}
+    </button>
   );
 };
 

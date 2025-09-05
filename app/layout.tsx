@@ -1,24 +1,13 @@
 import type { Metadata } from "next";
-import {
-  Instrument_Sans,
-  Montserrat,
-  Raleway,
-  Work_Sans,
-} from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "sonner";
 
-const instrumentSans = Work_Sans({
-  variable: "--font-instrument-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const montserrat = Raleway({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -33,12 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${instrumentSans.variable} ${montserrat.variable} antialiased`}
-      >
+      <body className={`${inter.variable} antialiased`}>
         {children}
         <Analytics />
-        <Toaster/>
+        <Toaster />
       </body>
     </html>
   );

@@ -60,20 +60,7 @@ export function MenuItems() {
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Link
-              href="/"
-              className={clsx(
-                "bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white",
-                navigationMenuTriggerStyle()
-              )}
-            >
-              Home
-            </Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white data-[state=open]:bg-secondary-foreground  data-[state=open]:text-white  data-[state=open]:hover:bg-secondary-foreground data-[state=open]:focus:bg-secondary-foreground ">
+          <NavigationMenuTrigger className="bg-transparent text-muted hover:bg-transparent hover:text-primary focus:bg-transparent focus:text-muted data-[state=open]:bg-transparent  data-[state=open]:text-primary  data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent text-[15px] font-medium">
             Boxes by Industry
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-secondary">
@@ -102,7 +89,7 @@ export function MenuItems() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white data-[state=open]:bg-secondary-foreground  data-[state=open]:text-white  data-[state=open]:hover:bg-secondary-foreground data-[state=open]:focus:bg-secondary-foreground ">
+          <NavigationMenuTrigger className="bg-transparent text-muted hover:bg-transparent hover:text-primary focus:bg-transparent focus:text-muted data-[state=open]:bg-transparent  data-[state=open]:text-primary  data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent text-[15px] font-medium ">
             Boxes by Material
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -131,7 +118,7 @@ export function MenuItems() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white data-[state=open]:bg-secondary-foreground  data-[state=open]:text-white  data-[state=open]:hover:bg-secondary-foreground data-[state=open]:focus:bg-secondary-foreground ">
+          <NavigationMenuTrigger className="bg-transparent text-muted hover:bg-transparent hover:text-primary focus:bg-transparent focus:text-muted data-[state=open]:bg-transparent  data-[state=open]:text-primary  data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent text-[15px] font-medium ">
             Boxes by Style
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -153,7 +140,7 @@ export function MenuItems() {
             <Link
               href="/portfolio"
               className={clsx(
-                "bg-secondary text-white hover:bg-secondary-foreground hover:text-white focus:bg-secondary-foreground focus:text-white",
+                "bg-transparent text-muted hover:bg-transparent hover:text-primary focus:bg-primary-foreground focus:text-muted text-[15px] font-medium",
                 navigationMenuTriggerStyle()
               )}
             >

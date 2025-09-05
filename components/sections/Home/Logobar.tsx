@@ -18,7 +18,7 @@ const Logobar = () => {
       <div className="max-w-[1370px] mx-auto hidden md:flex flex-row justify-between items-center h-[86px] px-4 lg:px-8 2xl:px-0">
         <div className="h-[77px] w-auto flex items-center py-2">
           <Image
-            src="/logo.webp"
+            src="/other/logo.webp"
             alt="logo"
             width={150}
             height={82}

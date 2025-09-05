@@ -10,7 +10,6 @@ import { toast } from "sonner";
 const Page = () => {
   const [loading, setLoading] = useState(false);
 
-
   const [formData, setFormData] = useState({
     title: "",
     subtitle: "",

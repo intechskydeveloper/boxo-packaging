@@ -4,10 +4,11 @@ import { SmNavbar } from "./navbar/SmNavbar";
 
 const Navbar = () => {
   return (
-    <nav className=" w-full fixed z-50 bg-secondary">
+    <header className=" w-full ">
+      {/* fixed z-50 */}
       <MdNavbar />
       <SmNavbar />
-    </nav>
+    </header>
   );
 };
 

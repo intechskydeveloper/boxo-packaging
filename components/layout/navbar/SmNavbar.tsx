@@ -112,7 +112,7 @@ const SmNavbar = () => {
       <div className="w-full flex flex-row bg-white justify-between px-4">
         <div className="h-[77px] w-auto flex items-center py-2">
           <Image
-            src="/logo.webp"
+            src="/other/logo.webp"
             alt="logo"
             width={150}
             height={82}
